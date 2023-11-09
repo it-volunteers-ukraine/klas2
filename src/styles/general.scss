@@ -37,12 +37,12 @@ body {
 	}
 
 	&::-webkit-scrollbar-thumb {
-		background-color: $grey;
+		background-color: $grey30;
 		border-radius: 8px;
 	}
 
 	&::-webkit-scrollbar-thumb:hover {
-		background-color: $main-blue;
+		background-color: $main-violet;
 	}
 }
 
@@ -167,7 +167,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: $black;
+	color: $main-black;
 	font-family: "Raleway", sans-serif;
 	font-size: 16px;
 	font-style: normal;

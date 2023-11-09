@@ -1,1 +1,1 @@
-console.log("footer part"), console.log("header"), console.log("main");
+console.log("footer part"),console.log("header"),console.log("main");
