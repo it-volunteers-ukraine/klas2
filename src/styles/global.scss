@@ -1,3 +1,64 @@
-.global {
-	color: green;
+.container {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 16px;
+
+	@media screen and (min-width: $tablet) {
+		padding: 0 32px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		max-width: $desktop;
+		padding: 0 16px;
+	}
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 24px;
+	cursor: pointer;
+	border: 1px solid transparent;
+	font-family: inherit;
+	font-size: 18px;
+	line-height: 1.33;
+	border-radius: $btn-border-radius;
+	transition: all $transition-function;
+
+	&:hover,
+	&:focus {
+		box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+			0px 2px 2px rgba(0, 0, 0, 0.12);
+	}
+}
+
+.primary-button {
+	color: $main-white;
+	background-color: $dark-violet;
+	font-weight: 400;
+	@media screen and (max-width: 767.98px) {
+		width: 100%;
+	}
+	&:hover,
+	&:focus {
+		color: $dark-violet;
+		background-color: $main-white;
+		border: 1.5px solid $dark-violet;
+		font-weight: 600;
+	}
+}
+
+.secondary-button {
+	color: $dark-violet;
+	background-color: $main-white;
+	border: 1.5px solid $dark-violet;
+	font-weight: 600;
+	&:hover,
+	&:focus {
+		color: $main-white;
+		background-color: $dark-violet;
+		font-weight: 400;
+		border: 1px solid transparent;
+	}
 }
