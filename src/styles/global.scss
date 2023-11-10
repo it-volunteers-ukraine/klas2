@@ -18,6 +18,7 @@
 	justify-content: center;
 	align-items: center;
 	padding: 12px 24px;
+	width: fit-content;
 	cursor: pointer;
 	border: 1px solid transparent;
 	font-family: inherit;
@@ -33,7 +34,7 @@
 	}
 }
 
-.primary-button {
+.primary_button {
 	color: $main-white;
 	background-color: $dark-violet;
 	font-weight: 400;
@@ -49,7 +50,7 @@
 	}
 }
 
-.secondary-button {
+.secondary_button {
 	color: $dark-violet;
 	background-color: $main-white;
 	border: 1.5px solid $dark-violet;
@@ -60,5 +61,29 @@
 		background-color: $dark-violet;
 		font-weight: 400;
 		border: 1px solid transparent;
+	}
+}
+
+.read-more_button {
+	padding: 14px 0;
+	background-color: transparent;
+	border-color: transparent;
+	font-weight: 500;
+	line-height: 1.25;
+	color: $main-black;
+}
+.arrow-icon {
+	fill: $grey70;
+	transition: all $transition-function;
+}
+
+.read-more_button:hover,
+.read-more_button:focus {
+	font-weight: 600;
+	color: $dark-violet;
+
+	.arrow-icon {
+		transform: rotate(-45deg);
+		fill: $dark-violet;
 	}
 }
