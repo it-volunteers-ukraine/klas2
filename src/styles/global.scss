@@ -4,11 +4,12 @@
 	padding: 0 16px;
 
 	@media screen and (min-width: $tablet) {
+		max-width: $desktop;
 		padding: 0 32px;
 	}
 
 	@media screen and (min-width: $desktop) {
-		max-width: $desktop;
+		max-width: 1172px;
 		padding: 0 16px;
 	}
 }
@@ -26,14 +27,9 @@
 	line-height: 1.33;
 	border-radius: $btn-border-radius;
 	transition: all $transition-function;
-
-	&:hover,
-	&:focus {
-		box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-			0px 2px 2px rgba(0, 0, 0, 0.12);
-	}
 }
 
+//violet button
 .primary_button {
 	color: $main-white;
 	background-color: $dark-violet;
@@ -50,6 +46,7 @@
 	}
 }
 
+//white button
 .secondary_button {
 	color: $dark-violet;
 	background-color: $main-white;
@@ -64,7 +61,9 @@
 	}
 }
 
-.read-more_button {
+//read-more & hide buttons
+.read-more_button,
+.hide_button {
 	padding: 14px 0;
 	background-color: transparent;
 	border-color: transparent;
@@ -72,7 +71,11 @@
 	line-height: 1.25;
 	color: $main-black;
 }
-.arrow-icon {
+.arrow-icon,
+.close-icon {
+	width: 24px;
+	height: 24px;
+	margin-left: 4px;
 	fill: $grey70;
 	transition: all $transition-function;
 }
@@ -84,6 +87,16 @@
 
 	.arrow-icon {
 		transform: rotate(-45deg);
+		fill: $dark-violet;
+	}
+}
+
+.hide_button:hover,
+.hide_button:focus {
+	font-weight: 600;
+	color: $dark-violet;
+
+	.close-icon {
 		fill: $dark-violet;
 	}
 }
