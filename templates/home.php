@@ -4,10 +4,12 @@ Template Name: home
 */
 get_header();
 ?>
-<h2>home page</h2>
+
+<section class="hero-section">
+    <div class="container">
+    </div>
+</section>
 
 <?php get_template_part('template-parts/form'); ?>
-
-
 
 <?php get_footer(); ?>
