@@ -31,9 +31,9 @@
 		gap: 24px;
 		margin: 0 auto 32px;
 		@media screen and (min-width: $tablet) {
-			width: 590px;
 			justify-content: center;
 			align-items: center;
+			margin: 0 55px 32px;
 		}
 
 		@media screen and (min-width: $desktop) {
@@ -48,11 +48,13 @@
 		font-weight: 600;
 		line-height: 28px;
 		@media screen and (min-width: $tablet) {
-			width: 508px;
+			width: auto;
+			margin: 0 5% 0;
 		}
 
 		@media screen and (min-width: $desktop) {
 			width: auto;
+			margin: 0;
 		}
 	}
 	&__description {
@@ -62,7 +64,7 @@
 		font-weight: 400;
 		line-height: 24px;
 		@media screen and (min-width: $tablet) {
-			width: 598px;
+			width: auto;
 		}
 
 		@media screen and (min-width: $desktop) {
