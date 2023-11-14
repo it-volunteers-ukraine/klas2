@@ -10,37 +10,45 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <header class="header">
-            <div class="header__content _container">
-                <div class="header__menu menu">
-                    <div class="menu__icon icon-menu menu__round">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <div class="menu__nav">
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
                     <?php
                     if (has_custom_logo()) {
                         echo get_custom_logo();
                     }
                     ?>
-                    <div class="menu__content">IT VOLUNTEERS</div>
-                    <nav class="menu__body">
-                        <div class=" menu__container">
-                            <?php wp_nav_menu([
-                                'theme_location'       => 'header',
-                                'container'            => false,
-                                'menu_class'           => 'menu__list',
-                                'menu_id'              => false,
-                                'echo'                 => true,
-                                'items_wrap'           => '<ul id="%1$s" class="header_list %2$s">%3$s</ul>',
-                            ]);
-                            ?>
-                        </div>
-                    </nav>
-                    <div class="burger-menu__overlay"></div>
+                </div>
+                <div class="menu__container" id="">
+                    <ul class="menu__body">
+                        <li>
+                            <a href="">Головна</a>
+                        </li>
+                        <li>
+                            <nav class="header__nav">
+                                <?php wp_nav_menu([
+                                    'theme_location'       => 'header',
+                                    'container'            => false,
+                                    'menu_class'           => 'menu__list',
+                                    'menu_id'              => false,
+                                    'echo'                 => true,
+                                    'items_wrap'           => '<ul id="%1$s" class="header_list %2$s">%3$s</ul>',
+                                ]);
+                                ?>
+                            </nav>
+                        </li>
+                        <li>
+                            <a href="">Контакти</a>
+                        </li>
+                    </ul>
+                </div>
+                <a class="secondary_button button header__btn" href="
+                                <?php the_field('link_helpform', 'option'); ?>">
+                    <?php the_field('need-help_button', 'option'); ?>Підтримати нас</a>
+                <div class="burger">
+                    <span></span>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>

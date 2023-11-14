@@ -1,1 +1,1 @@
-console.log("footer part"),console.log("header"),console.log("main");
+console.log("footer part");const menu=document.querySelector(".header__nav"),menuButton=document.querySelector(".burger");menuButton.addEventListener("click",(function(){this.classList.toggle("active"),menu.classList.toggle("open"),document.body.classList.toggle("modal-open")})),console.log("header"),console.log("main");
