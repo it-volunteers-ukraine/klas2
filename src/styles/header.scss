@@ -88,11 +88,10 @@
 			
 	@media screen and (max-width: $desktop) {
 		display: none;
-	    position: absolute;
-		height: fit-content;
-		background-color: $main-white;
+	    position: fixed;
+		height: 100%;
 		width: 100%;
-		top: 10%;
+		top: 65px;
 		bottom: 0;
 		left:0;
 		right: 0;
@@ -102,8 +101,8 @@
 		animation: burgerAnimation 0.4s;
 	}
 	@media screen and (max-width: $tablet) {
-		top: 6%;
-		height: fit-content;
+		top: 38px;
+		height: 100%;
 	}
 }
 
@@ -115,10 +114,14 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	width: 100%;
+	
+	
 
 	@media screen and (max-width: $desktop) {
 		flex-direction: column;
+		background-color: white;
+        height: fit-content;
+		width: 100%;
 	}
 }
 
@@ -175,8 +178,16 @@
 }
 
 .header_list li a{
-	width: 100%;
-    text-align: center;
+	
+	@media screen and (max-width: $desktop) {
+		width: 100%;
+    	text-align: center;
+	}
+	
+	@media screen and (max-width: $tablet) {
+		width: 100%;
+    	text-align: end;
+	}
 }
 
 .burger{
