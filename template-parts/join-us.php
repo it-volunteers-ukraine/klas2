@@ -1,10 +1,18 @@
 <section class="join-us">
   <div class="container join-us__container">
     <div class="join-us__content">
-      <h3 class="join-us__title">Команда ГО “Клас” реалізує соціальні проєкти, не заробляючи на цьому</h3>
-    <p class="join-us__text">Нам дуже важливо відчувати підтримку однодумців. Долучайтеся до спільноти доброчинців та творімо добро разом із нами</p>
+    <?php $title = get_field("join_us_title"); ?>
+      <?php if ($title): ?>
+        <h3 class="join-us__title"><?php echo $title; ?></h3>
+      <?php endif; ?>
+      <?php $description = get_field("join_us_description"); ?>
+      <?php if ($description): ?>
+        <p class="join-us__description"><?php echo $description; ?></p>
+      <?php endif; ?>
     </div>
-    <a href="" class="join-us__button" aria-label="Долучитися">Долучитися</a>
-    <p></p>
+    <?php $button = get_field("join_us_button"); ?>
+      <?php if ($description): ?>
+        <a href="" class="join-us__button"><?php echo $button; ?></a>
+      <?php endif; ?>
   </div>
 </section>
