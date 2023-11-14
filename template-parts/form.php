@@ -1,19 +1,21 @@
-<section class="form__section">
-    <div class="container">
-        <h2 class="helpform__title"><?php the_field('form_title', 'option'); ?></h2>
-        <h3 class="helpform__title"><?php the_field('form_subtitle', 'option'); ?></h3>
-        <?php
-        $form = get_field('form', 'option');
-        if ($form) : ?>
+<section class="form">
+    <h2 class="form__title"><?php the_field('form_title', 'option'); ?></h2>
+    <h3 class="form__subtitle"><?php the_field('form_subtitle', 'option'); ?></h3>
+    <?php
+    $form = get_field('form', 'option');
+    if ($form) : ?>
+        <?php echo $form ?>
+    <?php endif; ?>
 
-            <div class="helpform">
-                <?php echo $form ?>
-            </div>
-        <?php endif; ?>
+    <div class="notification visually-hidden" id="notification">
+        <div>
+            <svg class="notification__icon" width="24px" height="24px">
+                <use href="../assets/images/сheckbox.svg"></use>
+            </svg>
+        </div>
+        <p class="notification__text">Дякуємо за Ваше звернення!</p>
     </div>
 </section>
-
-
 
 <!-- варіант розмітки для WP Contact Form 7 -->
 <!-- <div class="input__wrap">
@@ -42,4 +44,3 @@
 <div class="form-btn__wrap">
 [submit class:button class:primary_button  "Відправити"]
 </div> -->
->>>>>>> main
