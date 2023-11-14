@@ -1,21 +1,22 @@
+@import "../variables.scss";
 .join-us {
 	padding: 40px 0;
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: $tablet) {
 		padding: 36px 0;
 	}
 
-	@media screen and (min-width: 1172px) {
+	@media screen and (min-width: $desktop) {
 		padding: 56px 0;
 	}
 	&__container {
-		background-color: #f5f2f7;
+		background-color: $light-violet;
 		padding-top: 24px;
 		padding-bottom: 24px;
-		@media screen and (min-width: 768px) {
+		@media screen and (min-width: $tablet) {
 			text-align: center;
 		}
 
-		@media screen and (min-width: 1172px) {
+		@media screen and (min-width: $desktop) {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-around;
@@ -25,20 +26,19 @@
 		}
 	}
 	&__content {
-		width: 343px;
 		display: flex;
 		flex-direction: column;
 		gap: 24px;
 		margin: 0 auto 32px;
-		@media screen and (min-width: 768px) {
+		@media screen and (min-width: $tablet) {
 			width: 590px;
 			justify-content: center;
 			align-items: center;
 		}
 
-		@media screen and (min-width: 1172px) {
+		@media screen and (min-width: $desktop) {
 			width: 558px;
-			margin: 0 auto;
+			margin: 0;
 		}
 	}
 	&__title {
@@ -47,11 +47,11 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: 28px;
-		@media screen and (min-width: 768px) {
+		@media screen and (min-width: $tablet) {
 			width: 508px;
 		}
 
-		@media screen and (min-width: 1172px) {
+		@media screen and (min-width: $desktop) {
 			width: auto;
 		}
 	}
@@ -61,11 +61,11 @@
 		font-style: normal;
 		font-weight: 400;
 		line-height: 24px;
-		@media screen and (min-width: 768px) {
+		@media screen and (min-width: $tablet) {
 			width: 598px;
 		}
 
-		@media screen and (min-width: 1172px) {
+		@media screen and (min-width: $desktop) {
 			width: auto;
 		}
 	}
@@ -73,9 +73,9 @@
 		display: inline-block;
 		width: 100%;
 		padding: 8px 0;
-		background: #663a7b;
+		background: $dark-violet;
 
-		color: #fdfcfc;
+		color: $main-white;
 		font-family: Raleway;
 		font-size: 16px;
 		font-style: normal;
@@ -85,16 +85,18 @@
 
 		&:hover,
 		&:focus {
+			font-weight: 600;
+
 			background-color: transparent;
-			border: 1.5px solid #663a7b;
-			color: #663a7b;
+			border: 1.5px solid $dark-violet;
+			color: $dark-violet;
 		}
 
-		@media screen and (min-width: 768px) {
+		@media screen and (min-width: $tablet) {
 			width: 344px;
 		}
 
-		@media screen and (min-width: 1172px) {
+		@media screen and (min-width: $desktop) {
 			width: 151px;
 			height: max-content;
 			padding: 12px 0;
