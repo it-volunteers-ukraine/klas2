@@ -11,8 +11,8 @@
       <?php endif; ?>
     </div>
     <?php $button = get_field("join_us_button"); ?>
-      <?php if ($description): ?>
-        <a href="" class="join-us__button"><?php echo $button; ?></a>
+      <?php if ($button): ?>
+        <a href="<?php the_field("url") ?>" class="join-us__button"><?php echo $button; ?></a>
       <?php endif; ?>
   </div>
 </section>
