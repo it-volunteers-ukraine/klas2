@@ -41,6 +41,7 @@ get_header();
 </section>
 </main>
 
+<?php get_template_part( 'template-parts/join-us'); ?>
 
 
 <?php get_footer(); ?>
