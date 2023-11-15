@@ -4,6 +4,7 @@
 	"description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
 	"main": "index.js",
 	"scripts": {
+		"gulp": "gulp",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "",
