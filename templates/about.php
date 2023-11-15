@@ -12,27 +12,27 @@ get_header();
     <div class="about__first-container">
     <?php $firstImage = get_field("first_image"); ?>
       <?php if ($firstImage): ?>
-        <img class="about__first-container__image" src="<?php echo esc_url($firstImage['url']); ?>" alt="<?php echo esc_attr($firstImage['alt']); ?>" />
+        <img class="about__image" src="<?php echo esc_url($firstImage['url']); ?>" alt="<?php echo esc_attr($firstImage['alt']); ?>" />
       <?php endif; ?>
       <?php $firstText = get_field("first_text"); ?>
       <?php if ($firstText): ?>
       <div class="about__first-container__text-container">
-      <p class="about__first-container__text"><?php echo esc_html($firstText); ?></p>
-        <p class="about__first-container__text"><?php echo esc_html(the_field('second_text')); ?></p>
-        <p class="about__first-container__text"><?php echo esc_html(the_field('third_text')); ?></p>
+      <p class="about__text"><?php echo esc_html($firstText); ?></p>
+        <p class="about__text"><?php echo esc_html(the_field('second_text')); ?></p>
+        <p class="about__text"><?php echo esc_html(the_field('third_text')); ?></p>
       </div>
       <?php endif; ?>
     </div>
       <div class="about__second-container">
       <?php $secondImage = get_field("second_image"); ?>
       <?php if ($secondImage): ?>
-        <img class="about__second-container__image" src="<?php echo esc_url($secondImage['url']); ?>" alt="<?php echo esc_attr($secondImage['alt']); ?>" />
+        <img class="about__image" src="<?php echo esc_url($secondImage['url']); ?>" alt="<?php echo esc_attr($secondImage['alt']); ?>" />
       <?php endif; ?>
       <?php $fourthText = get_field("fourth_text"); ?>
       <?php if ($fourthText): ?>
        <div class="about__second-container__text-container">
-       <p class="about__second-container__text"><?php echo esc_html($fourthText); ?></p>
-        <p class="about__second-container__text"><?php echo esc_html(the_field('fifth_text')); ?></p>
+       <p class="about__text"><?php echo esc_html($fourthText); ?></p>
+        <p class="about__text"><?php echo esc_html(the_field('fifth_text')); ?></p>
        </div>
       <?php endif; ?>
       </div>

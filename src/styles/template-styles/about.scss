@@ -1,59 +1,102 @@
 @import "../variables.scss";
-.title {
-	color: #070707;
-	font-family: Raleway;
-	font-size: 40px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: 48px;
-}
-.visually-hidden {
-	display: none;
-}
-.image {
-	width: 343px;
-	height: auto;
-	@media screen and (min-width: $tablet) {
-		width: 344px;
-		height: auto;
+.about {
+	&__title {
+		color: #070707;
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 34px;
+		margin-bottom: 32px;
+		@media screen and (min-width: $desktop) {
+			font-size: 40px;
+			line-height: 48px;
+			margin-bottom: 36px;
+		}
 	}
-	@media screen and (min-width: $desktop) {
-		width: 558px;
-		height: auto;
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		position: relative;
+		height: 756px;
+		@media screen and (min-width: $desktop) {
+			gap: 112px;
+			height: auto;
+			position: static;
+		}
 	}
-}
-.first-container {
-	display: flex;
-	flex-direction: column;
-	@media screen and (min-width: $tablet) {
-		flex-direction: row;
-		gap: 50px;
+	&__first-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 16px;
+		@media screen and (min-width: $tablet) {
+			flex-direction: row-reverse;
+			gap: 24px;
+			align-items: flex-start;
+			position: absolute;
+			top: 0;
+		}
+		@media screen and (min-width: $desktop) {
+			flex-direction: row;
+			gap: 50px;
+			position: static;
+		}
+		&__text-container {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+		}
 	}
-}
-.second-container {
-	display: flex;
-	flex-direction: column;
-	@media screen and (min-width: $tablet) {
-		flex-direction: row-reverse;
-		gap: 50px;
+	&__second-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 16px;
+		@media screen and (min-width: $tablet) {
+			flex-direction: row;
+			gap: 24px;
+			align-items: flex-end;
+			position: absolute;
+			top: 288px;
+		}
+		@media screen and (min-width: $desktop) {
+			flex-direction: row-reverse;
+			gap: 50px;
+			position: static;
+		}
+		&__text-container {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+			@media screen and (min-width: $tablet) {
+				width: 344px;
+			}
+			@media screen and (min-width: $desktop) {
+				width: 100%;
+			}
+		}
 	}
-}
-.content {
-	display: flex;
-	flex-direction: column;
-	gap: 112px;
-}
-.text {
-	font-family: Raleway;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 24px;
-	@media screen and (min-width: $desktop) {
-		font-size: 18px;
+	&__image {
+		width: 343px;
+		max-height: 214px;
+		@media screen and (min-width: $tablet) {
+			width: 344px;
+			max-height: 276px;
+			min-height: 264px;
+		}
+		@media screen and (min-width: $desktop) {
+			width: 558px;
+			max-height: 348px;
+			min-height: 336px;
+		}
 	}
-}
-.text-container {
-	display: flex;
-	flex-direction: column;
-	gap: 12px;
+	&__text {
+		font-family: Raleway;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		@media screen and (min-width: $desktop) {
+			font-size: 18px;
+		}
+	}
 }
