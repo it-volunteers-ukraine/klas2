@@ -46,6 +46,9 @@ function wp_it_volunteers_scripts()
   if (is_singular() && locate_template('template-parts/form.php')) {
     wp_enqueue_style( 'form-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/form.css', array('main') );
     }
+    if (is_singular() && locate_template('template-parts/join-us.php')) {
+      wp_enqueue_style( 'join-us-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/join-us.css', array('main') );
+      }
 }
 /** add fonts */
 function add_google_fonts()
