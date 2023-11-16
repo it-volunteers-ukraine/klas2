@@ -4,11 +4,15 @@
     &__main {
         &>section {
             margin-bottom: 112px;
+
+        }
+        @media(max-width:$desktop){
+            margin-bottom: 72px;
         }
     }
 
     &__articles {
-        @media (max-width:$mobile) {
+        @media (max-width:$tablet) {
             display: block;
         }
 
@@ -48,10 +52,49 @@
             display: flex;
             gap: 24px;
             justify-content: space-between;
+
+        
+            @media(max-width:$desktop){
+                margin-bottom: 24px;
+                flex-wrap: wrap;
+            }
+            @media(max-width:$tablet){         
+                flex-direction: column;
+                align-items: center;
+
+            }
         }
 
         &-new {
             width: 33.33%;
+            &:last-child{
+                display: none;
+            }
+        
+            @media(max-width:$desktop){
+                width: 47%;
+                &:last-child{
+                    display: block;
+                }
+            }
+            @media(max-width:$tablet){
+                width: 100%;
+                &:last-child{
+                    display: none;
+                }
+            }
+        }
+        &-btn{
+            display: none;
+            @media(max-width:$desktop){
+               width: 45%;
+                display: block;
+                margin: 0 auto;
+            }
+            @media(max-width:$tablet){
+                width: 100%;
+           
+             }
         }
     }
 }

@@ -3,22 +3,44 @@
     &__desc{
         &-text{
           
-            &>p{
+            & p{
                 line-height: 134%;
-                margin-bottom: 16px;
+           
+                &:not(:last-child){
+                    margin-bottom: 16px;
+                }
             }
+         
+
         }
     
-  
-     
      
     }
-   
-    &__fon{
-        width: 48%;
+   &--left{
+    & .content__fon{
+        float: left;
+        margin-right: 24px;
+      }
+   }
+  &--right{
+   & .content__fon{
         float: right;
         margin-left: 24px;
+      }
+   }
+   &--right,
+   &--left{
+    @media(max-width:700px){
+        & .content__fon{
+            width: 100%;
+            margin-bottom: 24px;
+            float: none;            
+        }  
     }
+   }
+   &__fon{
+    width: 48%;
+   }
     
    
 }
