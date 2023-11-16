@@ -1,110 +1,130 @@
 @import "../variables.scss";
 .about {
+	padding: 52px 0 56px;
+	@media screen and (max-width: $desktop) {
+		padding: 40px 0 36px;
+	}
+
+	@media screen and (max-width: $tablet) {
+		padding: 40px 0;
+	}
 	&__title {
-		color: #070707;
-		font-size: 30px;
+		color: $main-black;
+		font-size: 40px;
 		font-weight: 700;
-		line-height: 34px;
-		margin-bottom: 32px;
-		@media screen and (min-width: $desktop) {
-			font-size: 40px;
-			line-height: 48px;
-			margin-bottom: 36px;
+		line-height: 48px;
+		margin-bottom: 36px;
+		@media screen and (max-width: $desktop) {
+			font-size: 30px;
+			line-height: 34px;
+			margin-bottom: 32px;
 		}
 	}
 	&__content {
 		display: flex;
 		flex-direction: column;
-		gap: 24px;
-		position: relative;
-		height: 756px;
-		@media screen and (min-width: $desktop) {
-			gap: 112px;
+		gap: 112px;
+		position: static;
+		height: auto;
+		@media screen and (max-width: $desktop) {
+			gap: 24px;
+			height: 756px;
+			position: relative;
+		}
+		@media screen and (max-width: $big-tablet) {
+			gap: 24px;
 			height: auto;
 			position: static;
 		}
 	}
 	&__first-container {
 		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 16px;
-		@media screen and (min-width: $tablet) {
+		flex-direction: row;
+		gap: 50px;
+
+		@media screen and (max-width: $desktop) {
 			flex-direction: row-reverse;
-			gap: 24px;
 			align-items: flex-start;
+			justify-content: space-between;
+			gap: 24px;
 			position: absolute;
 			top: 0;
 		}
-		@media screen and (min-width: $desktop) {
-			flex-direction: row;
-			gap: 50px;
+		@media screen and (max-width: $big-tablet) {
+			flex-direction: column;
+			align-items: center;
+			gap: 16px;
 			position: static;
+			width: auto;
 		}
 		&__text-container {
 			display: flex;
 			flex-direction: column;
 			gap: 12px;
+			width: 100%;
+			@media screen and (max-width: $desktop) {
+				width: 47.7%;
+			}
+			@media screen and (max-width: $big-tablet) {
+				width: auto;
+			}
 		}
 	}
 	&__second-container {
 		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 16px;
-		@media screen and (min-width: $tablet) {
+		flex-direction: row-reverse;
+		gap: 50px;
+		@media screen and (max-width: $desktop) {
 			flex-direction: row;
 			gap: 24px;
 			align-items: flex-end;
 			position: absolute;
+			justify-content: space-between;
 			top: 288px;
 		}
-		@media screen and (min-width: $desktop) {
-			flex-direction: row-reverse;
-			gap: 50px;
+		@media screen and (max-width: $big-tablet) {
+			flex-direction: column;
+			align-items: center;
+			gap: 16px;
 			position: static;
+			width: auto;
 		}
+
 		&__text-container {
 			display: flex;
 			flex-direction: column;
 			gap: 12px;
-			@media screen and (min-width: $tablet) {
-				width: 344px;
+			@media screen and (max-width: $desktop) {
+				min-width: 48.8%;
+				max-width: 48.8%;
 			}
-			@media screen and (min-width: $desktop) {
-				width: 100%;
+			@media screen and (max-width: $big-tablet) {
+				min-width: auto;
+				max-width: none;
 			}
 		}
 	}
 	&__image {
-		width: 343px;
-		max-height: 214px;
-		@media screen and (min-width: $tablet) {
+		width: 558px;
+		max-height: 348px;
+		min-height: 336px;
+		@media screen and (max-width: $desktop) {
 			width: 344px;
 			max-height: 276px;
 			min-height: 264px;
 		}
-		@media screen and (min-width: $desktop) {
-			width: 558px;
-			max-height: 348px;
-			min-height: 336px;
+		@media screen and (max-width: $tablet) {
+			width: 343px;
+			max-height: 214px;
+			min-height: auto;
 		}
 	}
 	&__text {
-		font-family: Raleway;
-		font-size: 16px;
+		font-size: 18px;
 		font-weight: 400;
 		line-height: 24px;
-		@media screen and (min-width: $desktop) {
-			font-size: 18px;
+		@media screen and (max-width: $desktop) {
+			font-size: 16px;
 		}
 	}
-}
-.title {
-	color: #070707;
-	font-family: Raleway;
-	font-size: 40px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: 48px;
 }
