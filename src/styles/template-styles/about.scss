@@ -19,6 +19,9 @@
 			line-height: 34px;
 			margin-bottom: 32px;
 		}
+		@media screen and (max-width: $tablet) {
+			margin-bottom: 22px;
+		}
 	}
 	&__content {
 		display: flex;
@@ -129,9 +132,9 @@
 	}
 }
 .we-are {
-	padding: 52px 0 56px;
+	padding: 56px 0;
 	@media screen and (max-width: $desktop) {
-		padding: 40px 0 36px;
+		padding: 36px 0;
 	}
 
 	@media screen and (max-width: $tablet) {
@@ -147,6 +150,9 @@
 			font-size: 30px;
 			line-height: 34px;
 			margin-bottom: 32px;
+		}
+		@media screen and (max-width: $tablet) {
+			margin-bottom: 24px;
 		}
 	}
 	&__list {
