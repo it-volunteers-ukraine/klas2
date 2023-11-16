@@ -39,6 +39,41 @@ get_header();
     </div>
   </div>
 </section>
+<section class="we-are">
+<div class="container">
+<?php $weAreTitle = get_field("we_are_title"); ?>
+<?php if ($weAreTitle): ?>
+  <h2 class="we-are__title"><?php echo esc_html($weAreTitle); ?></h2>
+  <ul class="we-are__list">
+    <li class="we-are__list__item">
+      <h3 class="we-are__list__item__title"><?php the_field("we_are_first_title"); ?></h3>
+      <p class="we-are__list__item__text"><?php the_field("we_are_first_text"); ?></p>
+    </li>
+    <li class="we-are__list__item">
+      <h3 class="we-are__list__item__title"><?php the_field("we_are_second_title"); ?></h3>
+      <p class="we-are__list__item__text"><?php the_field("we_are_second_text"); ?></p>
+    </li>
+    <li class="we-are__list__item">
+      <h3 class="we-are__list__item__title"><?php the_field("we_are_third_title"); ?></h3>
+      <p class="we-are__list__item__text"><?php the_field("we_are_third_text"); ?></p>
+    </li>
+
+    <li class="we-are__list__item">
+      <h3 class="we-are__list__item__title"><?php the_field("we_are_fourth_title"); ?></h3>
+      <p class="we-are__list__item__text"><?php the_field("we_are_fourth_text"); ?></p>
+    </li>
+    <li class="we-are__list__item">
+      <h3 class="we-are__list__item__title"><?php the_field("we_are_fifth_title"); ?></h3>
+      <p class="we-are__list__item__text"><?php the_field("we_are_fifth_text"); ?></p>
+    </li>
+    <li class="we-are__list__item">
+      <h3 class="we-are__list__item__title"><?php the_field("we_are_sixth_title"); ?></h3>
+      <p class="we-are__list__item__text"><?php the_field("we_are_sixth_text"); ?></p>
+    </li>
+  </ul>
+      <?php endif; ?>
+</div>
+</section>
 </main>
 
 <?php get_template_part( 'template-parts/join-us'); ?>
