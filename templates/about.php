@@ -6,7 +6,9 @@ get_header();
 ?>
 <main>
 <section class="about">
-  <div class="container">
+  <div class="container about__container">
+    <img class="about__fon-right" src='<?php echo get_template_directory_uri()?>/assets/images/fon_right.png' />
+    <img class="about__fon-left" src='<?php echo get_template_directory_uri()?>/assets/images/fon_left.png' />
     <h2 class="about__title"><?php the_title(); ?></h2>
     <div class="about__content">
     <div class="about__first-container">

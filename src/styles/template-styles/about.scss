@@ -8,6 +8,37 @@
 	@media screen and (max-width: $tablet) {
 		padding: 40px 0;
 	}
+	&__container {
+		position: relative;
+	}
+	&__fon-right {
+		position: absolute;
+		width: 112px;
+		height: auto;
+		z-index: -1;
+		right: 0;
+		top: 496px;
+		@media screen and (max-width: $desktop) {
+			top: 31px;
+			right: 32px;
+			width: 84px;
+		}
+		@media screen and (max-width: $big-tablet) {
+			top: 697px;
+			right: 16px;
+		}
+	}
+	&__fon-left {
+		position: absolute;
+		width: 112px;
+		height: auto;
+		z-index: -1;
+		left: 0;
+		top: 326px;
+		@media screen and (max-width: $desktop) {
+			display: none;
+		}
+	}
 	&__title {
 		color: $main-black;
 		font-size: 40px;
@@ -29,10 +60,12 @@
 		gap: 112px;
 		position: static;
 		height: auto;
+		padding: 0 18px 0 32px;
 		@media screen and (max-width: $desktop) {
 			gap: 24px;
 			height: 756px;
 			position: relative;
+			padding: 0;
 		}
 		@media screen and (max-width: $big-tablet) {
 			gap: 24px;
