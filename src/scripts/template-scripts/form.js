@@ -3,7 +3,15 @@ const notificationEl = document.getElementById("notification");
 const telInputEl = document.getElementById("contactPhone");
 const nameInputEl = document.getElementById("contactName");
 
-wpcf7Elm.addEventListener("wpcf7mailsent", getNotification, false);
+wpcf7Elm.addEventListener(
+	"wpcf7mailsent",
+	function (event) {
+		getNotification();
+		const form = event.target;
+		form.reset();
+	},
+	false,
+);
 
 function getNotification() {
 	notificationEl.classList.remove("visually-hidden");
