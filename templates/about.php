@@ -5,6 +5,7 @@ Template Name: about
 get_header();
 ?>
 <main>
+  
 <section class="about">
   <div class="container about__container">
     <img class="about__fon-right" src='<?php echo get_template_directory_uri()?>/assets/images/fon_right.png' />
@@ -76,9 +77,67 @@ get_header();
       <?php endif; ?>
 </div>
 </section>
+<section class="our-team">
+  <div class="container">
+    <?php $ourTeamTitle = get_field("our_team_tilte"); ?>
+    <?php if($ourTeamTitle): ?>
+      <h2 class="our-team__title"><?php echo esc_html($ourTeamTitle); ?></h2>
+      <?php endif ?>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+      <?php if(have_rows('our_team_slider')): ?>
+        <div class="swiper swiper-container" id="our-team__slider" data-autoplay="true" data-interval="7000" data-loop="true" data-slider="slider">
+            <div class="swiper-wrapper"></div>
+        <ul class="our-team__list swiper our-team__slider" id="our-team__slider">
+              <?php while(have_rows('our_team_slider')) : the_row(); 
+                $image = get_sub_field('our_team_slider_image');
+                $person = get_sub_field('our_team_slider_person');
+                $position = get_sub_field('our_team_slider_position');
+              ?>
+               <li class="swiper-slide our-team__list__item">
+
+               <img class="our-team__list__item__img" src='<?php echo $image['url'] ?>' />
+
+               <div class="our-team__list__item__text-container">
+               <h3 class="our-team__list__item__person"><?php echo $person ?></h3>
+                <p class="our-team__list__item__position"><?php echo $position ?></p>
+               </div>
+               
+               </li>
+              <?php endwhile; ?>
+            </ul>
+
+          <?php endif; ?>
+          <button class="swiper-button-prev"></button>
+        <button class="swiper-button-next"></button>
+        <div class="swiper-pagination"></div>
+        </div>
+  </div>
+</section>
 </main>
-
 <?php get_template_part( 'template-parts/join-us'); ?>
-
-
+<script>
+  // Initialize Swiper when the DOM is ready
+  document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper(".our-team__slider", {
+      slidesPerView: "auto",
+      spaceBetween: 16,
+      grabCursor: true,
+      autoHeight: true,
+      freeMode: true,
+      speed: 800,
+      keyboard: {
+        enabled: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        slideToClickedSlide: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  });
+</script>
 <?php get_footer(); ?>
