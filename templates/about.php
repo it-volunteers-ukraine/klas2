@@ -106,8 +106,8 @@ get_header();
             </ul>
 
           <?php endif; ?>
-          <button class="swiper-button-prev"></button>
-        <button class="swiper-button-next"></button>
+          <button class="swiper-button-prev"><svg width="24px" height="24px"><use href="../assets/images/icon-arrow-left.svg"></use></svg></button>
+        <button class="swiper-button-next"><svg width="24px" height="24px"><use href="../assets/images/icon-arrow-right.svg"></use></svg></button>
         <div class="swiper-pagination"></div>
         </div>
   </div>
