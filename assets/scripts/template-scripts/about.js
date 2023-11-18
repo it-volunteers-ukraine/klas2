@@ -1,1 +1,1 @@
-console.log(Swiper);const swiper=new Swiper("#our-team__slider",{slidesPerView:2,spaceBetween:16,loop:!0,autoplay:{delay:2500,disableOnInteraction:!1},pagination:{el:".swiper-pagination",clickable:!0,slideToClickedSlide:!0},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}});
+console.log("about")
