@@ -17,42 +17,50 @@
 }
 
 .footer__logo {
+	margin-right: 121px;
 	width: 168px;
 	height: 168px;
 }
 
 .footer__wraper {
-	margin-bottom: 72px;
+	margin-bottom: 36px;
 	display: flex;
-	gap: 101px;
 	font-size: 18px;
 	font-weight: 600;
 	line-height: calc(24 / 18);
 }
 
 .footer__list {
-	width: 287px;
-	height: 160px;
+	margin-top: 12px;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 28px;
+}
+
+.menu-item {
+	margin-right: 74px;
+	margin-bottom: 36px;
 }
 
 .fcontact__list {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
+	margin-top: 4px;
+	margin-right: 72px;
 }
 
 .fsocial__list {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 20px;
+	margin-top: 12px;
+	text-align: center;
+
+	p {
+		margin-bottom: 28px;
+	}
+
+	svg {
+		margin-bottom: 16px;
+	}
 }
 
 .fcontac__link {
+	margin-bottom: 20px;
 	display: flex;
 	align-items: center;
 	gap: 22px;
