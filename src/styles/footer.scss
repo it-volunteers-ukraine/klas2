@@ -1,3 +1,64 @@
-.footer {
-	color: pink;
+.footer--container {
+	padding-top: 72px;
+	padding-bottom: 46px;
+	position: relative;
+}
+
+.footer-line {
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, #ffffff, #cfcfcf, #ffffff);
+	}
+}
+
+.footer__logo {
+	width: 168px;
+	height: 168px;
+}
+
+.footer__wraper {
+	margin-bottom: 72px;
+	display: flex;
+	gap: 101px;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: calc(24 / 18);
+}
+
+.footer__list {
+	width: 287px;
+	height: 160px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 28px;
+}
+
+.fcontact__list {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.fsocial__list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+.fcontac__link {
+	display: flex;
+	align-items: center;
+	gap: 22px;
+}
+
+.icon {
+	background-color: red;
+	border-radius: 50%;
 }
