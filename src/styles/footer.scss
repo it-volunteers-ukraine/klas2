@@ -2,6 +2,11 @@
 	padding-top: 72px;
 	padding-bottom: 46px;
 	position: relative;
+
+	@media screen and (max-width: $desktop) {
+		padding-top: 24px;
+		padding-bottom: 24px;
+	}
 }
 
 .footer-line {
@@ -20,6 +25,22 @@
 	margin-right: 121px;
 	width: 168px;
 	height: 168px;
+
+	@media screen and (max-width: $desktop) {
+		margin-right: 69px;
+		width: 49px;
+		height: 49px;
+	}
+
+	@media screen and (min-width: $desktop) and (max-width: 1140px) {
+		margin-right: 50px;
+		width: 110px;
+		height: 110px;
+	}
+
+	@media screen and (min-width: $tablet) and (max-width: 780px) {
+		margin-right: 20px;
+	}
 }
 
 .footer__wraper {
@@ -28,34 +49,79 @@
 	font-size: 18px;
 	font-weight: 600;
 	line-height: calc(24 / 18);
+
+	@media screen and (max-width: $desktop) {
+		margin-bottom: 12px;
+		font-size: 12px;
+		font-weight: 600;
+		line-height: 1;
+	}
 }
 
 .footer__list {
 	margin-top: 12px;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
+
+	@media screen and (max-width: $desktop) {
+		margin-top: 7px;
+	}
 }
 
 .menu-item {
 	margin-right: 74px;
 	margin-bottom: 36px;
+
+	@media screen and (max-width: $desktop) {
+		margin-right: 69px;
+		margin-bottom: 28px;
+	}
+
+	@media screen and (min-width: $desktop) and (max-width: 1140px) {
+		margin-right: 50px;
+	}
+
+	@media screen and (min-width: $tablet) and (max-width: 780px) {
+		margin-right: 15px;
+	}
 }
 
 .fcontact__list {
 	margin-top: 4px;
 	margin-right: 72px;
+
+	@media screen and (max-width: $desktop) {
+		margin-top: 0;
+		margin-right: 69px;
+	}
+
+	@media screen and (min-width: $tablet) and (max-width: 780px) {
+		margin-right: 25px;
+	}
 }
 
 .fsocial__list {
 	margin-top: 12px;
 	text-align: center;
 
+	@media screen and (max-width: $desktop) {
+		margin-top: 6px;
+	}
+
 	p {
 		margin-bottom: 28px;
+
+		@media screen and (max-width: $desktop) {
+			margin-bottom: 22px;
+		}
 	}
 
 	svg {
 		margin-bottom: 16px;
+
+		@media screen and (max-width: $desktop) {
+			margin-bottom: 14px;
+		}
 	}
 }
 
@@ -64,9 +130,29 @@
 	display: flex;
 	align-items: center;
 	gap: 22px;
+
+	@media screen and (max-width: $desktop) {
+		margin-bottom: 16px;
+		gap: 10px;
+	}
 }
 
 .icon {
 	background-color: red;
 	border-radius: 50%;
+
+	@media screen and (max-width: $desktop) {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+.footer-policy-text {
+	font-size: 18px;
+	line-height: calc(24 / 18);
+
+	@media screen and (max-width: $desktop) {
+		font-size: 12px;
+		line-height: calc(4 / 12);
+	}
 }
