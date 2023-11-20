@@ -78,41 +78,46 @@ get_header();
 </div>
 </section>
 <section class="our-team">
-  <div class="container">
-    <?php $ourTeamTitle = get_field("our_team_tilte"); ?>
-    <?php if($ourTeamTitle): ?>
-      <h2 class="our-team__title"><?php echo esc_html($ourTeamTitle); ?></h2>
-      <?php endif ?>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-      <?php if(have_rows('our_team_slider')): ?>
-        <div class="our-team__slider" data-autoplay="true" data-interval="7000" data-loop="true" data-slider="slider">
-        <ul class="our-team__list swiper">
-              <?php while(have_rows('our_team_slider')) : the_row(); 
-                $image = get_sub_field('our_team_slider_image');
-                $person = get_sub_field('our_team_slider_person');
-                $position = get_sub_field('our_team_slider_position');
-              ?>
-               <li class="our-team__list__item">
+  <div class="container our-team__container">
+    <?php if(have_rows('our_team_slider')): ?>
+      <?php $ourTeamTitle = get_field("our_team_tilte"); ?>
+     <div class="our-team__head">
+     <?php if($ourTeamTitle): ?>
+        <h2 class="our-team__title"><?php echo esc_html($ourTeamTitle); ?></h2>
+        <?php endif ?>
+        <div class="our-team__buttons-wrapper">
+              <button class="swiper-button-prev"></button>
+              <button class="swiper-button-next"></button>
+              </div>
+     </div>
+        <div class="swiper-container">
+          <div class="our-team__slider swiper">
+          <ul class="our-team__list swiper-wrapper">
+                <?php while(have_rows('our_team_slider')) : the_row(); 
+                  $image = get_sub_field('our_team_slider_image');
+                  $person = get_sub_field('our_team_slider_person');
+                  $position = get_sub_field('our_team_slider_position');
+                ?>
+                <li class="our-team__list__item swiper-slide">
 
-               <img class="our-team__list__item__img" src='<?php echo $image['url'] ?>' />
+                <img class="our-team__list__item__img" src='<?php echo $image['url'] ?>' />
 
-               <div class="our-team__list__item__text-container">
-               <h3 class="our-team__list__item__person"><?php echo $person ?></h3>
-                <p class="our-team__list__item__position"><?php echo $position ?></p>
-               </div>
-               
-               </li>
-              <?php endwhile; ?>
-            </ul>
+                <div class="our-team__list__item__text-container">
+                <h3 class="our-team__list__item__person"><?php echo $person ?></h3>
+                  <p class="our-team__list__item__position"><?php echo $position ?></p>
+                </div>
+                
+                </li>
+                <?php endwhile; ?>
+              </ul>
 
-          <?php endif; ?>
-          <button class="swiper-button-prev"><svg width="24px" height="24px"><use href="../assets/images/icon-arrow-left.svg"></use></svg></button>
-        <button class="swiper-button-next"><svg width="24px" height="24px"><use href="../assets/images/icon-arrow-right.svg"></use></svg></button>
-        <div class="swiper-pagination"></div>
+              <div class="swiper-pagination"></div>
+              </div>
+            <?php endif; ?>
         </div>
   </div>
 </section>
-</main>
 <?php get_template_part( 'template-parts/join-us'); ?>
+</main>
 
 <?php get_footer(); ?>

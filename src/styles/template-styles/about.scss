@@ -240,10 +240,49 @@
 	@media screen and (max-width: $tablet) {
 		padding: 40px 0;
 	}
+	&__container {
+		position: relative;
+	}
+	&__head {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__slider {
+		position: relative;
+		overflow-y: visible;
+	}
+	&__buttons-wrapper {
+		display: flex;
+		gap: 48px;
+		@media screen and (max-width: $desktop) {
+			position: absolute;
+			bottom: -60px;
+			left: 30%;
+			width: 365px;
+			justify-content: space-between;
+		}
+		@media screen and (max-width: $tablet) {
+			width: 90%;
+			left: 5%;
+		}
+	}
+	&__pagination-span {
+		display: none;
+		@media screen and (max-width: $desktop) {
+			display: block;
+			width: 29px;
+			height: 2px;
+			border-radius: 0;
+		}
+	}
+	&__pagination-span.swiper-pagination-bullet-active {
+		background: #000;
+	}
 	&__list {
 		display: flex;
-		flex-wrap: wrap;
+		flex-wrap: nowrap;
 		gap: 24px;
+		align-items: baseline;
 		@media screen and (max-width: $desktop) {
 			gap: 16px;
 		}
@@ -251,21 +290,19 @@
 			flex-wrap: nowrap;
 		}
 		&__item {
-			width: 23.421%;
+			margin-right: 0 !important;
 			display: flex;
 			flex-direction: column;
 			gap: 8px;
+			max-width: 267px;
 			@media screen and (max-width: $desktop) {
-				width: 23.2954%;
 				gap: 12px;
-			}
-			@media screen and (max-width: $big-tablet) {
-				width: 164px;
 			}
 			&__img {
 				width: 240px;
 				@media screen and (max-width: $desktop) {
-					width: 164px;
+					width: auto;
+					max-width: 164px;
 				}
 			}
 			&__text-container {
@@ -315,4 +352,30 @@
 			margin-bottom: 24px;
 		}
 	}
+}
+// slider
+.swiper-button-prev,
+.swiper-button-next {
+	position: static;
+	margin: 0;
+}
+.swiper-button-prev {
+	background: url("../../images/icon-arrow-left.svg");
+	background-repeat: no-repeat;
+}
+.swiper-button-next {
+	background: url("../../images/icon-arrow-right.svg");
+	background-repeat: no-repeat;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+	display: none;
+}
+.swiper-pagination {
+	display: flex;
+	justify-content: center;
+	bottom: -28px !important;
+}
+.swiper-grid-column .swiper-wrapper {
+	flex-direction: row !important;
 }
