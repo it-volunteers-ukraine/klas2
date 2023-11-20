@@ -4,7 +4,7 @@
     <div class="footer-line"> </div>
 
     <div class="footer__wraper">
-      <div class="footer__logo">
+      <div class="footer__logo hide-mob">
         <?php
         if (has_custom_logo()) {
           echo get_custom_logo();
@@ -25,7 +25,7 @@
         ?>
       </nav>
 
-      <ul class="fcontact__list">
+      <ul class="fcontact__list hide-mob">
         <li>
           <a class="fcontac__link" href="<?php echo esc_attr(get_field('viber', 'options')); ?>" target="_blank" aria-label="Viber">
             <svg class="icon" width="40px" height="40px">
@@ -56,26 +56,68 @@
         <li>
           <p>Соцмережі</p>
         </li>
-        <li>
-          <a href="<?php echo esc_attr(get_field('viber', 'options')); ?>" target="_blank" aria-label="Viber">
-            <svg class="icon" width="40px" height="40px">
-              <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite-logo.svg#viber"></use>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="<?php echo esc_attr(get_field('viber', 'options')); ?>" target="_blank" aria-label="Viber">
-            <svg class="icon" width="40px" height="40px">
-              <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite-logo.svg#viber"></use>
-            </svg>
-          </a>
-        </li>
+        <div class="flex__wraper">
+          <li>
+            <a href="<?php echo esc_attr(get_field('viber', 'options')); ?>" target="_blank" aria-label="Viber">
+              <svg class="icon" width="40px" height="40px">
+                <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite-logo.svg#viber"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo esc_attr(get_field('viber', 'options')); ?>" target="_blank" aria-label="Viber">
+              <svg class="icon" width="40px" height="40px">
+                <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite-logo.svg#viber"></use>
+              </svg>
+            </a>
+          </li>
+        </div>
       </ul>
     </div>
 
-    <p class="footer-policy-text">
-      © <?php echo date('Y'); ?> IT Volunteers. All Rights Reserved.
-    </p>
+    <ul class="fcontact__list flex__wraper block__wraper hide-desc">
+      <div>
+        <li>
+          <a class="fcontac__link" href="<?php echo esc_attr(get_field('viber', 'options')); ?>" target="_blank" aria-label="Viber">
+            <svg class="icon" width="40px" height="40px">
+              <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite-logo.svg#viber"></use>
+            </svg>
+            <p>govgoklas@gmail.com</p>
+          </a>
+        </li>
+      </div>
+      <div>
+        <li>
+          <a class="fcontac__link" href="<?php echo esc_attr(get_field('viber', 'options')); ?>" target="_blank" aria-label="Viber">
+            <svg class="icon" width="40px" height="40px">
+              <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite-logo.svg#viber"></use>
+            </svg>
+            <p>+38 066 596 82 47</p>
+          </a>
+        </li>
+        <li>
+          <a class="fcontac__link" href="<?php echo esc_attr(get_field('viber', 'options')); ?>" target="_blank" aria-label="Viber">
+            <svg class="icon" width="40px" height="40px">
+              <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite-logo.svg#viber"></use>
+            </svg>
+            <p>+38 066 596 82 47</p>
+          </a>
+        </li>
+      </div>
+    </ul>
+
+    <div class="flex__wraper">
+      <div class="footer__logo hide-desc">
+        <?php
+        if (has_custom_logo()) {
+          echo get_custom_logo();
+        }
+        ?>
+      </div>
+      <p class="footer-policy-text">
+        © <?php echo date('Y'); ?> IT Volunteers. All Rights Reserved.
+      </p>
+    </div>
 
   </div>
 </footer>
