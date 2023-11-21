@@ -199,8 +199,9 @@
 }
 
 .icon {
-	background-color: red;
+	background-color: $grey15;
 	border-radius: 50%;
+	fill: red;
 
 	@media screen and (max-width: $desktop) {
 		width: 24px;
