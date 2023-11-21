@@ -27,27 +27,27 @@
 
       <ul class="fcontact__list hide-mob">
         <li>
-          <a class="fcontac__link" href="<?php echo esc_attr(get_field('viber', 'options')); ?>" target="_blank" aria-label="Viber">
+          <a class="fcontac__link" href="mailto:<?php the_field('email', 'options'); ?>" aria-label="email">
             <svg class="icon" width="40px" height="40px">
               <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite-logo.svg#viber"></use>
             </svg>
-            <p>govgoklas@gmail.com</p>
+            <p><?php the_field('email', 'options'); ?></p>
           </a>
         </li>
         <li>
-          <a class="fcontac__link" href="<?php echo esc_attr(get_field('viber', 'options')); ?>" target="_blank" aria-label="Viber">
+          <a class="fcontac__link" href="tel:<?php echo str_replace(' ', '', get_field('first-phone', 'options')); ?>" aria-label="телефон">
             <svg class="icon" width="40px" height="40px">
               <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite-logo.svg#viber"></use>
             </svg>
-            <p>+38 066 596 82 47</p>
+            <p><?php the_field('first-phone', 'options'); ?></p>
           </a>
         </li>
         <li>
-          <a class="fcontac__link" href="<?php echo esc_attr(get_field('viber', 'options')); ?>" target="_blank" aria-label="Viber">
+          <a class="fcontac__link" href="tel:<?php echo str_replace(' ', '', get_field('second-phone', 'options')); ?>" aria-label="телефон">
             <svg class="icon" width="40px" height="40px">
               <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite-logo.svg#viber"></use>
             </svg>
-            <p>+38 066 596 82 47</p>
+            <p><?php the_field('second-phone', 'options'); ?></p>
           </a>
         </li>
       </ul>
@@ -58,14 +58,14 @@
         </li>
         <div class="flex__wraper">
           <li>
-            <a href="<?php echo esc_attr(get_field('viber', 'options')); ?>" target="_blank" aria-label="Viber">
+            <a href="<?php echo esc_attr(get_field('facebook', 'options')); ?>" target="_blank" aria-label="facebook">
               <svg class="icon" width="40px" height="40px">
                 <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite-logo.svg#viber"></use>
               </svg>
             </a>
           </li>
           <li>
-            <a href="<?php echo esc_attr(get_field('viber', 'options')); ?>" target="_blank" aria-label="Viber">
+            <a href="<?php echo esc_attr(get_field('youtube', 'options')); ?>" target="_blank" aria-label="youtube">
               <svg class="icon" width="40px" height="40px">
                 <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite-logo.svg#viber"></use>
               </svg>
@@ -78,29 +78,29 @@
     <ul class="fcontact__list flex__wraper block__wraper hide-desc">
       <div>
         <li>
-          <a class="fcontac__link" href="<?php echo esc_attr(get_field('viber', 'options')); ?>" target="_blank" aria-label="Viber">
+          <a class="fcontac__link" href="mailto:<?php the_field('email', 'options'); ?>" aria-label="email">
             <svg class="icon" width="40px" height="40px">
               <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite-logo.svg#viber"></use>
             </svg>
-            <p>govgoklas@gmail.com</p>
+            <p><?php the_field('email', 'options'); ?></p>
           </a>
         </li>
       </div>
       <div>
         <li>
-          <a class="fcontac__link" href="<?php echo esc_attr(get_field('viber', 'options')); ?>" target="_blank" aria-label="Viber">
+          <a class="fcontac__link" href="tel:<?php echo str_replace(' ', '', get_field('first-phone', 'options')); ?>" aria-label="телефон">
             <svg class="icon" width="40px" height="40px">
               <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite-logo.svg#viber"></use>
             </svg>
-            <p>+38 066 596 82 47</p>
+            <p><?php the_field('first-phone', 'options'); ?></p>
           </a>
         </li>
         <li>
-          <a class="fcontac__link" href="<?php echo esc_attr(get_field('viber', 'options')); ?>" target="_blank" aria-label="Viber">
+          <a class="fcontac__link" href="tel:<?php echo str_replace(' ', '', get_field('second-phone', 'options')); ?>" aria-label="телефон">
             <svg class="icon" width="40px" height="40px">
               <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite-logo.svg#viber"></use>
             </svg>
-            <p>+38 066 596 82 47</p>
+            <p><?php the_field('second-phone', 'options'); ?></p>
           </a>
         </li>
       </div>
