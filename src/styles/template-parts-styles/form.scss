@@ -203,3 +203,20 @@ textarea.contact__input {
 	border-radius: 50%;
 	background-color: #41f674;
 }
+
+.form-btn__wrap {
+	position: relative;
+}
+
+.wpcf7-spinner {
+	width: 21px;
+	height: 21px;
+	position: absolute;
+	top: 16px;
+	left: 102px;
+	background-color: $dark-violet;
+}
+
+.wpcf7-response-output {
+	display: none;
+}
