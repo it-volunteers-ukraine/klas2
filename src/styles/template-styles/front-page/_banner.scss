@@ -5,9 +5,14 @@
     background: url('../');
     background-size: cover;
     background-position: top center;
-
+&__btn{
+    margin: 44px auto 0;
+    @media(max-width:$desktop) {
+        margin: 24px auto 0;
+        }
+}
     &__title {
-        margin-bottom: 44px;
+   
         text-align: center;
         font-size: 32px;
         @media(max-width:$desktop) {
@@ -32,6 +37,7 @@
         align-items: baseline;
         gap: 24px;
         margin-bottom: 50px;
+        margin-top: -55px;
 
         @media(max-width:$desktop) {
             gap: 16px

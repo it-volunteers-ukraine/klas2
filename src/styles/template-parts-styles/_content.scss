@@ -2,7 +2,8 @@
     
     &__desc{
         &-text{
-          
+          display: flex;
+          gap: 24px;
             & p{
                 line-height: 134%;
            
@@ -10,37 +11,26 @@
                     margin-bottom: 16px;
                 }
             }
+            &>div{
+                width: 48%;
+            }
+            @media(max-width:900px) {
+                flex-direction: column-reverse;
+                &>div{
+                    width: 100%;
+                }
+
+                }
          
 
         }
     
      
     }
-   &--left{
-    & .content__fon{
-        float: left;
-        margin-right: 24px;
-      }
-   }
-  &--right{
-   & .content__fon{
-        float: right;
-        margin-left: 24px;
-      }
-   }
-   &--right,
-   &--left{
-    @media(max-width:700px){
-        & .content__fon{
-            width: 100%;
-            margin-bottom: 24px;
-            float: none;            
-        }  
+    &__fon{
+        position: relative;
     }
-   }
-   &__fon{
-    width: 48%;
-   }
+
     
    
 }

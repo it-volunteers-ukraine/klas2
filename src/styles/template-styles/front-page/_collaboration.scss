@@ -7,14 +7,13 @@
         font-size: 24px;
         font-weight: 600;
         line-height: 116%;
-        @media (max-width:$desktop){
+        @media (max-width:900px){
             width: 100%;
             margin-bottom: 2em;
             font-size: 1em;
+            text-align: center;
         }
-        @media (max-width:700px){
-        text-align: center;
-        }
+     
  
     }
     &__btn{
@@ -33,12 +32,22 @@
         }
     }
 
-  
-    .collaboration &__content-fon{
-        @media (max-width:$desktop){
-            float: right;
-            margin-right: 0;
-            margin-left: 24px;
+    &__content-fon{
+    
+        @media (max-width:900px){
+         order: 2;
+        }
+        & img{
+            position: relative;
+        }
+        &-svg{
+            position: absolute;
+            top: -34px;
+            left: -15px;
+            @media (max-width:$tablet){
+            display: none;
+            }
         }
     }
+
 }

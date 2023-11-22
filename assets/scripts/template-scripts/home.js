@@ -1,1 +1,5 @@
-console.log("home page");
+
+$(document).ready(function(){
+    console.log("home page");
+   
+})
