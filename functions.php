@@ -48,6 +48,8 @@ function wp_it_volunteers_scripts()
   if (is_page_template('templates/projects.php')) {
     wp_enqueue_style('projects-style', get_template_directory_uri() . '/assets/styles/template-styles/projects.css', array('main'));
     wp_enqueue_script('projects-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/projects.js', array(), false, true);
+  if (is_page_template('templates/library.php')) {
+    wp_enqueue_style('library', get_template_directory_uri() . '/assets/styles/template-styles/library.css', array('main'));
   }
 
   if (is_singular() && locate_template('template-parts/form.php')) {
@@ -105,49 +107,3 @@ if (function_exists('acf_add_options_page')) {
   ));
 }
 
-
-// library custom post type
-add_action( 'init', 'register_library_post_types' );
-
-function register_library_post_types(){
-
-	register_post_type( 'post_type_name', [
-		'label'  => null,
-		'labels' => [
-			'name'               => 'materials',
-			'singular_name'      => 'material',
-			'add_new'            => 'Add material',
-			'add_new_item'       => 'Add new material',
-			'edit_item'          => 'Edit material',
-			'new_item'           => 'New material',
-			'view_item'          => 'View material',
-			'search_items'       => 'Search material',
-			'not_found'          => 'Not found',
-			'not_found_in_trash' => 'Not found in trash',
-			'parent_item_colon'  => '',
-			'menu_name'          => 'Library',
-		],
-		'description'            => '',
-		'public'                 => true,
-		// 'publicly_queryable'  => null, // зависит от public
-		// 'exclude_from_search' => null, // зависит от public
-		// 'show_ui'             => null, // зависит от public
-		// 'show_in_nav_menus'   => null, // зависит от public
-		'show_in_menu'           => null, // показывать ли в меню админки
-		// 'show_in_admin_bar'   => null, // зависит от show_in_menu
-		'show_in_rest'        => null, // добавить в REST API. C WP 4.7
-		'rest_base'           => null, // $post_type. C WP 4.7
-		'menu_position'       => 4,
-		'menu_icon'           => null,
-		//'capability_type'   => 'post',
-		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
-		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
-		'hierarchical'        => false,
-		'supports'            => [ 'title', 'editor' ], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-		'taxonomies'          => [],
-		'has_archive'         => false,
-		'rewrite'             => true,
-		'query_var'           => true,
-	] );
-
-}
