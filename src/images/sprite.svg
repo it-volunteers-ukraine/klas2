@@ -6,8 +6,9 @@
 <symbol id="close" viewBox="0 0 32 32">
 <path d="M23.883 6.706l-7.883 7.884-7.884-7.884c-0.178-0.166-0.417-0.268-0.681-0.268-0.551 0-0.998 0.447-0.998 0.998 0 0.264 0.102 0.503 0.269 0.682l-0-0.001 7.879 7.884-7.882 7.882c-0.181 0.181-0.293 0.43-0.293 0.706 0 0.551 0.447 0.998 0.998 0.998 0.275 0 0.525-0.112 0.705-0.292l7.886-7.882 7.884 7.884c0.177 0.161 0.413 0.26 0.672 0.26 0.551 0 0.998-0.447 0.998-0.998 0-0.259-0.099-0.495-0.261-0.673l0.001 0.001-7.884-7.884 7.884-7.886c0.19-0.182 0.309-0.439 0.309-0.723 0-0.275-0.111-0.525-0.291-0.705l0 0c-0.181-0.181-0.43-0.293-0.706-0.293-0.284 0-0.54 0.118-0.721 0.308l-0 0v0.002z"></path>
 </symbol>
-<symbol id="vector" viewBox="0 0 26 32">
-<path fill="none" stroke="#2031cb" style="stroke: var(--color3, #2031cb)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M1.6 1.6l22.4 14.4-22.4 14.4v-28.8z"></path>
+<symbol id="play" viewBox="0 0 32 32">
+<path fill="rgba(0,0,0,0)" style="fill: rgba(0,0,0,0)" d="M0 0h32v32h-32v-32z"></path>
+<path fill="none" stroke="#2031cb" style="stroke: var(--color2, #2031cb)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M6.667 4l18.667 12-18.667 12v-24z"></path>
 </symbol>
 <symbol id="download" viewBox="0 0 32 32">
 <path fill="none" stroke="#2031cb" style="stroke: var(--color1, #2031cb)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 20v5.333c0 0.707-0.281 1.385-0.781 1.886s-1.178 0.781-1.886 0.781h-18.667c-0.707 0-1.386-0.281-1.886-0.781s-0.781-1.178-0.781-1.886v-5.333"></path>
