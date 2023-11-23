@@ -1,0 +1,15 @@
+@import "../variables.scss";
+.contacts {
+	&__title {
+		font-size: 40px;
+		font-weight: 700;
+		line-height: 48px;
+		@media screen and (max-width: $desktop) {
+			font-size: 30px;
+			line-height: 34px;
+		}
+		@media screen and (max-width: $tablet) {
+			text-align: center;
+		}
+	}
+}
