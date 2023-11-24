@@ -13,3 +13,32 @@
 		}
 	}
 }
+
+.maps {
+	&__title {
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 28px;
+		@media screen and (max-width: $desktop) {
+			font-size: 18px;
+			line-height: 24px;
+		}
+		@media screen and (max-width: $tablet) {
+			text-align: center;
+		}
+	}
+	&__list {
+		&__item {
+			display: flex;
+			align-items: center;
+			&__title {
+				border-left: 8px solid $main-yellow;
+				border-radius: 4px;
+				padding-left: 12px;
+			}
+			&__map {
+				width: 484px;
+			}
+		}
+	}
+}

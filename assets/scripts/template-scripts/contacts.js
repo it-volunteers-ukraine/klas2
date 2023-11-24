@@ -1,1 +1,1 @@
-function initialize(){const e={zoom:8,center:new google.maps.Lating(-34.397,150.644),mapTypeId:google.maps.MapTypeId.ROADMAP};new google.maps.Map(document.getElementById("#first-map"),e)}initialize();
+console.log("contacts");
