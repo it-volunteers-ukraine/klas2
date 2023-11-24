@@ -10,6 +10,37 @@ get_header();
   <?php $postID = $post->ID; ?>
     <div class="container">
       <h1 class="library__title"><?php the_field('library_title', $postID) ?></h1>
+
+      <?php
+        $args = array(
+                    'type' => 'material',
+                    'taxonomy' => 'material-category',
+                    'orderby' => 'name',
+                    'order'   => 'ASC',
+                    'hide_empty' => 1
+                );
+
+        $cats = get_categories($args);
+
+        if($cats) : ?>
+
+        <ul class='library-cats__list'>
+          <?php foreach($cats as $cat) {
+            $termId = $cat->term_id;
+            ?>
+            <li>
+              <a href="<?php echo get_category_link( $termId ) ?>">
+                      <?php echo $cat->name; ?>
+                  </a>
+            </li>
+                  
+            <?php
+              }
+            ?>
+        </ul>
+
+        <?php endif; ?>
+
       <div class="library-wrap">
           <?php
       $args = array(
