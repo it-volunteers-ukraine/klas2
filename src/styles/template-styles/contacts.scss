@@ -15,29 +15,65 @@
 }
 
 .maps {
+	padding: 56px 0;
 	&__title {
 		font-size: 24px;
 		font-weight: 600;
 		line-height: 28px;
+		margin-bottom: 36px;
+		max-width: 462px;
 		@media screen and (max-width: $desktop) {
 			font-size: 18px;
 			line-height: 24px;
+			margin-bottom: 40px;
+			max-width: 343px;
 		}
 		@media screen and (max-width: $tablet) {
 			text-align: center;
+			margin-bottom: 24px;
+			max-width: none;
 		}
 	}
 	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 36px;
+		@media screen and (max-width: $tablet) {
+			gap: 24px;
+		}
 		&__item {
 			display: flex;
 			align-items: center;
+			justify-content: space-between;
+			@media screen and (max-width: $tablet) {
+				flex-direction: column;
+				gap: 16px;
+			}
 			&__title {
+				width: 385px;
+				padding-left: 12px;
 				border-left: 8px solid $main-yellow;
 				border-radius: 4px;
-				padding-left: 12px;
+
+				font-size: 18px;
+				line-height: 24px;
+				@media screen and (max-width: $desktop) {
+					width: 327px;
+					font-size: 16px;
+					line-height: 24px;
+				}
+				@media screen and (max-width: $tablet) {
+					align-self: start;
+				}
 			}
 			&__map {
 				width: 484px;
+				@media screen and (max-width: $desktop) {
+					width: 48.863636%;
+				}
+				@media screen and (max-width: $tablet) {
+					width: 100%;
+				}
 			}
 		}
 	}

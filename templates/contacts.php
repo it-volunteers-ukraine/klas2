@@ -25,11 +25,19 @@ get_header();
           <ul class="maps__list">
             <?php while(have_rows('maps')) : the_row(); 
                           $text = get_sub_field('maps_text');
-                          $map = get_sub_field('maps_map');
+                          $map = get_sub_field('maps_url');
                         ?>
                 <li class="maps__list__item">
                   <p class="maps__list__item__title"><?php echo $text ?></p>
-                  <img class="maps__list__item__map" src='<?php echo $map['url'] ?>' alt="<?php echo esc_attr($map['alt']); ?>"/>
+                  <iframe 
+                  class="maps__list__item__map"
+                  src="<?php echo $map ?>" 
+                  width="484" 
+                  height="357" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
               </li>
             <?php endwhile; ?>
         </ul>
