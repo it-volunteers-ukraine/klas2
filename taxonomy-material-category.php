@@ -25,6 +25,11 @@ get_header();
         if($cats) : ?>
 
         <ul class='library-cats__list'>
+           <li>
+              <a href="">
+                      Всі матеріали
+                  </a>
+            </li>
           <?php foreach($cats as $cat) {
             $termId = $cat->term_id;
             ?>
@@ -39,28 +44,17 @@ get_header();
 
         <?php endif; ?>
 
-      <div class="library-wrap">
+      <ul class="library-wrap">
 
-      <?php
-// теперь выполняется запрос для каждого семейства животных
-foreach( $cats as $cat ) {
- 
-    // Определение запроса
-    $args = array(
+
+    <?php $args = array(
         'post_type' => 'materials',
         'posts_per_page' => 10,
-        'animal_cat' => $cat->slug
+        'material-category' => $cat->slug
     );
-    $loop = new WP_Query($args);
-             
-    // вывод названий записей в тегах заголовков
-     echo'<h2>' . $cat->name . '</h2>';
-     
-    // вывод списком заголовков записей
-    echo '<ul>';
-     
-        // Начало цикла
-        while ( $loop->have_posts() ) {
+    $loop = new WP_Query($args); ?>
+
+      <?php  while ( $loop->have_posts() ) {
         $loop->the_post();
         $iconType = get_field('svg_media_button');
         $buttonText = get_field('text_media_button');
@@ -103,15 +97,10 @@ foreach( $cats as $cat ) {
 
         </div>
         <?php } ?>
-     
-    </ul>;
-     
-    // используем сброс данных записи, чтобы восстановить оригинальный запрос
-    <?php wp_reset_postdata();
- 
-} ?>
 
-    </div>
+    <?php wp_reset_postdata(); ?>
+
+    </ul>
     </div>
 </section>
 
