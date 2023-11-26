@@ -20,7 +20,7 @@ get_header();
                           $text = get_sub_field('contacts_text');
                         ?>
                 <li class="contacts__list__item">
-                <img class="contacts__list__item__icon" src="<?php echo $icon['url']  ?>" />
+                <img class="contacts__list__item__icon" src="<?php echo $icon['url']  ?>" alt="<?php echo $icon['alt']; ?>"/>
                   <p class="contacts__list__item__text"><?php echo $text ?></p>
               </li>
             <?php endwhile; ?>
@@ -33,7 +33,7 @@ get_header();
                           $text = get_sub_field('socials_text');
                         ?>
                 <li class="contacts__list__item">
-                <img class="contacts__list__item__icon" src="<?php echo $icon['url']  ?>" />
+                <img class="contacts__list__item__icon" src="<?php echo $icon['url']  ?>" alt="<?php echo $icon['alt']; ?>"/>
                   <p class="contacts__list__item__text"><?php echo $text ?></p>
               </li>
             <?php endwhile; ?>
@@ -48,7 +48,7 @@ get_header();
   <?php if(have_rows('maps')): ?>
     <?php $mapsTitle = get_field("map_title"); ?>
     <?php if ($mapsTitle): ?>
-      <h3 class="maps__title"><?php echo esc_html($mapsTitle); ?></h3>
+      <h2 class="maps__title"><?php echo esc_html($mapsTitle); ?></h2>
         <?php endif; ?>
           <ul class="maps__list">
             <?php while(have_rows('maps')) : the_row(); 
@@ -73,10 +73,16 @@ get_header();
 </div>
 </section>
 
-<section class="contacts">
-<div class="container">
-<?php get_template_part( 'template-parts/form'); ?>
-</div>
+<section class="team">
+  <div class="container team__container">
+  <?php get_template_part('template-parts/form'); ?>
+    <div class="team__container__content">
+      <img class="team__container__content__fon-image" src='<?php echo get_template_directory_uri()?>/assets/images/fon_right.png' alt="Fon photo" />
+      <img class="team__image" src="<?php echo get_field('team_image')['url']; ?>" alt="<?php echo esc_attr(get_field('team_image')['alt']); ?>"/>
+      <h3 class="team__title"><?php the_field('team_title'); ?></h3>
+      <p class="team__text"><?php  the_field('team_text'); ?></p>
+    </div>
+  </div>
 </section>
 </main>
 

@@ -8,8 +8,8 @@ get_header();
   
 <section class="about">
   <div class="container about__container">
-    <img class="about__fon-right" src='<?php echo get_template_directory_uri()?>/assets/images/fon_right.png' />
-    <img class="about__fon-left" src='<?php echo get_template_directory_uri()?>/assets/images/fon_left.png' />
+    <img class="about__fon-right" src='<?php echo get_template_directory_uri()?>/assets/images/fon_right.png' alt="Fon photo"/>
+    <img class="about__fon-left" src='<?php echo get_template_directory_uri()?>/assets/images/fon_left.png' alt="Fon photo"/>
     <h2 class="about__title"><?php the_title(); ?></h2>
     <div class="about__content">
     <div class="about__first-container">
@@ -89,7 +89,7 @@ get_header();
                   $position = get_sub_field('our_team_slider_position');
               ?>
                 <li class="our-team__list__item swiper-slide">
-                    <img class="our-team__list__item__img" src='<?php echo $image['url'] ?>' />
+                    <img class="our-team__list__item__img" src='<?php echo $image['url'] ?>' alt="<?php echo esc_attr($image['alt']); ?>"/>
                     <div class="our-team__list__item__text-container">
                       <h3 class="our-team__list__item__person"><?php echo $person ?></h3>
                       <p class="our-team__list__item__position"><?php echo $position ?></p>
