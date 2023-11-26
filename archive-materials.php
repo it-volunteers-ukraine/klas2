@@ -13,7 +13,7 @@ get_header();
 
       <?php
         $args = array(
-                    'type' => 'material',
+                    'type' => 'materials',
                     'taxonomy' => 'material-category',
                     'orderby' => 'name',
                     'order'   => 'ASC',
@@ -29,26 +29,38 @@ get_header();
             $termId = $cat->term_id;
             ?>
             <li>
-              <a href="<?php echo get_category_link( $termId ) ?>">
+              <a href="<?php echo get_term_link((int) $termId) ?>">
                       <?php echo $cat->name; ?>
                   </a>
             </li>
                   
-            <?php
-              }
-            ?>
+            <?php } ?>
         </ul>
 
         <?php endif; ?>
 
       <div class="library-wrap">
-          <?php
-      $args = array(
-        'post_type'      => 'material',
+
+      <?php
+// теперь выполняется запрос для каждого семейства животных
+foreach( $cats as $cat ) {
+ 
+    // Определение запроса
+    $args = array(
+        'post_type' => 'materials',
         'posts_per_page' => 10,
-      );
-      $loop = new WP_Query($args);
-      while ( $loop->have_posts() ) {
+        'animal_cat' => $cat->slug
+    );
+    $loop = new WP_Query($args);
+             
+    // вывод названий записей в тегах заголовков
+     echo'<h2>' . $cat->name . '</h2>';
+     
+    // вывод списком заголовков записей
+    echo '<ul>';
+     
+        // Начало цикла
+        while ( $loop->have_posts() ) {
         $loop->the_post();
         $iconType = get_field('svg_media_button');
         $buttonText = get_field('text_media_button');
@@ -57,34 +69,48 @@ get_header();
           <div class="feature-image">
               
               <?php if($iconType==="play"): ?>
-                <a target="_blank"  rel="noopener noreferrer" class="feature-image__link" href="<?php the_field('video_media'); ?>" aria-label="Подивитись <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
-                <a target="_blank" rel="noopener noreferrer" href="<?php the_field('video_media'); ?>" class="play-outline__button" aria-label="Подивитись <?php the_title(); ?>">
+                <a href="<?php the_field('video_media'); ?>" target="_blank"  rel="noopener noreferrer" class="feature-image__link"  aria-label="Подивитись <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+
+                <a href="<?php the_field('video_media'); ?>" target="_blank" rel="noopener noreferrer" class="play-outline__button" aria-label="Подивитись <?php the_title(); ?>">
                   <svg class="play-outline__image" width="32px" height="32px">
                     <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#play-outline"></use>
                   </svg>
                 </a>
               <?php endif; ?>
+
               <?php if($iconType==="download"): ?>
-                <a download class="feature-image__link" href="<?php the_field('pdf_media'); ?>" aria-label="Завантажити <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+                <a href="<?php the_field('pdf_media'); ?>" download class="feature-image__link" aria-label="Завантажити <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
               <?php endif; ?>
+
           </div>
          <div class="library-post__title"> <?php the_title(); ?></div>
-         <?php if($iconType==="play"): ?>
-                <a target="_blank" rel="noopener noreferrer" href="<?php the_field('video_media'); ?>" class="button download_button">
+
+              <?php if($iconType==="play"): ?>
+                <a href="<?php the_field('video_media'); ?>" target="_blank" rel="noopener noreferrer" class="button download_button">
                   <svg class="download-icon" width="24px" height="24px">
                     <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#<?php echo $iconType; ?>"></use>
                   </svg><?php echo $buttonText; ?>
                 </a>
               <?php endif; ?>
+
               <?php if($iconType==="download"): ?>
-                <a download href="<?php the_field('pdf_media'); ?>" class="button download_button">
+                <a href="<?php the_field('pdf_media'); ?>" download class="button download_button">
                   <svg class="download-icon" width="24px" height="24px">
                     <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#<?php echo $iconType; ?>"></use>
                   </svg><?php echo $buttonText; ?>
                 </a>
               <?php endif; ?>
+
         </div>
         <?php } ?>
+     
+    </ul>;
+     
+    // используем сброс данных записи, чтобы восстановить оригинальный запрос
+    <?php wp_reset_postdata();
+ 
+} ?>
+
     </div>
     </div>
 </section>
