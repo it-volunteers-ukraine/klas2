@@ -1,21 +1,79 @@
 @import "../variables.scss";
 .contacts {
+	padding: 56px 0;
+	@media screen and (max-width: $desktop) {
+		padding: 40px 0 36px;
+	}
+	@media screen and (max-width: $tablet) {
+		padding: 40px 0 27px;
+	}
 	&__title {
 		font-size: 40px;
 		font-weight: 700;
 		line-height: 48px;
+		margin-bottom: 36px;
 		@media screen and (max-width: $desktop) {
 			font-size: 30px;
 			line-height: 34px;
+			margin-bottom: 32px;
 		}
 		@media screen and (max-width: $tablet) {
 			text-align: center;
+			margin-bottom: 23px;
+		}
+	}
+	&__wrapper {
+		display: flex;
+		gap: 42.5px;
+		flex-wrap: wrap;
+		@media screen and (max-width: $desktop) {
+			gap: 155px;
+		}
+		@media screen and (max-width: $tablet) {
+			gap: 16px;
+			flex-direction: column;
+		}
+	}
+	&__list {
+		display: flex;
+		gap: 42.5px;
+		@media screen and (max-width: $desktop) {
+			flex-direction: column;
+			gap: 16px;
+		}
+		&__item {
+			display: flex;
+			align-items: center;
+			gap: 22px;
+			&__icon {
+				width: 40px;
+				height: 40px;
+				@media screen and (max-width: $desktop) {
+					width: 24px;
+					height: 24px;
+				}
+			}
+			&__text {
+				font-size: 18px;
+				font-weight: 600;
+				line-height: 24px;
+				@media screen and (max-width: $desktop) {
+					font-size: 16px;
+					line-height: 23px;
+				}
+			}
 		}
 	}
 }
 
 .maps {
 	padding: 56px 0;
+	@media screen and (max-width: $desktop) {
+		padding: 36px 0;
+	}
+	@media screen and (max-width: $tablet) {
+		padding: 40px 0 27px;
+	}
 	&__title {
 		font-size: 24px;
 		font-weight: 600;

@@ -12,6 +12,34 @@ get_header();
 <section class="contacts">
 <div class="container">
   <h2 class="contacts__title"><?php the_title(); ?></h2>
+  <div class="contacts__wrapper">
+  <?php if(have_rows('contacts')): ?>
+          <ul class="contacts__list">
+            <?php while(have_rows('contacts')) : the_row(); 
+                          $icon = get_sub_field('contacts_icon');
+                          $text = get_sub_field('contacts_text');
+                        ?>
+                <li class="contacts__list__item">
+                <img class="contacts__list__item__icon" src="<?php echo $icon['url']  ?>" />
+                  <p class="contacts__list__item__text"><?php echo $text ?></p>
+              </li>
+            <?php endwhile; ?>
+        </ul>
+    <?php endif; ?>
+    <?php if(have_rows('socials')): ?>
+          <ul class="contacts__list">
+            <?php while(have_rows('socials')) : the_row(); 
+                          $icon = get_sub_field('socials_icon');
+                          $text = get_sub_field('socials_text');
+                        ?>
+                <li class="contacts__list__item">
+                <img class="contacts__list__item__icon" src="<?php echo $icon['url']  ?>" />
+                  <p class="contacts__list__item__text"><?php echo $text ?></p>
+              </li>
+            <?php endwhile; ?>
+        </ul>
+    <?php endif; ?>
+  </div>
 </div>
 </section>
 
