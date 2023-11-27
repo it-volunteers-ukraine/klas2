@@ -2,7 +2,9 @@
 
 
 <main class="front-page__main">
-    <section class="banner">
+
+    <section class="banner" >
+        <div class="banner__back" style="background-image: url('<?php echo get_field('banner_back') ?>')">
         <div class="container">
             <div class="banner__wrap">
                 <div class="banner__title">
@@ -12,21 +14,28 @@
                         Підтримати нас
                     </a>
                 </div>
+            </div>
 
-                <div class="banner__gallary">
-                    <?php
+            <div class="banner__gallary">
+                <?php
 
                     $gallary = get_field('gallary');
                     foreach ($gallary as $key => $gallary) {
                     ?>
-                    <div class="banner__gallary-img">
+                <div class="banner__gallary-img">
 
-                        <img src="<?php echo $gallary ?>" alt="<?php echo esc_attr($hero['image']['alt']); ?>" />
-                    </div>
-
-                    <?php } ?>
-
+                    <img src="<?php echo $gallary ?>" alt="<?php echo esc_attr($hero['image']['alt']); ?>" />
                 </div>
+
+                <?php } ?>
+
+            </div>
+        </div>
+        </div>
+    
+        <div class="container">
+
+            <div class="banner__wrap">
                 <div class="banner__cards">
                     <div class="banner__cards-card">
                         <div class="banner__cards-card-img">
@@ -56,10 +65,11 @@
                 <div class="banner__desc">
                     <p><?php the_field('banner_text') ?></p>
                 </div>
-
             </div>
-
         </div>
+
+
+
 
     </section>
     <section class="about">
@@ -151,42 +161,59 @@
     <section class="front-page__news">
         <div class="container">
             <div class="front-page__news-wrap">
-                <h2 class="title"> Новини</h2>
+
+                <h2 class="title"> <?php the_field('new_title') ?></h2>
                 <div class="front-page__news-inner">
                     <?php
-                    // запрос
-                    $query = new WP_Query(['category_name' => 'News']); ?>
+                    $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    $postID = $post->ID;
+                    add_image_size('front_new', 364, 180, true);
+                    add_filter('excerpt_length', function () {
+                        return 30;
+                    });
+                    $args = array(
+                        'post_type' => 'post', //это вид
+                        'posts_per_page' => 4, //количество
+                        'paged'          => $current_page,
+                        'category_name' => 'News',
+                        'order' => 'ASC'
+            
+                    );
+                
+                    $query = new WP_Query($args); ?>
 
                     <?php if ($query->have_posts()) : ?>
 
-                    <!-- пагинация -->
 
-                    <!-- цикл -->
                     <?php while ($query->have_posts()) : $query->the_post(); ?>
 
                     <article class="new new--column  front-page__news-new">
                         <div class="new__body">
-                            <div class="new__back">
-                                <img src="<?php echo get_template_directory_uri() ?>/src/images/front-page/new1.jpg"
-                                    alt="">
-                            </div>
-                            <div class="new__desc">
-                                <h3><?php the_title(); ?></h3>
-                                <p>
-                                    Сьогодні фахівці
-                                    дитячої точки СПІЛЬНО провели для дітей
-                                    ігротеку на дитячому майданчику «Кмітливі пірати» та пограл
-                                </p>
-                                <div class="new__footer">
-                                    <time datatime='2023-06-24'>24.06.23</time>
-                                    <button class="button read-more_button" type="button">Читати більше<svg
-                                            class="arrow-icon">
-                                            <use
-                                                href="http://klas2/wp-content/themes/klas2/assets/images/sprite.svg#arrow">
-                                            </use>
-                                        </svg>
-                                    </button>
+
+                            <div class="new__body-content">
+                                <div class="new__back">
+                                    <?php the_post_thumbnail('front_new') ?>
                                 </div>
+                                <div class="new__desc">
+                                    <h3>
+                                        <a href="<?php the_permalink(); ?>">
+                                            <?php the_title(); ?>
+                                        </a>
+                                    </h3>
+                                    <p>
+                                        <?php the_excerpt(); ?>
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="new__footer">
+                                <time datatime='2023-06-24'><?php the_time('d.m.y') ?></time>
+                                <a href="<?php the_permalink(); ?>" class="button read-more_button" type="button">Читати
+                                    більше<svg class="arrow-icon">
+                                        <use href="http://klas2/wp-content/themes/klas2/assets/images/sprite.svg#arrow">
+                                        </use>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
 
@@ -194,9 +221,7 @@
 
 
                     <?php endwhile; ?>
-                    <!-- конец цикла -->
 
-                    <!-- пагинация -->
 
                     <?php wp_reset_postdata(); ?>
 
@@ -209,7 +234,7 @@
 
 
                 </div>
-                <a class="primary_button button front-page__news-btn" href=" ">
+                <a class="primary_button button front-page__news-btn" href=" <?php the_field('news_link')?>">
                     Усі новини
                 </a>
             </div>

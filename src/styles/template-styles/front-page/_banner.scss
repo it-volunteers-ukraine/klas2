@@ -1,15 +1,24 @@
 .banner {
     min-height: 300px;
-    margin-top: 64px;
     margin-bottom: 112px;
-    background: url('../');
-    background-size: cover;
-    background-position: top center;
+ 
+
+    &__back{  
+        padding-top: 64px;
+        padding-bottom: 20px;
+        background-size: cover;
+        background-position: top center;
+
+    }
 &__btn{
     margin: 44px auto 0;
     @media(max-width:$desktop) {
         margin: 24px auto 0;
+        width: 45%;
         }
+        @media(max-width:$tablet) {
+          width: 100%;
+            }
 }
     &__title {
    
@@ -40,11 +49,13 @@
         margin-top: -55px;
 
         @media(max-width:$desktop) {
-            gap: 16px
+            gap: 16px;
+            margin-top: 0;
         }
 
         @media(max-width:$tablet) {
             gap: 5px;
+            margin-top: 21px;
             margin-bottom:24px;
         }
 

@@ -1,6 +1,6 @@
-
 $(document).ready(function(){
-    console.log("home page");
+    console.log("home page");	    console.log("home page");
+
    $('.slider__inner').slick({
     slidesToShow:3,
     slidesToScroll: 1,
@@ -17,14 +17,7 @@ $(document).ready(function(){
     pauseOnHover:false,
     pauseOnDotsHover:false,
     variableWidth:true,
-  
+
    });
-//    $('.slider-nav').slick({
-//     slidesToShow: 3,
-//     slidesToScroll: 1,
-//     asNavFor: '.slider-for',
-//     dots: true,
-//     centerMode: true,
-//     focusOnSelect: true
-//   });
-})
+
+});

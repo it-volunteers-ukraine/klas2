@@ -74,7 +74,7 @@
             @media(max-width:$desktop){
                 width: 47%;
                 &:nth-child(4n){
-                    display: block;
+                    display: flex;
                 }
             }
             @media(max-width:$tablet){

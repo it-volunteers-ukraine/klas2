@@ -4,6 +4,8 @@
     &--column{
         & .new__body{
             flex-direction: column;
+            justify-content: space-between;
+            flex-basis: 100%;
         }
         & .new__back{
             margin-bottom: 12px;
