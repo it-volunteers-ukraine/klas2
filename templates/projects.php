@@ -21,11 +21,77 @@ get_header();
       </div>
 
       <div id="tab2" class="tab-content">
-        <p>Зміст для вкладки Поточні.</p>
+        <?php
+        // Виведення постів категорії "Поточні"
+        $current_projects = new WP_Query(array(
+          'post_type' => 'projects',
+          'posts_per_page' => -1,
+          'tax_query' => array(
+            array(
+              'taxonomy' => 'project_categories',
+              'field' => 'slug',
+              'terms' => 'поточні',
+            ),
+          ),
+        ));
+
+        while ($current_projects->have_posts()) :
+          $current_projects->the_post();
+        ?>
+          <article>
+            <h3><?php the_field('project__title'); ?></h3>
+            <?php
+            $image = get_field('project__img');
+            if ($image) {
+              echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
+            }
+            ?>
+            <p><?php the_field('project__category'); ?></p>
+            <p><?php the_field('project__period'); ?></p>
+            <p><?php the_field('project__description'); ?></p>
+
+          </article>
+        <?php
+        endwhile;
+        wp_reset_postdata();
+        ?>
       </div>
 
       <div id="tab3" class="tab-content">
-        <p>Зміст для вкладки Реалізовані.</p>
+        <?php
+        // Виведення постів категорії "Реалізовані"
+        $current_projects = new WP_Query(array(
+          'post_type' => 'projects',
+          'posts_per_page' => -1,
+          'tax_query' => array(
+            array(
+              'taxonomy' => 'project_categories',
+              'field' => 'slug',
+              'terms' => 'реалізовані',
+            ),
+          ),
+        ));
+
+        while ($current_projects->have_posts()) :
+          $current_projects->the_post();
+        ?>
+          <article>
+            <h3><?php the_field('project__title'); ?></h3>
+            <?php
+            $image = get_field('project__img');
+            if ($image) {
+              echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
+            }
+            ?>
+            <p><?php the_field('project__category'); ?></p>
+            <p><?php the_field('project__period'); ?></p>
+            <p><?php the_field('project__description'); ?></p>
+
+          </article>
+        <?php
+        endwhile;
+        wp_reset_postdata();
+        ?>
       </div>
 
       <?php get_template_part('template-parts/join-us'); ?>
