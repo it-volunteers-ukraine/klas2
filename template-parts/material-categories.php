@@ -10,16 +10,19 @@
         $cats = get_categories($args);
 
         if($cats) : ?>
-<ul class='library-cats__list'>
-           <li class="library-cats__item current">
-              <a href="<?php echo get_permalink(55); ?>">
+        <ul class='library-cats__list'>
+          <?php $class = ( $post->ID == 16 ) ? 'active' : ''; ?>
+           <li class="library-cats__item <?php echo $class; ?>" >
+              <a href="<?php echo get_permalink(16); ?>">
                       Всі матеріали
                   </a>
             </li>
           <?php foreach($cats as $cat) {
+            $curTerm = $wp_query->queried_object;
+            $class = ( $cat->name == $curTerm->name ) ? 'active' : '';
             $termId = $cat->term_id;
             ?>
-            <li class="library-cats__item">
+            <li class="library-cats__item <?php echo $class; ?>" >
               <a href="<?php echo get_term_link((int) $termId) ?>">
                       <?php echo $cat->name; ?>
                   </a>

@@ -51,10 +51,6 @@ function wp_it_volunteers_scripts()
     wp_enqueue_script('projects-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/projects.js', array(), false, true);
   }
 
-  if (is_page_template('templates/library.php')) {
-    wp_enqueue_style('library-style', get_template_directory_uri() . '/assets/styles/template-styles/library.css', array('main'));
-  }
-
   if (is_singular() && locate_template('template-parts/form.php')) {
     wp_enqueue_style('form-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/form.css', array('main'));
     wp_enqueue_script('form-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/form.js', array(), false, true);
@@ -64,12 +60,6 @@ function wp_it_volunteers_scripts()
     wp_enqueue_style('join-us-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/join-us.css', array('main'));
   }
 
-  if (is_singular() && locate_template('template-parts/material-categories.php')) {
-    wp_enqueue_style('materials-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/material-categories.css', array('main'));
-  }
-  if (is_singular() && locate_template('template-parts/content-material-posts.php')) {
-    wp_enqueue_style('material-posts-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/content-material-posts.css', array('main'));
-  }
 }
 /** add fonts */
 function add_google_fonts()

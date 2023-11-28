@@ -36,10 +36,10 @@
     }
   }
 
-  &.current {
+  &.active {
     font-weight: 600;
   }
-  &.current::after {
+  &.active::after {
       content: '';
       position: absolute;
       bottom: 0;

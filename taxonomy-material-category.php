@@ -3,10 +3,10 @@
 get_header();
 ?>
 
-<main class='main'>
+<main>
 <section class="library-section">
     <div class="container">
-      <h1 class="library__title"><?php the_field('library_title', 55) ?></h1>
+      <h1 class="library__title"><?php the_field('library_title', 16) ?></h1>
 
       <?php get_template_part( 'template-parts/material-categories'); ?>
 
