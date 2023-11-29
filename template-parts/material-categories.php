@@ -11,9 +11,9 @@
 
         if($cats) : ?>
         <ul class='library-cats__list'>
-          <?php $class = ( $post->ID == 55 ) ? 'active' : ''; ?>
+          <?php $class = ( $post->ID == 16 ) ? 'active' : ''; ?>
            <li class="library-cats__item <?php echo $class; ?>" >
-              <a href="<?php echo get_permalink(55); ?>">
+              <a href="<?php echo get_permalink(16); ?>">
                       Всі матеріали
                   </a>
             </li>

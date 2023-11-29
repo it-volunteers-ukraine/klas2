@@ -7,7 +7,7 @@
     $myposts = get_posts([ 
       'post_type' => 'materials',
       'numberposts' => -1,
-      'posts_per_page' => 4,
+      'posts_per_page' => 10,
       'order' => 'DESC',  
       'orderby' => 'date',
       'paged'   => $current_page
@@ -23,7 +23,7 @@
       }?>
       </div>
       <?php 
-      $posts_per_page = 4;
+      $posts_per_page = 10;
       $total_posts = wp_count_posts('materials')->publish;
       $total_pages = ceil($total_posts / $posts_per_page);
 
@@ -34,11 +34,10 @@
         'format' => 'page/%#%',
         'current' => $current_page,
         'total' => $total_pages,
-        'prev_text'          => __('<'),
-        'next_text'          => __('>'),
-        'class'              => 'material-pagination', 
+        'prev_text' => ('&lt;'),
+        'next_text' => ('&gt;'),
       );
-      echo '<div class="events__pagination">';
+      echo '<div class="lib-pagination">';
       echo paginate_links($pagination_args);
       echo '</div>';
 

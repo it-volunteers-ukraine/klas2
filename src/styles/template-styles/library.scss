@@ -48,6 +48,7 @@
   }
 }
 
+//one material content
 .entry-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -65,6 +66,7 @@
   }
 }
 
+//feature image
 .feature-image {
   position: relative;
   overflow: hidden;
@@ -99,6 +101,7 @@
   object-fit: cover;
 }
 
+//centered play icon
 .play-outline__button {
   position: absolute;
   top: 50%;
@@ -124,6 +127,7 @@
   }
 }
 
+//material title
 .library-post__title {
   font-size: 18px;
   font-weight: 600;
@@ -135,6 +139,7 @@
   }
 }
 
+//buttons
 .download_button {
   color: $blue;
   padding: 14px 0;
