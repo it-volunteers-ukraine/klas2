@@ -36,7 +36,7 @@ get_header();
         'next_text' => ('&gt;'),
       );
 
-      echo '<div class="lib-pagination">';
+      echo '<div id="lib-pagination">';
       echo paginate_links($pagination_args);
       echo '</div>';
 
@@ -45,6 +45,7 @@ get_header();
 
     </div>
 </section>
+<?php  get_template_part( 'template-parts/join-us' ); ?>
 </main>
 
 <?php get_footer(); ?>
