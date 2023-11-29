@@ -1,0 +1,12 @@
+.error-404 {
+	background-color: aqua;
+	&__image {
+		width: 647px;
+		@media screen and (max-width: $desktop) {
+			width: 544px;
+		}
+		@media screen and (max-width: $tablet) {
+			width: 283px;
+		}
+	}
+}
