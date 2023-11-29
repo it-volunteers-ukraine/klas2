@@ -107,6 +107,7 @@ if (function_exists('acf_add_options_page')) {
   ));
 }
 
+//add CPT to archive
 function my_cptui_add_post_types_to_archives( $query ) {
 
 	if ( is_admin() || ! $query->is_main_query() ) {
@@ -127,3 +128,22 @@ function my_cptui_add_post_types_to_archives( $query ) {
 	}
 }
 add_filter( 'pre_get_posts', 'my_cptui_add_post_types_to_archives' );
+
+// change request to WP for pagination on the taxonomy page
+function codernote_request($query_string ) {
+  if ( isset( $query_string['page'] ) ) {
+    if ( ''!=$query_string['page'] ) {
+      if ( isset( $query_string['name'] ) ) {
+        unset( $query_string['name'] ); }
+      }
+    }
+    return $query_string;
+}
+add_filter('request', 'codernote_request');
+
+add_action('pre_get_posts', 'codernote_pre_get_posts');
+function codernote_pre_get_posts( $query ) {
+  if ( $query->is_main_query() && !$query->is_feed() && !is_admin()  && is_archive()) {
+    $query->set( 'paged', str_replace( '/', '', get_query_var( 'page' ) ) );
+  }
+}
