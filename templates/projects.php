@@ -35,17 +35,27 @@ get_header();
           $current_projects->the_post();
         ?>
           <article>
-            <h3><?php the_field('project__title'); ?></h3>
-            <?php
-            $image = get_field('project__img');
-            if ($image) {
-              echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
-            }
-            ?>
-            <p><?php the_field('project__category'); ?></p>
-            <p><?php the_field('project__period'); ?></p>
-            <p><?php the_field('project__description'); ?></p>
-            <p><?php the_field('project__budget'); ?></p>
+            <h3 class="project__title"><?php the_title(); ?></h3>
+            <div class="project__wrap">
+              <div class="project__flex">
+                <?php
+                $image = get_field('project__img');
+                if ($image) {
+                  echo '<img class="project__img" src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
+                }
+                ?>
+              </div>
+              <div class="project__flex">
+                <div class="text__wrap">
+                  <p class="text__btn"><?php the_field('project__category'); ?></p>
+                  <p><?php the_field('project__period'); ?></p>
+                </div>
+                <div class="description__wrap">
+                  <p class="project__description"><?php the_field('project__description'); ?></p>
+                  <p class="project__budget"><?php the_field('project__budget'); ?></p>
+                </div>
+              </div>
+            </div>
           </article>
         <?php
         endwhile;
@@ -70,17 +80,27 @@ get_header();
           $completed_projects->the_post();
         ?>
           <article>
-            <h3><?php the_field('project__title'); ?></h3>
-            <?php
-            $image = get_field('project__img');
-            if ($image) {
-              echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
-            }
-            ?>
-            <p><?php the_field('project__category'); ?></p>
-            <p><?php the_field('project__period'); ?></p>
-            <p><?php the_field('project__description'); ?></p>
-            <p><?php the_field('project__budget'); ?></p>
+            <h3 class="project__title"><?php the_title(); ?></h3>
+            <div class="project__wrap">
+              <div class="project__flex">
+                <?php
+                $image = get_field('project__img');
+                if ($image) {
+                  echo '<img class="project__img" src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
+                }
+                ?>
+              </div>
+              <div class="project__flex">
+                <div class="text__wrap">
+                  <p class="text__btn"><?php the_field('project__category'); ?></p>
+                  <p><?php the_field('project__period'); ?></p>
+                </div>
+                <div class="description__wrap">
+                  <p class="project__description"><?php the_field('project__description'); ?></p>
+                  <p class="project__budget"><?php the_field('project__budget'); ?></p>
+                </div>
+              </div>
+            </div>
           </article>
         <?php
         endwhile;
@@ -107,17 +127,27 @@ get_header();
           $current_projects->the_post();
         ?>
           <article>
-            <h3><?php the_field('project__title'); ?></h3>
-            <?php
-            $image = get_field('project__img');
-            if ($image) {
-              echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
-            }
-            ?>
-            <p><?php the_field('project__category'); ?></p>
-            <p><?php the_field('project__period'); ?></p>
-            <p><?php the_field('project__description'); ?></p>
-            <p><?php the_field('project__budget'); ?></p>
+            <h3 class="project__title"><?php the_title(); ?></h3>
+            <div class="project__wrap">
+              <div class="project__flex">
+                <?php
+                $image = get_field('project__img');
+                if ($image) {
+                  echo '<img class="project__img" src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
+                }
+                ?>
+              </div>
+              <div class="project__flex">
+                <div class="text__wrap">
+                  <p class="text__btn"><?php the_field('project__category'); ?></p>
+                  <p><?php the_field('project__period'); ?></p>
+                </div>
+                <div class="description__wrap">
+                  <p class="project__description"><?php the_field('project__description'); ?></p>
+                  <p class="project__budget"><?php the_field('project__budget'); ?></p>
+                </div>
+              </div>
+            </div>
           </article>
         <?php
         endwhile;
@@ -144,17 +174,27 @@ get_header();
           $completed_projects->the_post();
         ?>
           <article>
-            <h3><?php the_field('project__title'); ?></h3>
-            <?php
-            $image = get_field('project__img');
-            if ($image) {
-              echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
-            }
-            ?>
-            <p><?php the_field('project__category'); ?></p>
-            <p><?php the_field('project__period'); ?></p>
-            <p><?php the_field('project__description'); ?></p>
-            <p><?php the_field('project__budget'); ?></p>
+            <h3 class="project__title"><?php the_title(); ?></h3>
+            <div class="project__wrap">
+              <div class="project__flex">
+                <?php
+                $image = get_field('project__img');
+                if ($image) {
+                  echo '<img class="project__img" src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
+                }
+                ?>
+              </div>
+              <div class="project__flex">
+                <div class="text__wrap">
+                  <p class="text__btn"><?php the_field('project__category'); ?></p>
+                  <p><?php the_field('project__period'); ?></p>
+                </div>
+                <div class="description__wrap">
+                  <p class="project__description"><?php the_field('project__description'); ?></p>
+                  <p class="project__budget"><?php the_field('project__budget'); ?></p>
+                </div>
+              </div>
+            </div>
           </article>
         <?php
         endwhile;

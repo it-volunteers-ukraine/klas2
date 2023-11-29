@@ -12,18 +12,21 @@
 }
 
 .tabs-container {
+	margin-bottom: 36px;
 	display: flex;
+	gap: 42px;
 }
 
 .tab {
 	position: relative;
-	padding: 10px;
-	margin-right: 10px;
+	padding: 14px 32px;
 	border: none;
 	background-color: transparent;
 	transition: background-color $transition-function;
 	cursor: pointer;
 	border-radius: 12px 12px 0 0;
+	font-weight: 500;
+	line-height: calc(20 / 16);
 
 	&:hover {
 		background-color: $light-violet;
@@ -32,6 +35,7 @@
 
 	&.tab-active {
 		background-color: transparent;
+		font-weight: 600;
 	}
 
 	&.tab-active::before {
@@ -53,4 +57,78 @@
 .tab-content.tab-active {
 	display: block;
 	margin-top: 10px;
+}
+
+.project__title {
+	max-width: 752px;
+	margin: 0 auto;
+	margin-bottom: 36px;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: calc(28 / 24);
+	text-align: center;
+}
+
+.project__wrap {
+	display: flex;
+	gap: 24px;
+	margin-bottom: 72px;
+}
+
+.project__img {
+	border-radius: $btn-border-radius;
+	overflow: hidden;
+}
+
+.project__flex {
+	flex: 1;
+	flex-basis: 50%;
+	font-weight: 500;
+	line-height: calc(20 / 16);
+}
+
+.text__wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 36px;
+}
+
+.text__btn {
+	padding: 8px 16px;
+	border: 1px solid $main-mint;
+	border-radius: $btn-border-radius;
+}
+
+.project__description {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: calc(20 / 18);
+}
+
+.project__budget {
+	margin-left: 16px;
+	position: relative;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: calc(24 / 18);
+}
+
+.project__budget::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -16px;
+	width: 8px;
+	height: 100%;
+	background-color: $main-yellow;
+	border-radius: $btn-border-radius;
+}
+
+.description__wrap {
+	padding-bottom: 72px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
