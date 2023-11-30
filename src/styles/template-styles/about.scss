@@ -284,11 +284,13 @@
 		flex-wrap: nowrap;
 		gap: 24px;
 		align-items: baseline;
+		justify-content: center;
 		@media screen and (max-width: $desktop) {
 			gap: 16px;
 		}
 		@media screen and (max-width: $tablet) {
 			flex-wrap: nowrap;
+			justify-content: normal;
 		}
 		&__item {
 			margin-right: 0 !important;
