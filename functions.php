@@ -16,6 +16,8 @@ if (!function_exists('wp_it_volunteers_setup')) {
   add_action('after_setup_theme', 'wp_it_volunteers_setup');
 }
 
+add_theme_support('post-thumbnails');
+
 /**
  * Enqueue scripts and styles.
  */
@@ -48,6 +50,12 @@ function wp_it_volunteers_scripts()
     }
     if (is_singular() && locate_template('template-parts/join-us.php')) {
       wp_enqueue_style( 'join-us-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/join-us.css', array('main') );
+      }
+    if (is_singular() && locate_template('template-parts/content-post.php')) {
+      wp_enqueue_style( 'content-post', get_template_directory_uri() . '/assets/styles/template-parts-styles/content-post.css', array('main') );
+      }
+    if (is_singular() && locate_template('template-parts/news.php')) {
+      wp_enqueue_style( 'news', get_template_directory_uri() . '/assets/styles/template-parts-styles/news.css', array('main') );
       }
 }
 /** add fonts */
@@ -95,3 +103,11 @@ if (function_exists('acf_add_options_page')) {
     'parent_slug'   => 'theme-general-settings',
   ));
 }
+
+add_filter( 'excerpt_length', function(){
+	return 20;
+  } );
+
+add_filter( 'excerpt_more', function( $more ) {
+	return '...';
+} );
