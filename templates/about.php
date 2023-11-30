@@ -89,7 +89,7 @@ get_header();
                   $position = get_sub_field('our_team_slider_position');
               ?>
                 <li class="our-team__list__item swiper-slide">
-                    <img class="our-team__list__item__img" src='<?php echo $image['url'] ?>' />
+                    <img class="our-team__list__item__img" src='<?php echo $image['url'] ?>' alt="<?php echo esc_attr($image['alt']); ?>"/>
                     <div class="our-team__list__item__text-container">
                       <h3 class="our-team__list__item__person"><?php echo $person ?></h3>
                       <p class="our-team__list__item__position"><?php echo $position ?></p>
