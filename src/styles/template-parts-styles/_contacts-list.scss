@@ -1,5 +1,6 @@
 .contacts__list {
     width: fit-content;
+    text-align: start;
     
 
     @media(max-width:768px) {
@@ -17,10 +18,7 @@
 		display: flex;
 		align-items: center;
         gap: 22px;
-        @media(max-width:$tablet) {
-            justify-content: center;
-
-        }
+   
         &>svg,
         &>img{
             flex-shrink: 0;
