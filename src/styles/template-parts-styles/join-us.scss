@@ -1,86 +1,74 @@
 @import "../variables.scss";
 .join-us {
-	padding: 40px 0;
-	@media screen and (min-width: $tablet) {
+	padding: 56px 0;
+	@media screen and (max-width: $desktop) {
 		padding: 36px 0;
 	}
 
-	@media screen and (min-width: $desktop) {
-		padding: 56px 0;
+	@media screen and (max-width: $tablet) {
+		padding: 40px 0;
 	}
 	&__container {
 		background-color: $light-violet;
 		padding-top: 24px;
 		padding-bottom: 24px;
-		@media screen and (min-width: $tablet) {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+
+		@media screen and (max-width: $desktop) {
 			text-align: center;
+			flex-direction: column;
 		}
-
-		@media screen and (min-width: $desktop) {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-around;
-			align-items: center;
-
+		@media screen and (max-width: $tablet) {
 			text-align: left;
 		}
 	}
 	&__content {
+		width: 558px;
 		display: flex;
 		flex-direction: column;
 		gap: 24px;
-		margin: 0 auto 32px;
-		@media screen and (min-width: $tablet) {
-			justify-content: center;
-			align-items: center;
-			margin: 0 55px 32px;
-		}
 
-		@media screen and (min-width: $desktop) {
-			width: 558px;
-			margin: 0;
+		@media screen and (max-width: $desktop) {
+			width: auto;
+			margin: 0 55px 32px;
+			align-items: center;
+			justify-content: center;
+		}
+		@media screen and (max-width: $tablet) {
+			margin: 0 auto 32px;
 		}
 	}
 	&__title {
-		font-family: Raleway;
 		font-size: 24px;
-		font-style: normal;
 		font-weight: 600;
 		line-height: 28px;
-		@media screen and (min-width: $tablet) {
-			width: auto;
+		@media screen and (max-width: $desktop) {
 			margin: 0 5% 0;
 		}
-
-		@media screen and (min-width: $desktop) {
-			width: auto;
+		@media screen and (max-width: $tablet) {
 			margin: 0;
 		}
 	}
 	&__description {
-		font-family: Raleway;
 		font-size: 18px;
 		font-style: normal;
 		font-weight: 400;
 		line-height: 24px;
-		@media screen and (min-width: $tablet) {
-			width: auto;
-		}
-
-		@media screen and (min-width: $desktop) {
-			width: auto;
-		}
 	}
 	&__button {
+		width: 151px;
+		height: max-content;
+		padding: 12px 0;
+
 		display: inline-block;
-		width: 100%;
-		padding: 8px 0;
 		background: $dark-violet;
+		border: none;
 
 		color: $main-white;
-		font-family: Raleway;
-		font-size: 16px;
-		font-style: normal;
+		font-size: 18px;
 		font-weight: 400;
 		line-height: 24px;
 		text-align: center;
@@ -94,16 +82,14 @@
 			color: $dark-violet;
 		}
 
-		@media screen and (min-width: $tablet) {
+		@media screen and (max-width: $desktop) {
+			height: auto;
 			width: 344px;
+			font-size: 16px;
+			padding: 8px 0;
 		}
-
-		@media screen and (min-width: $desktop) {
-			width: 151px;
-			height: max-content;
-			padding: 12px 0;
-
-			font-size: 18px;
+		@media screen and (max-width: $tablet) {
+			width: 100%;
 		}
 	}
 }
