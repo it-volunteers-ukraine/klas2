@@ -254,16 +254,13 @@
 	&__buttons-wrapper {
 		display: flex;
 		gap: 48px;
+		left: 30%;
 		@media screen and (max-width: $desktop) {
 			position: absolute;
-			bottom: -60px;
-			left: 30%;
-			width: 365px;
-			justify-content: space-between;
-		}
-		@media screen and (max-width: $tablet) {
+			bottom: -50px;
 			width: 90%;
 			left: 5%;
+			justify-content: space-between;
 		}
 	}
 	&__pagination-span {
@@ -359,22 +356,16 @@
 	position: static;
 	margin: 0;
 }
-.swiper-button-prev {
-	background: url("../../images/icon-arrow-left.svg");
-	background-repeat: no-repeat;
-}
-.swiper-button-next {
-	background: url("../../images/icon-arrow-right.svg");
-	background-repeat: no-repeat;
-}
 .swiper-button-prev::after,
 .swiper-button-next::after {
-	display: none;
+	font-size: 24px;
+	color: $main-black;
 }
 .swiper-pagination {
 	display: flex;
 	justify-content: center;
 	bottom: -28px !important;
+	padding: 0 27px;
 }
 .swiper-grid-column .swiper-wrapper {
 	flex-direction: row !important;
