@@ -19,16 +19,19 @@ get_header();
       <?php if ($errorImage): ?>
         <img class="error-404__image" src="<?php echo esc_url($errorImage['url']); ?>" alt="<?php echo esc_attr($errorImage['alt']); ?>" />
       <?php endif; ?>
-			<div>
-					<h2><?php the_field("error_title", 'option') ?></h2>
-					<p><?php the_field("error_text", 'option') ?></p>
-					<button class="button"><?php the_field("error_button_text", 'option') ?></button>
+			<div class="error-404__wrapper">
+					<h2 class="error-404__title"><?php the_field("error_title", 'option') ?></h2>
+					<div class="error-404__error-container">
+						<p class="error-404__text"><?php the_field("error_first_text", 'option') ?></p>
+						<p class="error-404__text"><?php the_field("error_second_text", 'option') ?></p>
+					</div>
+					<button class="error-404__button button"><?php the_field("error_button_text", 'option') ?></button>
 			</div>
 		</div>
 	</section>
 
 
-</main><!-- #main -->
+</main>
 
 <?php
 get_footer();
