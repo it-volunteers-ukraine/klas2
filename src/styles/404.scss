@@ -1,4 +1,11 @@
 .error-404 {
+	padding: 112px 0;
+	@media screen and (max-width: $desktop) {
+		padding: 72px 0;
+	}
+	@media screen and (max-width: $tablet) {
+		padding: 40px 0;
+	}
 	&__image {
 		width: 100%;
 		max-width: 647px;
