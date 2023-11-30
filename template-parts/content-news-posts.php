@@ -49,6 +49,12 @@ get_header();
             </div>
             <div class="post__text">
                 <h2 class="post__title"><?php the_title(); ?></h2>
+                <div class="post__img-mobile"><?php if ( has_post_thumbnail()) { ?>
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+                   <?php the_post_thumbnail(); ?>
+                </a>
+                <?php } ?>
+            </div>
                 <p class="post__content"> 
                     <?php
                         $excerpt = get_the_excerpt();
