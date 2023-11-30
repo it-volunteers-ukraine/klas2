@@ -13,17 +13,16 @@ get_header();
 
       <?php get_template_part( 'template-parts/material-categories'); ?>
 
-      <div class="">
-        <?php if ( have_posts() ) : 
-			/* Start the Loop */
-          while ( have_posts() ) : the_post();
-          
-            get_template_part( 'template-parts/content-material-posts' );
+      <?php if ( have_posts() ) : 
+    /* Start the Loop */
+        while ( have_posts() ) : the_post();
+        
+          get_template_part( 'template-parts/content-material-posts' );
 
-          endwhile;
-        endif;
-        ?>
-      </div>
+        endwhile;
+      endif;
+      ?>
+
     </div>
 </section>
 </main>

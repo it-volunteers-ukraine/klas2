@@ -19,6 +19,9 @@
             </li>
           <?php foreach($cats as $cat) {
             $curTerm = $wp_query->queried_object;
+            global $termCount;
+            $termCount = $curTerm->count;
+
             $class = ( $cat->name == $curTerm->name ) ? 'active' : '';
             $termId = $cat->term_id;
             ?>
