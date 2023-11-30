@@ -2,6 +2,10 @@
 
 .projects {
 	padding-top: 56px;
+
+	@media screen and (max-width: $desktop) {
+		padding-top: 40px;
+	}
 }
 
 .projects__title {
@@ -9,12 +13,23 @@
 	font-size: 40px;
 	font-weight: 700;
 	line-height: calc(48 / 40);
+
+	@media screen and (max-width: $desktop) {
+		margin-bottom: 32px;
+		font-size: 30px;
+		line-height: calc(34 / 30);
+	}
 }
 
 .tabs-container {
-	margin-bottom: 36px;
 	display: flex;
 	gap: 42px;
+
+	@media screen and (max-width: $desktop) {
+		display: flex;
+		justify-content: space-between;
+		gap: 22px;
+	}
 }
 
 .tab {
@@ -28,6 +43,12 @@
 	font-weight: 500;
 	line-height: calc(20 / 16);
 
+	@media screen and (max-width: $desktop) {
+		padding: 14px 32px;
+		font-weight: 400;
+		line-height: calc(24 / 16);
+	}
+
 	&:hover {
 		background-color: $light-violet;
 		border-radius: 12px 12px 0 0;
@@ -36,6 +57,10 @@
 	&.tab-active {
 		background-color: transparent;
 		font-weight: 600;
+
+		@media screen and (max-width: $desktop) {
+			line-height: calc(22.5 / 16);
+		}
 	}
 
 	&.tab-active::before {
@@ -61,18 +86,24 @@
 
 .project__title {
 	max-width: 752px;
-	margin: 0 auto;
-	margin-bottom: 36px;
+	margin: 36px auto;
 	font-size: 24px;
 	font-weight: 600;
 	line-height: calc(28 / 24);
 	text-align: center;
+
+	@media screen and (max-width: $desktop) {
+		margin: 32px auto;
+		max-width: 516px;
+		margin-bottom: 24px;
+		font-size: 18px;
+		line-height: calc(24 / 18);
+	}
 }
 
 .project__wrap {
 	display: flex;
 	gap: 24px;
-	margin-bottom: 72px;
 }
 
 .project__img {
@@ -85,6 +116,11 @@
 	flex-basis: 50%;
 	font-weight: 500;
 	line-height: calc(20 / 16);
+
+	@media screen and (max-width: $desktop) {
+		font-size: 12px;
+		line-height: calc(16 / 12);
+	}
 }
 
 .text__wrap {
@@ -92,6 +128,11 @@
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 36px;
+	gap: 5px;
+
+	@media screen and (max-width: $desktop) {
+		margin-bottom: 16px;
+	}
 }
 
 .text__btn {
@@ -104,14 +145,25 @@
 	font-size: 18px;
 	font-weight: 400;
 	line-height: calc(20 / 18);
+
+	@media screen and (max-width: $desktop) {
+		font-size: 16px;
+		line-height: calc(24 / 16);
+	}
 }
 
 .project__budget {
 	margin-left: 16px;
+	margin-top: 10px;
 	position: relative;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: calc(24 / 18);
+
+	@media screen and (max-width: $desktop) {
+		font-size: 16px;
+		line-height: calc(24 / 16);
+	}
 }
 
 .project__budget::before {
@@ -126,9 +178,12 @@
 }
 
 .description__wrap {
-	padding-bottom: 72px;
-	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	height: 78%;
+
+	@media screen and (max-width: 1150px) {
+		height: 75%;
+	}
 }
