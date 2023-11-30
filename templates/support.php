@@ -23,13 +23,21 @@ get_header();
       </div>
     </div>
   </div>
-
-  <section class="middle-section">
+</section>
+<section class="support-section__middle">
     <div class="container">
-      
+      <div class="support_inner__container">
+        <div class="support-image__wrap">
+          <div class="support-image_wrapper">
+            <img class="support-img" src='<?php the_field('support_middle_image'); ?>' alt=''>
+          </div>
+          <svg class="support-bcg__image" width="112px" height="98px">
+            <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#fon_left"></use>
+          </svg>
+        </div>
+        <p class="support-text"><?php the_field("support_text"); ?></p>
+      </div>
     </div>
   </section>
-  
-</section>
 </main>
 <?php get_footer(); ?>
