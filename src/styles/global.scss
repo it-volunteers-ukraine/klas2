@@ -34,7 +34,7 @@
 .primary_button {
 	color: $main-white;
 	background-color: $dark-violet;
-	@media screen and (max-width: 767.98px) {
+	@media screen and (max-width: $tablet) {
 		width: 100%;
 	}
 	&:hover,
