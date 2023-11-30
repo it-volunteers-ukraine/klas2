@@ -1,9 +1,5 @@
 @import "../variables.scss";
 
-section{
-   
-}
-
 .main__title{
     font-size: 40px;
     font-style: normal;
@@ -12,7 +8,7 @@ section{
     margin-top: 58px;
     @media screen and (max-width: $desktop) {
        margin-top: 33px;;
-     }
+    }
 }
 
 .main__banner{
@@ -28,9 +24,8 @@ section{
     @media screen and (max-width: $tablet) {
         height: 115px;
         margin-top: 24px;
-     }
-
     }
+}
 
 .main__banner img{
     width: 100%;
@@ -47,12 +42,13 @@ section{
     position: absolute;
     bottom: 40px;
     padding-left: 32px;
+    
     @media screen and (max-width: $desktop) {
         font-size: 16px;
         line-height: 22.5px;
 
-     }
     }
+}
 
 .banner__button{
 	background-color: transparent;
@@ -171,28 +167,4 @@ section{
     padding: 14px 0;
 }
 
-.page-numbers{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    margin-top: 7%;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-    color: $main-black;
-    
-    @media screen and (max-width: $desktop) {
-       margin-top: 5%;
-    }
-}
-
-.page-numbers li{
-    padding: 0 7px;
-    margin-right: 8px;
-}
-
-.page-numbers li:active{
-    background-color: $grey15;
-}
 

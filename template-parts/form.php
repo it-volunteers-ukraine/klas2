@@ -10,7 +10,7 @@
     <div class="notification visually-hidden" id="notification">
         <div>
             <svg class="notification__icon" width="24px" height="24px">
-                <use href="../assets/images/сheckbox.svg"></use>
+                <use href="<?php echo get_template_directory_uri() ?>/assets/images/сheckbox.svg"></use>
             </svg>
         </div>
         <p class="notification__text">Дякуємо за Ваше звернення!</p>
