@@ -8,25 +8,25 @@ get_header();
   
 <section class="about">
   <div class="container about__container">
-    <img class="about__fon-right" src='<?php echo get_template_directory_uri()?>/assets/images/fon_right.png' alt="Fon photo"/>
-    <img class="about__fon-left" src='<?php echo get_template_directory_uri()?>/assets/images/fon_left.png' alt="Fon photo"/>
     <h2 class="about__title"><?php the_title(); ?></h2>
     <div class="about__content">
-    <div class="about__first-container">
-    <?php $firstImage = get_field("first_image"); ?>
-      <?php if ($firstImage): ?>
-        <img class="about__image" src="<?php echo esc_url($firstImage['url']); ?>" alt="<?php echo esc_attr($firstImage['alt']); ?>" />
-      <?php endif; ?>
-      <?php $firstText = get_field("first_text"); ?>
-      <?php if ($firstText): ?>
-      <div class="about__first-container__text-container">
-      <p class="about__text"><?php echo esc_html($firstText); ?></p>
-        <p class="about__text"><?php echo esc_html(the_field('second_text')); ?></p>
-        <p class="about__text"><?php echo esc_html(the_field('third_text')); ?></p>
-      </div>
-      <?php endif; ?>
-    </div>
-      <div class="about__second-container">
+      <div class="about__first-container">
+        <img class="about__fon-left" src='<?php echo get_template_directory_uri()?>/assets/images/fon_left.png' />
+        <?php $firstImage = get_field("first_image"); ?>
+        <?php if ($firstImage): ?>
+          <img class="about__image" src="<?php echo esc_url($firstImage['url']); ?>" alt="<?php echo esc_attr($firstImage['alt']); ?>" />
+          <?php endif; ?>
+          <?php $firstText = get_field("first_text"); ?>
+          <?php if ($firstText): ?>
+            <div class="about__first-container__text-container">
+              <p class="about__text"><?php echo esc_html($firstText); ?></p>
+              <p class="about__text"><?php echo esc_html(the_field('second_text')); ?></p>
+              <p class="about__text"><?php echo esc_html(the_field('third_text')); ?></p>
+            </div>
+            <?php endif; ?>
+          </div>
+          <div class="about__second-container">
+            <img class="about__fon-right" src='<?php echo get_template_directory_uri()?>/assets/images/fon_right.png' />
       <?php $secondImage = get_field("second_image"); ?>
       <?php if ($secondImage): ?>
         <img class="about__image" src="<?php echo esc_url($secondImage['url']); ?>" alt="<?php echo esc_attr($secondImage['alt']); ?>" />
