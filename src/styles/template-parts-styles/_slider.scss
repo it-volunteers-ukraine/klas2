@@ -1,0 +1,22 @@
+.slider{
+    overflow: hidden;
+    max-width: 1140px;
+    margin: 0 auto;
+
+}
+
+.slick-track{
+    width: 100%;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        gap: 34px;
+}
+.slider__item.slick-slide{
+    & img {
+        min-height: 58px;
+        @media(max-width:$desktop) {
+           max-height: 60px;
+        }
+    };
+}

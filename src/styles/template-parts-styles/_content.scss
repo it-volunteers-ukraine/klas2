@@ -1,0 +1,39 @@
+.content{
+    
+    &__desc{
+        &-text{
+          display: flex;
+          gap: 24px;
+            & p{
+                line-height: 134%;
+           
+                &:not(:last-child){
+                    margin-bottom: 16px;
+                }
+            }
+            &>div{
+                width: 48%;
+            }
+            @media(max-width:900px) {
+                flex-direction: column-reverse;
+                &>div{
+                    width: 100%;
+                }
+
+                }
+         
+
+        }
+    
+     
+    }
+    &__fon{
+        position: relative;
+        & img{
+            position: relative;
+        }
+    }
+
+    
+   
+}
