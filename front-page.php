@@ -342,55 +342,53 @@
                     <h2 class="title">
                         Контакти
                     </h2>
-                 
+
                     <p class="contacts__sub">
                         Громадська організація «Всеукраїнська організація "Клас"»
                     </p>
                     <ul class="list__contact contacts__list">
-                    <?php 
-                    $contacts = get_field('contacts');
-                  
-                  ?>
+                        <?php
+                        $contacts = get_field('contacts');
+
+                        ?>
                         <li class="contacts__list-item">
-                            <a class="contacts__list-link" href="mailto:<?php echo $contacts['google_email'] ?> " target="_blank" >
-                            <img src="<?php echo get_template_directory_uri()?>/src/images/contact/Gmail.svg" alt="Gmail">
+                            <a class="contacts__list-link" href="mailto:<?php echo $contacts['google_email'] ?> " target="_blank">
+                                <img src="<?php echo get_template_directory_uri() ?>/src/images/contact/Gmail.svg" alt="Gmail">
                                 <span><?php echo $contacts['google_email'] ?></span>
 
                             </a>
                         </li>
                         <li class="contacts__list-item">
                             <a class="contacts__list-link" href="tel:<?php echo $contacts['phone'] ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri()?>/src/images/contact/Phone.svg" alt="Phone">
+                                <img src="<?php echo get_template_directory_uri() ?>/src/images/contact/Phone.svg" alt="Phone">
                                 <span>+<?php echo $contacts['phone'] ?> </span>
                             </a>
                         </li>
                         <li class="contacts__list-item">
                             <a class="contacts__list-link" href="https://wa.me/<?php echo $contacts['whatsapp'] ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri()?>/src/images/contact/WhatsApp.svg" alt="WhatsApp">
+                                <img src="<?php echo get_template_directory_uri() ?>/src/images/contact/WhatsApp.svg" alt="WhatsApp">
                                 <span>+<?php echo $contacts['whatsapp'] ?></span>
                             </a>
                         </li>
                         <li class="contacts__list-item">
                             <a class="contacts__list-link" href="<?php echo $contacts['facebook'] ?>" target="_blank">
-                             <img src="<?php echo get_template_directory_uri()?>/src/images/contact/Facebook.svg" alt="Facebook">
+                                <img src="<?php echo get_template_directory_uri() ?>/src/images/contact/Facebook.svg" alt="Facebook">
 
                                 <span> Facebook</span>
                             </a>
                         </li>
                         <li class="contacts__list-item">
                             <a class="contacts__list-link" href="<?php echo $contacts['youtube'] ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri()?>/src/images/contact/YouTube.svg" alt="YouTube">
+                                <img src="<?php echo get_template_directory_uri() ?>/src/images/contact/YouTube.svg" alt="YouTube">
                                 <span>YouTube</span>
                             </a>
                         </li>
-                      <?php  ?>
+                        <?php  ?>
                     </ul>
 
                 </div>
                 <div class="contacts__inner-form">
-                    <h2 class="title">
-                        Маєте питання?
-                    </h2>
+                    <?php get_template_part('template-parts/form'); ?>
                 </div>
 
             </div>
