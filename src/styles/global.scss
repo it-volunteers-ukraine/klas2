@@ -26,8 +26,11 @@
   font-weight: 600;
 	font-size: 18px;
 	line-height: 1.33;
+	text-align: center;
 	border-radius: $btn-border-radius;
 	transition: all $transition-function;
+	will-change: font-weight;
+	transition: all 0.3s ease;
 }
 
 //violet button

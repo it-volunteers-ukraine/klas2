@@ -1,0 +1,36 @@
+.articles{
+    &__article{
+     
+        &-title{
+            position: relative;
+            margin-bottom: 16px;
+            padding: 14px 12px 14px 20px;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 116%;
+            &::before{
+                content:"";
+                position: absolute;
+                
+                width: 8px;
+                height: 100%;
+                top: 0;
+                left: 0px;
+                border-radius: 25px;
+                background:$main-mint;
+                
+            }
+        
+         
+
+        }
+       &-content{
+        padding-left: 20px;
+        &>p{
+            margin-bottom: 16px;
+            line-height: 133%;
+        }
+
+       }
+    }
+}
