@@ -19,6 +19,11 @@
 		font-size: 30px;
 		line-height: calc(34 / 30);
 	}
+
+	@media screen and (max-width: $tablet) {
+		margin-bottom: 24px;
+		text-align: center;
+	}
 }
 
 .tabs-container {
@@ -29,6 +34,12 @@
 		display: flex;
 		justify-content: space-between;
 		gap: 22px;
+	}
+
+	@media screen and (max-width: $tablet) {
+		flex-direction: column;
+		gap: 16px;
+		text-align: center;
 	}
 }
 
@@ -95,15 +106,24 @@
 	@media screen and (max-width: $desktop) {
 		margin: 32px auto;
 		max-width: 516px;
-		margin-bottom: 24px;
 		font-size: 18px;
 		line-height: calc(24 / 18);
+	}
+
+	@media screen and (max-width: $tablet) {
+		margin: 24px auto;
+		max-width: 343px;
 	}
 }
 
 .project__wrap {
 	display: flex;
 	gap: 24px;
+
+	@media screen and (max-width: $tablet) {
+		flex-direction: column;
+		gap: 10px;
+	}
 }
 
 .project__img {
@@ -128,7 +148,7 @@
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 36px;
-	gap: 5px;
+	gap: 7px;
 
 	@media screen and (max-width: $desktop) {
 		margin-bottom: 16px;
@@ -139,6 +159,12 @@
 	padding: 8px 16px;
 	border: 1px solid $main-mint;
 	border-radius: $btn-border-radius;
+
+	@media screen and (max-width: $desktop) {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: calc(20 / 16);
+	}
 }
 
 .project__description {
@@ -163,6 +189,10 @@
 	@media screen and (max-width: $desktop) {
 		font-size: 16px;
 		line-height: calc(24 / 16);
+	}
+
+	@media screen and (max-width: $tablet) {
+		margin-top: 16px;
 	}
 }
 
