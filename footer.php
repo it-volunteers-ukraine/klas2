@@ -29,7 +29,7 @@
         <li>
           <a class="fcontac__link" href="mailto:<?php the_field('email', 'options'); ?>" aria-label="email">
             <svg class="icon" width="40px" height="40px">
-              <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#close"></use>
+              <use href="<?php echo get_template_directory_uri() ?>/src/images/contact/Gmail.svg"></use>
             </svg>
             <p><?php the_field('email', 'options'); ?></p>
           </a>
@@ -37,7 +37,7 @@
         <li>
           <a class="fcontac__link" href="tel:<?php echo str_replace(' ', '', get_field('first-phone', 'options')); ?>" aria-label="телефон">
             <svg class="icon" width="40px" height="40px">
-              <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#arrow"></use>
+              <use href="<?php echo get_template_directory_uri() ?>/src/images/contact/Phone.svg"></use>
             </svg>
             <p><?php the_field('first-phone', 'options'); ?></p>
           </a>
@@ -45,7 +45,7 @@
         <li>
           <a class="fcontac__link" href="tel:<?php echo str_replace(' ', '', get_field('second-phone', 'options')); ?>" aria-label="телефон">
             <svg class="icon" width="40px" height="40px">
-              <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#arrow"></use>
+              <use href="<?php echo get_template_directory_uri() ?>/src/images/contact/WhatsApp.svg"></use>
             </svg>
             <p><?php the_field('second-phone', 'options'); ?></p>
           </a>
@@ -60,14 +60,14 @@
           <li>
             <a href="<?php echo esc_attr(get_field('facebook', 'options')); ?>" target="_blank" aria-label="facebook">
               <svg class="icon" width="40px" height="40px">
-                <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#arrow"></use>
+                <use href="<?php echo get_template_directory_uri() ?>/src/images/contact/Facebook.svg"></use>
               </svg>
             </a>
           </li>
           <li>
             <a href="<?php echo esc_attr(get_field('youtube', 'options')); ?>" target="_blank" aria-label="youtube">
               <svg class="icon" width="40px" height="40px">
-                <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#arrow"></use>
+                <use href="<?php echo get_template_directory_uri() ?>/src/images/contact/YouTube.svg"></use>
               </svg>
             </a>
           </li>
