@@ -37,7 +37,7 @@
         'prev_text' => ('&lt;'),
         'next_text' => ('&gt;'),
       );
-      echo '<div class="lib-pagination">';
+      echo '<div id="pagination">';
       echo paginate_links($pagination_args);
       echo '</div>';
 
