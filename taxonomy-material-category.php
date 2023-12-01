@@ -36,7 +36,7 @@ get_header();
         'next_text' => ('&gt;'),
       );
 
-      echo '<div id="lib-pagination">';
+      echo '<div id="pagination">';
       echo paginate_links($pagination_args);
       echo '</div>';
 
