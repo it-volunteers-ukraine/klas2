@@ -1,0 +1,104 @@
+@import "../variables.scss";
+
+.entry-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+
+  @media screen and (max-width: $desktop) {
+    grid-template-columns: 1fr 3fr;
+    column-gap: 16px;
+  }
+
+  @media screen and (max-width: 700px) {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.feature-image {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  padding-bottom: 61%;
+  border-radius: 8px;
+  border: 1px solid $grey15;
+  grid-row-end: span 2;
+
+  @media screen and (max-width: $desktop) {
+    padding-bottom: 84%;
+  }
+
+  @media screen and (max-width: 700px) {
+    padding-bottom: 61%;
+  }
+}
+
+.feature-image__link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.feature-image__link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-outline__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-outline__image {
+  transition: $transition-function;
+
+  @media screen and (max-width: $desktop) {
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+}
+
+.library-post__title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+
+  @media screen and (max-width: $desktop) {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+
+.download_button {
+  color: $blue;
+  padding: 14px 0;
+  font-weight: 500;
+  line-height: 1.25;
+  font-size: 16px;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.download-icon {
+  margin-right: 8px;
+}

@@ -23,17 +23,20 @@
 	cursor: pointer;
 	border: 1px solid transparent;
 	font-family: inherit;
+  font-weight: 600;
 	font-size: 18px;
 	line-height: 1.33;
+	text-align: center;
 	border-radius: $btn-border-radius;
 	transition: all $transition-function;
+	will-change: font-weight;
+	transition: all 0.3s ease;
 }
 
 //violet button
 .primary_button {
 	color: $main-white;
 	background-color: $dark-violet;
-	font-weight: 400;
 	@media screen and (max-width: 767.98px) {
 		width: 100%;
 	}
@@ -42,7 +45,6 @@
 		color: $dark-violet;
 		background-color: $main-white;
 		border: 1.5px solid $dark-violet;
-		font-weight: 600;
 	}
 }
 
@@ -51,12 +53,10 @@
 	color: $dark-violet;
 	background-color: $main-white;
 	border: 1.5px solid $dark-violet;
-	font-weight: 600;
 	&:hover,
 	&:focus {
 		color: $main-white;
 		background-color: $dark-violet;
-		font-weight: 400;
 		border: 1px solid transparent;
 	}
 }
@@ -67,7 +67,6 @@
 	padding: 14px 0;
 	background-color: transparent;
 	border-color: transparent;
-	font-weight: 500;
 	line-height: 1.25;
 	color: $main-black;
 }
@@ -82,7 +81,6 @@
 
 .read-more_button:hover,
 .read-more_button:focus {
-	font-weight: 600;
 	color: $dark-violet;
 
 	.arrow-icon {
