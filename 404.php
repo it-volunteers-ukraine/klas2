@@ -15,10 +15,7 @@ get_header();
 
 <section class="error-404">
 		<div class="container">
-		<?php $errorImage = get_field('error_image', 'option'); ?>
-      <?php if ($errorImage): ?>
-        <img class="error-404__image" src="<?php echo esc_url($errorImage['url']); ?>" alt="<?php echo esc_attr($errorImage['alt']); ?>" />
-      <?php endif; ?>
+        <img class="error-404__image" src="<?php echo get_template_directory_uri() ?>/assets/images/404.png" alt="404 error" />
 			<div class="error-404__wrapper">
 					<h2 class="error-404__title"><?php the_field("error_title", 'option') ?></h2>
 					<div class="error-404__error-container">
