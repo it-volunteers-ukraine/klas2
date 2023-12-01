@@ -24,9 +24,12 @@ add_action('wp_enqueue_scripts', 'wp_it_volunteers_scripts');
 function wp_it_volunteers_scripts()
 {
   wp_enqueue_style('main', get_stylesheet_uri());
-  wp_enqueue_style('wp-it-volunteers-style', get_template_directory_uri() . '/assets/styles/main.css', array('main'));
+  wp_enqueue_style('swiper-style', "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css", array());
+  wp_enqueue_style('wp-it-volunteers-style', get_template_directory_uri() . '/assets/styles/main.css', array('swiper-style', 'main'));
   wp_enqueue_style('normalize', 'https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css');
-  wp_enqueue_script('wp-it-volunteers-scripts', get_template_directory_uri() . '/assets/scripts/main.js', array(), false, true);
+
+  wp_enqueue_script('swiper-scripts', 'https://cdn.jsdelivr.net/npm/swiper@10.0.0/swiper-bundle.min.js', array(), false, true);
+  wp_enqueue_script('wp-it-volunteers-scripts', get_template_directory_uri() . '/assets/scripts/main.js', array('swiper-scripts'), false, true);
 
   if (is_page_template('templates/home.php')) {
     wp_enqueue_style('home-style', get_template_directory_uri() . '/assets/styles/template-styles/home.css', array('main'));
@@ -47,15 +50,20 @@ function wp_it_volunteers_scripts()
     wp_enqueue_script('contacts-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/contacts.js', array(), false, true);
   }
 
+  if (is_page_template('templates/projects.php')) {
+    wp_enqueue_style('projects-style', get_template_directory_uri() . '/assets/styles/template-styles/projects.css', array('main'));
+    wp_enqueue_script('projects-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/projects.js', array(), false, true);
+  }
+
   if (is_singular() && locate_template('template-parts/form.php')) {
     wp_enqueue_style('form-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/form.css', array('main'));
+    wp_enqueue_script('form-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/form.js', array(), false, true);
   }
+
   if (is_singular() && locate_template('template-parts/join-us.php')) {
     wp_enqueue_style('join-us-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/join-us.css', array('main'));
   }
-  if (is_front_page()) {
-    wp_enqueue_style('join-us-style', get_template_directory_uri() . '/assets/styles/template-styles/front-page.css', array('main'));
-  }
+
 }
 /** add fonts */
 function add_google_fonts()
@@ -106,4 +114,45 @@ if (function_exists('acf_add_options_page')) {
     'menu_title'    => 'Footer',
     'parent_slug'   => 'theme-general-settings',
   ));
+}
+
+//add CPT to archive
+function my_cptui_add_post_types_to_archives( $query ) {
+
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;    
+	}
+
+	if ( is_category() && empty( $query->query_vars['suppress_filters'] ) ) {
+
+		$cptui_post_types = array( 'materials' );
+
+		$query->set(
+	  		'post_type',
+			array_merge(
+				array( 'post' ),
+				$cptui_post_types
+			)
+		);
+	}
+}
+add_filter( 'pre_get_posts', 'my_cptui_add_post_types_to_archives' );
+
+// change request to WP for pagination on the taxonomy page
+function codernote_request($query_string ) {
+  if ( isset( $query_string['page'] ) ) {
+    if ( ''!=$query_string['page'] ) {
+      if ( isset( $query_string['name'] ) ) {
+        unset( $query_string['name'] ); }
+      }
+    }
+    return $query_string;
+}
+add_filter('request', 'codernote_request');
+
+add_action('pre_get_posts', 'codernote_pre_get_posts');
+function codernote_pre_get_posts( $query ) {
+  if ( $query->is_main_query() && !$query->is_feed() && !is_admin()  && is_archive()) {
+    $query->set( 'paged', str_replace( '/', '', get_query_var( 'page' ) ) );
+  }
 }

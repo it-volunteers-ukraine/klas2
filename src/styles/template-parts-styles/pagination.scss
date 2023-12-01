@@ -1,0 +1,29 @@
+@import '../variables.scss';
+
+.lib-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 72px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.lib-pagination .page-numbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px 7px;
+
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.lib-pagination .page-numbers.current {
+  border-radius: 4px;
+  background: $grey15;
+}
+
+.lib-pagination .next.page-numbers, .prev.page-numbers {
+  font-size: 12px;
+}
