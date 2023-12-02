@@ -50,9 +50,9 @@ get_header();
             <div class="post__text">
                 <h2 class="post__title"><?php the_title(); ?></h2>
                 <div class="post__img-mobile"><?php if ( has_post_thumbnail()) { ?>
-                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+                   <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
                    <?php the_post_thumbnail(); ?>
-                </a>
+                   </a>
                 <?php } ?>
             </div>
                 <p class="post__content"> 
@@ -61,7 +61,7 @@ get_header();
 
                         if (wp_is_mobile()) {
                             echo wp_trim_words($excerpt, 49); // Максимальная длина отрывка для мобильных устройств
-                        } elseif (get_theme_mod('tablet_breakpoint', 1024) >= 600 && get_theme_mod('tablet_breakpoint', 1024) <= 1024) {
+                        } elseif (get_theme_mod('tablet_breakpoint', 992) >= 576 && get_theme_mod('tablet_breakpoint', 992) <= 992) {
                             echo wp_trim_words($excerpt, 27); // Максимальная длина отрывка для планшетов
                         } else {
                             echo wp_trim_words($excerpt, 55); // Максимальная длина отрывка для компьютеров
@@ -70,7 +70,7 @@ get_header();
                 </p>
                 <div class="post__details">
                     <p class="post__time"><?php the_time('d.m.y'); ?></p>
-                    <a href="<?php the_permalink(); ?>" class="button read-more_button">Читати більше<svg class="arrow-icon">
+                    <a href="<?php the_permalink(); ?>" class="button read-more_button read-more-button-mobile">Читати більше<svg class="arrow-icon">
                         <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#arrow"></use>
                         </svg>
                     </a>

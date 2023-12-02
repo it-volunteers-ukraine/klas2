@@ -1,5 +1,7 @@
 @import "../variables.scss";
-
+section{
+    font-variant-numeric: lining-nums proportional-nums;
+}
 .main__title{
     font-size: 40px;
     font-style: normal;
@@ -7,9 +9,16 @@
     line-height: 48px; 
     margin-top: 58px;
     @media screen and (max-width: $desktop) {
-       margin-top: 33px;;
+        margin-top: 46px;
+        font-size: 30px;
+        line-height: 34px
     }
-}
+    @media screen and (max-width: $tablet) {
+        text-align: center;
+        margin-top: 40px;
+        
+     }
+    }
 
 .main__banner{
     margin-top: 36px;
@@ -24,6 +33,7 @@
     @media screen and (max-width: $tablet) {
         height: 115px;
         margin-top: 24px;
+        margin-bottom: 79px;
     }
 }
 
@@ -46,6 +56,8 @@
     @media screen and (max-width: $desktop) {
         font-size: 16px;
         line-height: 22.5px;
+        bottom: 14px;
+        padding-left: 20px;
     }
 
     @media screen and (max-width: $tablet) {
@@ -69,13 +81,17 @@
     position: absolute;
     bottom: 29px;
     right: 11px;
+    @media screen and (max-width: $desktop) {
+        bottom: 0px;
+        right: 0px;
+    }
 
     @media screen and (max-width: $tablet) {
         color: $main-black;
         bottom: 9%;
         right: 1%;
         position: static;
-      margin: 0 auto;
+        margin: 0 auto;
      }
 }
 
@@ -116,6 +132,7 @@
     }
     @media screen and (max-width: $tablet) {
         flex-direction: column;
+        margin-bottom: 32px;
  }
 }
 
@@ -144,7 +161,15 @@
 
     @media screen and (max-width: $tablet) {
         display: block;
+        margin-top: 24px;
+        height: 206px;
  }
+}
+
+.post__img-mobile img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .post__title{
@@ -157,6 +182,9 @@
        font-size: 18px;
        line-height: 24px;
        
+    }
+    @media screen and (max-width: $tablet) {
+        text-align: center;
     }
 }
 
@@ -171,6 +199,10 @@
         font-size: 16px;
         margin-top: 16px;
      }
+     @media screen and (max-width: 620px) {
+        line-height: 21px;
+     }
+     
     
 }
 
@@ -187,7 +219,10 @@
     width: 100%;
 
     @media screen and (max-width: $tablet) {
-        position: static;;
+        position: static;
+        flex-direction: column;
+        align-items: stretch;
+
  }
 }
 
@@ -197,6 +232,18 @@
     font-weight: 500;
     line-height: 20px;
     padding: 14px 0;
+
+    @media screen and (max-width: $tablet) {
+        line-height: 24px;
+ }
+}
+
+.read-more-button-mobile{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 0 auto;
 }
 
 
