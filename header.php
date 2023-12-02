@@ -43,8 +43,7 @@
                         </li>
                     </ul>
                 </div>
-                <a class="secondary_button button header__btn" href="
-                                <?php the_field('link_helpform', 'option'); ?>">
+                <a class="secondary_button button header__btn" href="https://klas.it-volunteers.com/%d0%bf%d1%96%d0%b4%d1%82%d1%80%d0%b8%d0%bc%d0%b0%d1%82%d0%b8-%d0%bd%d0%b0%d1%81/">
                     <?php the_field('need-help_button', 'option'); ?>Підтримати нас</a>
                 <div class="burger">
                     <span></span>
