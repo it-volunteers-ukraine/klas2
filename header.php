@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
-    <title>It-volunteers</title>
+    <title></title>
 </head>
 
 <body <?php if(is_front_page()) body_class('front-page')?>>
@@ -23,7 +23,7 @@
                 <div class="menu__container" id="">
                     <ul class="menu__body">
                         <li>
-                            <a href="">Головна</a>
+                            <a href="<?php echo get_permalink(8); ?>">Головна</a>
                         </li>
                         <li>
                             <nav class="header__nav">
@@ -39,11 +39,11 @@
                             </nav>
                         </li>
                         <li>
-                            <a href="">Контакти</a>
+                            <a href="<?php echo get_permalink(18); ?>">Контакти</a>
                         </li>
                     </ul>
                 </div>
-                <a class="secondary_button button header__btn" href="https://klas.it-volunteers.com/%d0%bf%d1%96%d0%b4%d1%82%d1%80%d0%b8%d0%bc%d0%b0%d1%82%d0%b8-%d0%bd%d0%b0%d1%81/">
+                <a class="secondary_button button header__btn" href="<?php echo get_permalink(24); ?>" >
                     <?php the_field('need-help_button', 'option'); ?>Підтримати нас</a>
                 <div class="burger">
                     <span></span>
