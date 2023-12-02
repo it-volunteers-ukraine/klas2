@@ -1,0 +1,32 @@
+.contacts__list {
+    width: fit-content;
+    text-align: start;
+    
+
+    @media(max-width:768px) {
+        margin: 0 auto;
+    
+
+    }
+    &-item{
+        &:not(:last-child){
+            margin-bottom: 20px;
+        }
+    }
+
+	&-link {
+		display: flex;
+		align-items: center;
+        gap: 22px;
+   
+        &>svg,
+        &>img{
+            flex-shrink: 0;
+            width: 40px;
+            @media(max-width:$tablet) {
+                width: 24px;
+    
+            }
+        }
+	}
+}

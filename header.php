@@ -9,7 +9,7 @@
     <title>It-volunteers</title>
 </head>
 
-<body>
+<body <?php if(is_front_page()) body_class('front-page')?>>
     <header class="header">
         <div class="container">
             <div class="header__content">

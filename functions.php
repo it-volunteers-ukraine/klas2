@@ -34,6 +34,10 @@ function wp_it_volunteers_scripts()
   if (is_page_template('templates/home.php')) {
     wp_enqueue_style('home-style', get_template_directory_uri() . '/assets/styles/template-styles/home.css', array('main'));
     wp_enqueue_script('home-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/home.js', array(), false, true);
+    wp_enqueue_script('home-slick', get_template_directory_uri() . '/assets/scripts/slick.min.js', array(), false, true);
+
+    wp_enqueue_script('home-jquery', 'https://code.jquery.com/jquery-2.2.0.min.js', array(), false, false);
+    wp_enqueue_style('join-us-style', get_template_directory_uri() . '/assets/styles/template-styles/front-page.css', array('main'));
   }
 
   if (is_page_template('templates/about.php')) {
@@ -49,6 +53,10 @@ function wp_it_volunteers_scripts()
   if (is_page_template('templates/projects.php')) {
     wp_enqueue_style('projects-style', get_template_directory_uri() . '/assets/styles/template-styles/projects.css', array('main'));
     wp_enqueue_script('projects-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/projects.js', array(), false, true);
+  }
+
+  if (is_page_template('templates/support.php')) {
+    wp_enqueue_style('support-style', get_template_directory_uri() . '/assets/styles/template-styles/support.css', array('main'));
   }
 
   if (is_singular() && locate_template('template-parts/form.php')) {
@@ -81,6 +89,11 @@ function wp_it_volunteers_menus()
 }
 
 add_action('init', 'wp_it_volunteers_menus');
+
+
+
+// добавим роли текущего пользователя в классы body
+
 
 
 /** ACF add options page */
