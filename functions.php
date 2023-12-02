@@ -116,7 +116,7 @@ if (function_exists('acf_add_options_page')) {
 }
 
   add_filter( 'excerpt_length', function(){
-    return 20;
+    return 55;
     } );
 
   add_filter( 'excerpt_more', function( $more ) {
