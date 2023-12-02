@@ -5,6 +5,8 @@
   margin-bottom: 68px;
   @media screen and (max-width: $desktop) {
       margin-bottom: 32px;
+      width: 100%;
+      justify-content: space-between;
     }
   @media screen and (max-width: $tablet) {
     display: block;
@@ -22,16 +24,13 @@
   @media screen and (max-width: $desktop) {
       line-height: 1.5;
     }
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 700px) {
     padding: 14px;
   }
   
   &:not(:last-child) {
     margin-right: 42px;
     @media screen and (max-width: $desktop) {
-      margin-right: 8px;
-    }
-    @media screen and (max-width: $tablet) {
       margin-right: 0;
     }
   }
