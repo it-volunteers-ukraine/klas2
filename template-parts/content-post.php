@@ -1,7 +1,7 @@
 <section>     
      <div class="container">
                   <div class="banner">
-                        <img src="" alt="">
+                        <img alt="main banner" src="<?php the_field('main-banner'); ?>">
                         <h1 class="post__title"><?php the_title(); ?></h1>
                         <p class="post__time"><?php the_time('d.m.y'); ?></p>
                     </div>
