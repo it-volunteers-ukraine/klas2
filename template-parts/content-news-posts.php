@@ -4,7 +4,7 @@ Template Name: posts
 */
 get_header();
 ?>
-<section>
+<section class="news__section">
    <div class="container">
         <h1 class="main__title">Новини</h1>
         <!-- banner  -->
