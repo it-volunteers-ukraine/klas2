@@ -12,6 +12,7 @@ if (!function_exists('wp_it_volunteers_setup')) {
       )
     );
     add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
   }
   add_action('after_setup_theme', 'wp_it_volunteers_setup');
 }
@@ -114,10 +115,6 @@ if (function_exists('acf_add_options_page')) {
     'parent_slug'   => 'theme-general-settings',
   ));
 }
-
-  add_filter( 'excerpt_length', function(){
-    return 55;
-    } );
 
   add_filter( 'excerpt_more', function( $more ) {
     return '...';

@@ -55,9 +55,9 @@ get_header();
                    </a>
                 <?php } ?>
             </div>
-                <p class="post__content-desktop"><?php echo get_the_excerpt(55); ?></p>
-                <p class="post__content-tablet"><?php echo get_the_excerpt(27); ?></p>
-                <p class="post__content-mobile"><?php echo get_the_excerpt(60); ?></p>
+                <div class="post__content-desktop"><?php echo wp_trim_words(get_the_excerpt(), 50); ?></div>
+                <div class="post__content-tablet"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></div>
+                <div class="post__content-mobile"><?php echo wp_trim_words(get_the_excerpt(), 60); ?></div>
                 <div class="post__details">
                     <p class="post__time"><?php the_time('d.m.y'); ?></p>
                     <a href="<?php the_permalink(); ?>" class="button read-more_button read-more_button-mobile">Читати більше<svg class="arrow-icon">
@@ -84,7 +84,7 @@ get_header();
                 'prev_text' => ('&lt;'),
                 'next_text' => ('&gt;'),
             );
-            echo '<div class="lib-pagination">';
+            echo '<div id="pagination" class="lib-pagination">';
             echo paginate_links($pagination_args);
             echo '</div>';
 

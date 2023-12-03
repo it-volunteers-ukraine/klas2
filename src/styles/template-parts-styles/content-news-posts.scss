@@ -172,6 +172,10 @@ section{
     height: 100%;
 }
 
+.post__text{
+    position: relative;
+}
+
 .post__title{
     font-size: 24px;
     font-style: normal;
@@ -188,7 +192,7 @@ section{
     }
 }
 
-.post__content-desktop{
+.post__content-desktop {
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -204,7 +208,7 @@ section{
         
      }     
 }
-.post__content-tablet{
+.post__content-tablet {
     display: none;
     @media screen and (max-width: $desktop) {
         display: block;
@@ -219,7 +223,7 @@ section{
     }     
 }
 
-.post__content-mobile{
+.post__content-mobile {
     display: none;
 
     @media screen and (max-width: $desktop) {
@@ -228,25 +232,22 @@ section{
        
      @media screen and (max-width: $tablet) {
         display: block;
+        margin-top: 16px;
     }     
-}
-
-.post__text{
-    position: relative;
 }
 
 .post__details{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     position: absolute;
     bottom: 0;
-    width: 100%;
 
     @media screen and (max-width: $tablet) {
-        position: static;
         flex-direction: column;
         align-items: stretch;
+        position: static;
 
  }
 }
@@ -264,12 +265,21 @@ section{
 }
 
 .read-more_button-mobile{
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: $desktop) {
         font-size: 16px;
+    }
+
+    @media screen and (max-width: $tablet) {
         font-style: normal;
         font-weight: 500;
         line-height: 20px;
         margin: 0 auto;
+    }
+}
+
+.lib-pagination{
+    @media screen and (max-width: $tablet) {
+        margin-top: 0;
     }
 }
 
