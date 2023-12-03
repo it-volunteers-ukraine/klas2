@@ -1,0 +1,95 @@
+.error-404 {
+	padding: 112px 0;
+	@media screen and (max-width: $desktop) {
+		padding: 72px 0;
+	}
+	@media screen and (max-width: $tablet) {
+		padding: 40px 0;
+	}
+	&__image {
+		width: 100%;
+		max-width: 647px;
+		margin: 0 auto;
+		margin-bottom: 112px;
+		@media screen and (max-width: $desktop) {
+			max-width: 544px;
+			margin-bottom: 72px;
+		}
+		@media screen and (max-width: $tablet) {
+			max-width: 283px;
+			margin-bottom: 40px;
+		}
+	}
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 36px;
+		width: 100%;
+		max-width: 452px;
+		margin: 0 auto;
+		@media screen and (max-width: $desktop) {
+			max-width: 402px;
+			gap: 24px;
+		}
+		@media screen and (max-width: $tablet) {
+			max-width: 100%;
+			gap: 16px;
+		}
+	}
+	&__title {
+		font-size: 40px;
+		font-weight: 700;
+		line-height: 48px;
+		@media screen and (max-width: $desktop) {
+			font-size: 30px;
+			line-height: 34px;
+		}
+		@media screen and (max-width: $tablet) {
+		}
+	}
+	&__error-container {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		text-align: center;
+	}
+	&__text {
+		font-size: 18px;
+		line-height: 24px;
+		@media screen and (max-width: $desktop) {
+			font-size: 16px;
+			line-height: 24px;
+		}
+		@media screen and (max-width: $tablet) {
+		}
+	}
+	&__button {
+		width: 100%;
+		max-width: 148px;
+		display: inline-block;
+		background: $dark-violet;
+		border: none;
+
+		color: $main-white;
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 24px;
+		text-align: center;
+
+		&:hover,
+		&:focus {
+			font-weight: 600;
+
+			background-color: transparent;
+			border: 1.5px solid $dark-violet;
+			color: $dark-violet;
+		}
+		@media screen and (max-width: $desktop) {
+			max-width: 344px;
+		}
+		@media screen and (max-width: $tablet) {
+			width: 100%;
+		}
+	}
+}

@@ -9,7 +9,7 @@ get_header();
 <section class="library-section">
   <?php $postID = $post->ID; ?>
     <div class="container">
-      <h1 class="library__title"><?php the_field('library_title', $postID) ?></h1>
+      <h1 class="library__title"><?php the_title(); ?></h1>
 
       <?php get_template_part( 'template-parts/material-categories'); ?>
 
@@ -25,5 +25,6 @@ get_header();
 
     </div>
 </section>
+<?php  get_template_part( 'template-parts/join-us' ); ?>
 </main>
 <?php get_footer(); ?>

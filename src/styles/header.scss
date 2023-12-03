@@ -115,8 +115,6 @@
 	flex-direction: row;
 	align-items: center;
 	
-	
-
 	@media screen and (max-width: $desktop) {
 		flex-direction: column;
 		background-color: white;
@@ -125,7 +123,7 @@
 	}
 }
 
-.header_list li{
+.header_list .menu-item{
 	&:hover,
 	&:focus {
 		color: $dark-violet;
@@ -147,7 +145,7 @@
 	}
 }
 
-.header_list li:last-child{
+.header_list .menu-item:last-child{
 	display: none;
 
 	@media screen and (max-width: $desktop) {
@@ -166,18 +164,18 @@
 	}
 }
 
-.header_list li:first-child{
+.header_list .menu-item:first-child{
 	
 	@media screen and (max-width: $desktop) {
 		border-top: 1px solid $grey15;
 	}
 }
 
-.header_list li:nth-child(4){
+.header_list .menu-item:nth-child(4){
 	margin-right: 0;
 }
 
-.header_list li a{
+.header_list .menu-item a{
 	
 	@media screen and (max-width: $desktop) {
 		width: 100%;
