@@ -6,7 +6,8 @@ get_header();
 ?>
 
 
-
+<?php var_dump(is_page_template('templates/home.php') ) ?>
+<?php  echo get_template_directory_uri()?>
 
 <main class="front-page__main">
 
@@ -39,8 +40,8 @@ get_header();
 
                     </div>
 
-                    <?php }
-                    ?>
+                    <?php }  ?>
+                  
 
                 </div>
             </div>
@@ -429,5 +430,5 @@ get_header();
     </section>
 
 </main>
-<?php get_template_part('template-parts/form'); ?>
+
 <?php get_footer(); ?>
