@@ -218,7 +218,7 @@
 	height: 2px;
 	width: 100%;
 	background-color: black;
-	transition: all 0.3s ease 0s;
+	transition: $transition-function;
 }
 
 .burger::before{

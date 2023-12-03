@@ -12,6 +12,7 @@ if (!function_exists('wp_it_volunteers_setup')) {
       )
     );
     add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
   }
   add_action('after_setup_theme', 'wp_it_volunteers_setup');
 }
@@ -68,6 +69,14 @@ function wp_it_volunteers_scripts()
     wp_enqueue_style('join-us-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/join-us.css', array('main'));
   }
 
+  if (is_singular() && locate_template('template-parts/content-post.php')) {
+    wp_enqueue_style('content-post-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/content-post.css', array('main'));
+  }
+
+  if (is_singular() && locate_template('template-parts/content-news-posts.php')) {
+    wp_enqueue_style('content-news-posts-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/content-news-posts.css', array('main'));
+  }
+
 }
 /** add fonts */
 function add_google_fonts()
@@ -119,6 +128,10 @@ if (function_exists('acf_add_options_page')) {
     'parent_slug'   => 'theme-general-settings',
   ));
 }
+
+  add_filter( 'excerpt_more', function( $more ) {
+    return '...';
+  } );
 
 //add CPT to archive
 function my_cptui_add_post_types_to_archives( $query ) {
