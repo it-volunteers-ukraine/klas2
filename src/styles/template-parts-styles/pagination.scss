@@ -1,28 +1,36 @@
-@import '../variables.scss';
+@import "../variables.scss";
 
 .pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 72px;
-  font-weight: 500;
+	display: flex;
+	justify-content: center;
+	margin-top: 72px;
+	font-weight: 500;
+
+	@media screen and (max-width: $desktop) {
+		margin-top: 32px;
+	}
+
+	@media screen and (max-width: $tablet) {
+		margin-top: 24px;
+	}
 }
 
 .pagination .page-numbers {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 4px;
 
-  &:not(:last-child) {
-    margin-right: 8px;
-  }
-  &:hover {
-    border: 1px solid $grey15;
-  }
+	&:not(:last-child) {
+		margin-right: 8px;
+	}
+	&:hover {
+		border: 1px solid $grey15;
+	}
 }
 
 .pagination .page-numbers.current {
-  background: $grey15;
+	background: $grey15;
 }
