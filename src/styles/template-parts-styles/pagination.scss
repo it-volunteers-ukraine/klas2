@@ -1,18 +1,16 @@
 @import "../variables.scss";
 
 .pagination {
-	display: flex;
-	justify-content: center;
-	margin-top: 72px;
-	font-weight: 500;
-
-	@media screen and (max-width: $desktop) {
-		margin-top: 32px;
-	}
-
-	@media screen and (max-width: $tablet) {
-		margin-top: 24px;
-	}
+  display: flex;
+  justify-content: center;
+  margin-top: 72px;
+  font-weight: 500;
+  @media screen and (max-width: $desktop) {
+    margin-top: 32px;
+  }
+  @media screen and (max-width: $tablet) {
+    margin-top: 24px;
+  }
 }
 
 .pagination .page-numbers {
