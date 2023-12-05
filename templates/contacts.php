@@ -10,30 +10,41 @@ get_header();
   <div class="container">
     <h2 class="contacts__title"><?php the_title(); ?></h2>
     <div class="contacts__wrapper">
-    <?php if(have_rows('contacts')): ?>
       <ul class="contacts__list">
-          <?php while(have_rows('contacts')) : the_row(); 
-              $icon = get_sub_field('contacts_icon');
-              $text = get_sub_field('contacts_text');?>
-              <li class="contacts__list__item">
-                  <img class="contacts__list__item__icon" src="<?php echo $icon['url'] ?>" alt="<?php echo $icon['alt']; ?>"/>
-                  <p class="contacts__list__item__text"><?php echo $text ?></p>
+              <li>
+                <a class="contacts__list__item" href="mailto:<?php the_field('email', 'options'); ?>" aria-label="email">
+                  <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-Gmail"></use></svg>
+                      <p class="contacts__list__item__text"><?php the_field('email', 'options'); ?></p>
+                </a>
               </li>
-          <?php endwhile; ?>
+              <li>
+                <a class="contacts__list__item" href="tel:<?php echo str_replace(' ', '', get_field('first-phone', 'options')); ?>" aria-label="телефон">
+                  <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-Phone"></use></svg>
+                      <p class="contacts__list__item__text"><?php the_field('first-phone', 'options'); ?></p>
+                </a>
+              </li>
+              <li>
+                <a class="contacts__list__item" href="tel:<?php echo str_replace(' ', '', get_field('second-phone', 'options')); ?>" aria-label="телефон">
+                  <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-WhatsApp"></use></svg>
+                      <p class="contacts__list__item__text"><?php the_field('second-phone', 'options'); ?></p>
+              </a>
+              </li>
       </ul>
-    <?php endif; ?>
-      <?php if(have_rows('socials')): ?>
+
             <ul class="contacts__list">
-              <?php while(have_rows('socials')) : the_row(); 
-                            $icon = get_sub_field('socials_icon');
-                            $text = get_sub_field('socials_text');?>
-                  <li class="contacts__list__item">
-                  <img class="contacts__list__item__icon" src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>"/>
-                    <p class="contacts__list__item__text"><?php echo $text ?></p>
+                  <li>
+                    <a class="contacts__list__item" href="<?php echo esc_attr(get_field('facebook', 'options')); ?>" target="_blank" aria-label="facebook">
+                      <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-Facebook"></use></svg>
+                        <p class="contacts__list__item__text"><?php the_field('contacts_facebook') ?></p>           
+                    </a>
+                  </li>
+                <li>
+                  <a class="contacts__list__item" href="<?php echo esc_attr(get_field('youtube', 'options')); ?>" target="_blank" aria-label="youtube">
+                    <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-YouTube"></use></svg>
+                        <p class="contacts__list__item__text"><?php the_field('contacts_youtube') ?></p>
+                  </a>
                 </li>
-              <?php endwhile; ?>
           </ul>
-      <?php endif; ?>
     </div>
   </div>
   </section>
