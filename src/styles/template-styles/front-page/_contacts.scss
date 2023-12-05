@@ -1,0 +1,47 @@
+.contacts {
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+
+        @media(max-width:768px) {
+            flex-direction: column;
+
+        }
+    }
+
+    &__sub {
+        font-size: 1.33em;
+        font-weight: 700;
+
+        @media(max-width:768px) {
+            font-size: 1em;
+
+        }
+    }
+
+    &__list {
+
+        margin-top: 36px;
+    }
+
+    &__inner-list {
+        width: 40%;
+
+        @media(max-width:768px) {
+            width: 100%;
+            text-align: center;
+
+        }
+    }
+
+    &__inner-form {
+        width: 48%;
+
+        @media(max-width:768px) {
+            order: -1;
+            width: 100%;
+
+        }
+    }
+}

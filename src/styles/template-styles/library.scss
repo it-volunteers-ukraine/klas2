@@ -1,16 +1,14 @@
 @import "../variables.scss";
 
 .library-section {
-  margin-top: 56px;
-  margin-bottom: 112px;
+  padding: 56px 0;
 
   @media screen and (max-width: $desktop) {
-    margin-top: 40px;
-    margin-bottom: 72px;
+    padding: 40px 0 36px;
   }
 
   @media screen and (max-width: $tablet) {
-    margin-bottom: 80px;
+    padding-bottom: 40px;
   }
 }
 

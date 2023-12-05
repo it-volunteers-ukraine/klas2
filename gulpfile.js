@@ -77,4 +77,12 @@ exports.default = parallel(
 	scripts,
 	scriptsTemplates,
 	watching,
+);
+exports.dev = parallel(
+	styles,
+	stylesTemplates,
+	stylesTemplatesParts,
 )
+
+
+
