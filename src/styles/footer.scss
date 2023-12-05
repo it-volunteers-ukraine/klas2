@@ -225,6 +225,7 @@ footer .menu-item {
 
 .fcontac__link {
 	margin-bottom: 20px;
+	margin-left: 5px;
 	display: flex;
 	align-items: center;
 	gap: 22px;
@@ -239,10 +240,8 @@ footer .menu-item {
 	}
 }
 
-.icon {
-	background-color: $grey15;
-	border-radius: 50%;
-	fill: red;
+.footer-icon {
+	background-color: transparent;
 
 	@media screen and (max-width: $desktop) {
 		width: 24px;
@@ -273,9 +272,9 @@ footer .menu-item {
 }
 
 .block__wraper {
-	@media screen and (max-width: 330px) {
+	@media screen and (max-width: 341px) {
 		display: block;
-		margin-left: 38px;
+		margin-left: 33px;
 	}
 }
 
