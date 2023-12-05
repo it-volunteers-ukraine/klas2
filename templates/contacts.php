@@ -11,28 +11,38 @@ get_header();
     <h2 class="contacts__title"><?php the_title(); ?></h2>
     <div class="contacts__wrapper">
       <ul class="contacts__list">
-              <li class="contacts__list__item">
-              <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-Gmail"></use></svg>
-                  <p class="contacts__list__item__text"><?php the_field('email') ?></p>
+              <li>
+                <a class="contacts__list__item" href="mailto:<?php the_field('email', 'options'); ?>" aria-label="email">
+                  <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-Gmail"></use></svg>
+                      <p class="contacts__list__item__text"><?php the_field('email', 'options'); ?></p>
+                </a>
               </li>
-              <li class="contacts__list__item">
-              <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-Phone"></use></svg>
-                  <p class="contacts__list__item__text"><?php the_field('first-phone') ?></p>
+              <li>
+                <a class="contacts__list__item" href="tel:<?php echo str_replace(' ', '', get_field('first-phone', 'options')); ?>" aria-label="телефон">
+                  <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-Phone"></use></svg>
+                      <p class="contacts__list__item__text"><?php the_field('first-phone', 'options'); ?></p>
+                </a>
               </li>
-              <li class="contacts__list__item">
-              <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-WhatsApp"></use></svg>
-                  <p class="contacts__list__item__text"><?php the_field('second-phone') ?></p>
+              <li>
+                <a class="contacts__list__item" href="tel:<?php echo str_replace(' ', '', get_field('second-phone', 'options')); ?>" aria-label="телефон">
+                  <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-WhatsApp"></use></svg>
+                      <p class="contacts__list__item__text"><?php the_field('second-phone', 'options'); ?></p>
+              </a>
               </li>
       </ul>
 
             <ul class="contacts__list">
-                  <li class="contacts__list__item">
-                  <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-Facebook"></use></svg>
-                    <p class="contacts__list__item__text"><?php the_field('facebook') ?></p>
+                  <li>
+                    <a class="contacts__list__item" href="<?php echo esc_attr(get_field('facebook', 'options')); ?>" target="_blank" aria-label="facebook">
+                      <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-Facebook"></use></svg>
+                        <p class="contacts__list__item__text"><?php the_field('contacts_facebook') ?></p>           
+                    </a>
                   </li>
-                <li class="contacts__list__item">
-                <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-YouTube"></use></svg>
-                    <p class="contacts__list__item__text"><?php the_field('youtube') ?></p>
+                <li>
+                  <a class="contacts__list__item" href="<?php echo esc_attr(get_field('youtube', 'options')); ?>" target="_blank" aria-label="youtube">
+                    <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-YouTube"></use></svg>
+                        <p class="contacts__list__item__text"><?php the_field('contacts_youtube') ?></p>
+                  </a>
                 </li>
           </ul>
     </div>
