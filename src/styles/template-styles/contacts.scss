@@ -37,6 +37,7 @@
 	&__list {
 		display: flex;
 		gap: 42.5px;
+		align-items: baseline;
 		@media screen and (max-width: $desktop) {
 			flex-direction: column;
 			gap: 16px;
