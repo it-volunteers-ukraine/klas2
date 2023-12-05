@@ -12,7 +12,7 @@ get_header();
     <div class="contacts__wrapper">
       <ul class="contacts__list">
               <li class="contacts__list__item">
-              <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#gmail"></use></svg>
+              <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-Gmail"></use></svg>
                   <p class="contacts__list__item__text"><?php the_field('email') ?></p>
               </li>
               <li class="contacts__list__item">

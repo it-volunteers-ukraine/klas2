@@ -25,7 +25,7 @@ get_header();
 						<p class="error-404__text"><?php the_field("error_first_text", 'option') ?></p>
 						<p class="error-404__text"><?php the_field("error_second_text", 'option') ?></p>
 					</div>
-					<a href="<?php the_field("error_link", 'option') ?>" class="error-404__button button"><?php the_field("error_button_text", 'option') ?></a>
+					<a href="<?php echo get_home_url(); ?>" class="error-404__button button"><?php the_field("error_button_text", 'option') ?></a>
 			</div>
 		</div>
 	</section>
