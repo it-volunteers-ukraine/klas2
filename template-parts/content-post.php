@@ -1,13 +1,13 @@
 <section>     
      <div class="container">
-                  <div class="banner">
-                        <img alt="main banner" src="<?php the_field('main-banner'); ?>">
-                        <h1 class="post__title"><?php the_title(); ?></h1>
-                        <p class="post__time"><?php the_time('d.m.y'); ?></p>
-                    </div>
-                    <div class="post__content">
-                        <p class="post__text"><?php the_content(); ?></p>
-                     <?php if(have_rows('gallery')):?>
+            <div class="single__banner">
+                <img alt="main banner" src="<?php the_field('main-banner'); ?>">
+                <h1 class="single__post-title"><?php the_title(); ?></h1>
+                <p class="single__post-time"><?php the_time('d.m.y'); ?></p>
+            </div>
+            <div class="post__content">
+                <p class="post__text"><?php the_content(); ?></p>
+                    <?php if(have_rows('gallery')):?>
                         <div class="single-post__slider swiper-container">
 
                            <ul class="single-post__wrap swiper-wrapper" id="lightgallery">
@@ -22,7 +22,7 @@
                             </ul>
                             <?php endif; ?>
                         </div>
-                    </div>
+            </div>
      </div>
                                   
                     
