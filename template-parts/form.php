@@ -1,4 +1,4 @@
-<section class="form">
+<section>
     <h2 class="form__title"><?php the_field('form_title', 'option'); ?></h2>
     <h3 class="form__subtitle"><?php the_field('form_subtitle', 'option'); ?></h3>
     <?php

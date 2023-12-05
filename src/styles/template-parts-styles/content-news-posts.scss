@@ -1,7 +1,15 @@
 @import "../variables.scss";
-section{
-    font-variant-numeric: lining-nums proportional-nums;
+
+.news__section{
+    margin-bottom: 56px;
+    @media screen and (max-width: $desktop) {
+        margin-bottom: 36px;
+    }
+    @media screen and (max-width: $tablet) {
+        margin-bottom: 40px;
+    }
 }
+
 .main__title{
     font-size: 40px;
     font-style: normal;
@@ -92,7 +100,7 @@ section{
         right: 1%;
         position: static;
         margin: 0 auto;
-     }
+    }
 }
 
 .banner__arrow-icon{
@@ -116,8 +124,7 @@ section{
 	.banner__arrow-icon {
 		transform: rotate(-45deg);
         fill: $dark-violet;
-  
-  }
+    }
 }
    
 .post__box{
