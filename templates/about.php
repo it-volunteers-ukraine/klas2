@@ -14,7 +14,9 @@ get_header();
         <img class="about__fon-left" src='<?php echo get_template_directory_uri()?>/assets/images/fon_left.png' />
         <?php $firstImage = get_field("first_image"); ?>
         <?php if ($firstImage): ?>
-          <img class="about__image" src="<?php echo esc_url($firstImage['url']); ?>" alt="<?php echo esc_attr($firstImage['alt']); ?>" />
+          <div class="about__wrapper">
+            <img class="about__image" src="<?php echo esc_url($firstImage['url']); ?>" alt="<?php echo esc_attr($firstImage['alt']); ?>" />
+          </div>
           <?php endif; ?>
           <?php $firstText = get_field("first_text"); ?>
           <?php if ($firstText): ?>
@@ -29,7 +31,9 @@ get_header();
             <img class="about__fon-right" src='<?php echo get_template_directory_uri()?>/assets/images/fon_right.png' />
       <?php $secondImage = get_field("second_image"); ?>
       <?php if ($secondImage): ?>
-        <img class="about__image" src="<?php echo esc_url($secondImage['url']); ?>" alt="<?php echo esc_attr($secondImage['alt']); ?>" />
+        <div class="about__wrapper">
+          <img class="about__image" src="<?php echo esc_url($secondImage['url']); ?>" alt="<?php echo esc_attr($secondImage['alt']); ?>" />
+        </div>
       <?php endif; ?>
       <?php $fourthText = get_field("fourth_text"); ?>
       <?php if ($fourthText): ?>

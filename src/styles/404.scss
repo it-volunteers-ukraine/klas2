@@ -69,18 +69,15 @@
 		max-width: 148px;
 		display: inline-block;
 		background: $dark-violet;
-		border: none;
 
 		color: $main-white;
 		font-size: 18px;
-		font-weight: 400;
+		font-weight: 600;
 		line-height: 24px;
 		text-align: center;
 
 		&:hover,
 		&:focus {
-			font-weight: 600;
-
 			background-color: transparent;
 			border: 1.5px solid $dark-violet;
 			color: $dark-violet;
