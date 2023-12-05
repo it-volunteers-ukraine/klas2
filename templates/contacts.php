@@ -16,22 +16,22 @@ get_header();
                   <p class="contacts__list__item__text"><?php the_field('email') ?></p>
               </li>
               <li class="contacts__list__item">
-                  <img class="contacts__list__item__icon" src="<?php echo $icon['url'] ?>" alt="<?php echo $icon['alt']; ?>"/>
+              <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-Phone"></use></svg>
                   <p class="contacts__list__item__text"><?php the_field('first-phone') ?></p>
               </li>
               <li class="contacts__list__item">
-                  <img class="contacts__list__item__icon" src="<?php echo $icon['url'] ?>" alt="<?php echo $icon['alt']; ?>"/>
+              <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-WhatsApp"></use></svg>
                   <p class="contacts__list__item__text"><?php the_field('second-phone') ?></p>
               </li>
       </ul>
 
             <ul class="contacts__list">
                   <li class="contacts__list__item">
-                    <img class="contacts__list__item__icon" src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>"/>
+                  <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-Facebook"></use></svg>
                     <p class="contacts__list__item__text"><?php the_field('facebook') ?></p>
                   </li>
                 <li class="contacts__list__item">
-                    <img class="contacts__list__item__icon" src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>"/>
+                <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-YouTube"></use></svg>
                     <p class="contacts__list__item__text"><?php the_field('youtube') ?></p>
                 </li>
           </ul>
