@@ -15,7 +15,7 @@ if ($myposts) : ?>
   <div class="library-wrap">
     <?php foreach ($myposts as $post) :
       setup_postdata($post);
-      get_template_part('template-parts/content-search');
+      get_template_part('template-parts/materials-search');
     endforeach; ?>
   </div>
 
@@ -40,7 +40,7 @@ if ($myposts) : ?>
   echo '</div>';
 
 else : ?>
-  <h2 class="nothing-found">Нажаль нічого не знайдено.</h2>
+  <p class="nothing-found"><?php the_field('nothing-found', 'options') ?></p>
   <a href="<?php echo get_home_url(); ?>" class="error-404__button button"><?php the_field("error_button_text", 'option') ?></a>
 <?php endif;
 

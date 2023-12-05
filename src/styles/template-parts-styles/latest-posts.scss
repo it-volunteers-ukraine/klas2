@@ -1,0 +1,30 @@
+@import '../variables.scss';
+
+.aside-posts__list {
+  @media screen and (max-width: $desktop) {
+    display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+  }
+    @media screen and (max-width: $tablet) {
+      display: block;
+    }
+}
+
+.latest-posts__title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.16;
+  margin-bottom: 36px;
+  @media screen and (max-width: $desktop) {
+    margin-bottom: 32px;
+  }
+  @media screen and (max-width: $tablet) {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+}
+
+.nothing-found {
+  font-size: 18px;
+}
