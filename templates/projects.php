@@ -71,16 +71,24 @@ get_header();
           <h3 class="project__title"><?php the_title(); ?></h3>
           <div class="project__wrap">
             <div class="project__flex">
-              <?php
-              $image = get_field('project__img');
-              if ($image) {
-                echo '<img class="project__img" src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
-              }
-              ?>
+              <?php get_template_part('template-parts/check_thumbnail'); ?>
             </div>
             <div class="project__flex">
               <div class="text__wrap">
-                <p class="text__btn"><?php the_field('project__category'); ?></p>
+
+                <?php
+                $categories = get_the_terms($post, 'project_categories');
+
+                if (count($categories) > 0) : ?>
+                  <p class="text__btn">
+                    <?php
+                    $catNames = array_column($categories, 'name');
+                    // виводимо через кому
+                    echo implode(', ', $catNames)
+                    ?>
+                  </p>
+                <?php endif; ?>
+
                 <p><?php the_field('project__period'); ?></p>
               </div>
               <div class="description__wrap">
@@ -93,7 +101,6 @@ get_header();
                 ?>
               </div>
             </div>
-
           </div>
         </article>
       <?php
@@ -107,9 +114,13 @@ get_header();
         'next_text' => ('&gt;'),
       );
 
-      echo '<div class="pagination">';
-      echo paginate_links($pagination_args);
-      echo '</div>';
+      $pagination_html = paginate_links($pagination_args);
+
+      if ($pagination_html) {
+        echo '<div class="pagination">';
+        echo $pagination_html;
+        echo '</div>';
+      }
 
       wp_reset_postdata();
       ?>
