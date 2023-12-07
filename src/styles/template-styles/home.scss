@@ -1,6 +1,6 @@
 
 
-@import "../main.scss";
+@import "../variables.scss";
 
 @import "../template-parts-styles/title";
 @import "../template-parts-styles/content";
@@ -8,10 +8,10 @@
 @import "../template-parts-styles/new";
 @import "../template-parts-styles/slider";
 @import "../template-parts-styles/contacts-list";
-@import "./front-page/base";
-@import "./front-page/banner";
-@import "./front-page/collaboration";
-@import "./front-page/contacts";
+@import "./home/base";
+@import "./home/banner";
+@import "./home/collaboration";
+@import "./home/contacts";
 
 @import "../template-parts-styles/title";
 @import "../template-parts-styles/content";
@@ -19,7 +19,7 @@
 @import "../template-parts-styles/new";
 @import "../template-parts-styles/slider";
 @import "../template-parts-styles/contacts-list";
-@import "./front-page/base";
-@import "./front-page/banner";
-@import "./front-page/collaboration";
-@import "./front-page/contacts";
+@import "./home/base";
+@import "./home/banner";
+@import "./home/collaboration";
+@import "./home/contacts";
