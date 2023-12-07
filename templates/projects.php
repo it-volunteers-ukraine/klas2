@@ -70,7 +70,7 @@ get_header();
         <article>
           <h3 class="project__title"><?php the_title(); ?></h3>
           <div class="project__wrap">
-            <div class="project__flex">
+            <div class="project__flex project__img">
               <?php get_template_part('template-parts/check_thumbnail'); ?>
             </div>
             <div class="project__flex">

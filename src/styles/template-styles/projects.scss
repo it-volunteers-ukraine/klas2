@@ -133,8 +133,38 @@
 }
 
 .project__img {
+	width: 100%;
 	border-radius: $btn-border-radius;
 	overflow: hidden;
+
+	& img {
+		max-height: 336px;
+		object-fit: cover;
+	}
+
+	@media screen and (max-width: $desktop) {
+		& img {
+			max-height: 244px;
+		}
+	}
+
+	@media screen and (max-width: $big-tablet) {
+		& img {
+			max-height: 200px;
+		}
+	}
+
+	@media screen and (max-width: $tablet) {
+		& img {
+			max-height: 206px;
+		}
+	}
+
+	@media screen and (max-width: $mobile) {
+		& img {
+			max-height: 185px;
+		}
+	}
 }
 
 .project__flex {

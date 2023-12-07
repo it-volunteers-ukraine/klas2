@@ -3,15 +3,17 @@ const notificationEl = document.getElementById("notification");
 const telInputEl = document.getElementById("contactPhone");
 const nameInputEl = document.getElementById("contactName");
 
-wpcf7Elm.addEventListener(
-	"wpcf7mailsent",
-	function (event) {
-		getNotification();
-		const form = event.target;
-		form.reset();
-	},
-	false,
-);
+if (wpcf7Elm) {
+	wpcf7Elm.addEventListener(
+		"wpcf7mailsent",
+		event => {
+			getNotification();
+			const form = event.target;
+			form.reset();
+		},
+		false,
+	);
+}
 
 function getNotification() {
 	notificationEl.classList.remove("visually-hidden");
@@ -20,10 +22,14 @@ function getNotification() {
 	}, 4000);
 }
 
-nameInputEl.addEventListener("keyup", function () {
-	nameInputEl.value = nameInputEl.value.replace(/\d/g, "");
-});
+if (nameInputEl) {
+	nameInputEl.addEventListener("keyup", function () {
+		nameInputEl.value = nameInputEl.value.replace(/\d/g, "");
+	});
+}
 
-telInputEl.addEventListener("keyup", function () {
-	telInputEl.value = telInputEl.value.replace(/[^\d?^\+]/g, "");
-});
+if (telInputEl) {
+	telInputEl.addEventListener("keyup", function () {
+		telInputEl.value = telInputEl.value.replace(/[^\d?^\+]/g, "");
+	});
+}
