@@ -192,11 +192,11 @@ get_header();
                             <article class="new new--column  front-page__news-new">
                                 <div class="new__body">
 
-                                    <div class="new__body-content">
-                                        <div class="new__back">
+                                    <div  class="new__body-content">
+                                        <a href="<?php the_permalink(); ?>" class="new__back">
                                         <?php echo get_template_part( 'template-parts/check_thumbnail' ); ?>
                                         
-                                        </div>
+                                        </a>
                                         <div class="new__desc">
                                             <h3>
                                                 <a href="<?php the_permalink(); ?>">
