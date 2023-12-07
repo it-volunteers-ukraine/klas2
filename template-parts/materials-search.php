@@ -1,11 +1,13 @@
 <?php $iconType = get_field('svg_media_button');
     $buttonText = get_field('text_media_button');
     ?>
-    <div class="entry-content">
+    <article class="entry-content">
       <div class="feature-image">
           
           <?php if($iconType==="play"): ?>
-            <a href="<?php the_field('video_media'); ?>" target="_blank"  rel="noopener noreferrer" class="feature-image__link"  aria-label="Подивитись <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+            <a href="<?php the_field('video_media'); ?>" target="_blank"  rel="noopener noreferrer" class="feature-image__link"  aria-label="Подивитись <?php the_title(); ?>">
+            <?php get_template_part( 'template-parts/check_thumbnail' ); ?>
+          </a>
 
             <a href="<?php the_field('video_media'); ?>" target="_blank" rel="noopener noreferrer" class="play-outline__button" aria-label="Подивитись <?php the_title(); ?>">
               <svg class="play-outline__image" width="32px" height="32px">
@@ -15,7 +17,9 @@
           <?php endif; ?>
 
           <?php if($iconType==="download"): ?>
-            <a href="<?php the_field('pdf_media'); ?>" download class="feature-image__link" aria-label="Завантажити <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+            <a href="<?php the_field('pdf_media'); ?>" download class="feature-image__link" aria-label="Завантажити <?php the_title(); ?>">
+            <?php get_template_part( 'template-parts/check_thumbnail' ); ?>
+          </a>
           <?php endif; ?>
 
       </div>
@@ -37,4 +41,4 @@
             </a>
           <?php endif; ?>
 
-    </div>
+    </article>
