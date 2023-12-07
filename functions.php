@@ -12,6 +12,7 @@ if (!function_exists('wp_it_volunteers_setup')) {
       )
     );
     add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
   }
   add_action('after_setup_theme', 'wp_it_volunteers_setup');
 }
@@ -38,7 +39,7 @@ function wp_it_volunteers_scripts()
     wp_enqueue_script('home-slick', get_template_directory_uri() . '/assets/scripts/slick.min.js', array(), false, true);
 
     wp_enqueue_script('home-jquery', 'https://code.jquery.com/jquery-2.2.0.min.js', array(), false, false);
-    wp_enqueue_style('join-us-style', get_template_directory_uri() . '/assets/styles/template-styles/front-page.css', array('main'));
+    
   }
 
   if (is_page_template('templates/about.php')) {
@@ -67,6 +68,22 @@ function wp_it_volunteers_scripts()
 
   if (is_singular() && locate_template('template-parts/join-us.php')) {
     wp_enqueue_style('join-us-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/join-us.css', array('main'));
+  }
+
+  if (is_singular() && locate_template('template-parts/content-post.php')) {
+    wp_enqueue_style('content-post-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/content-post.css', array('main'));
+  }
+
+  if (is_singular() && locate_template('template-parts/content-news-posts.php')) {
+    wp_enqueue_style('content-news-posts-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/content-news-posts.css', array('main'));
+  }
+
+  if (is_singular() && locate_template('template-parts/latest-posts.php')) {
+    wp_enqueue_style('latest-posts-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/latest-posts.css', array('main'));
+  }
+
+  if (is_singular() && locate_template('template-parts/aside-posts.php')) {
+    wp_enqueue_style('aside-posts-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/aside-posts.css', array('main'));
   }
 
 }
@@ -120,6 +137,10 @@ if (function_exists('acf_add_options_page')) {
     'parent_slug'   => 'theme-general-settings',
   ));
 }
+
+  add_filter( 'excerpt_more', function( $more ) {
+    return '...';
+  } );
 
 //add CPT to archive
 function my_cptui_add_post_types_to_archives( $query ) {

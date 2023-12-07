@@ -104,7 +104,7 @@
 	text-align: center;
 
 	@media screen and (max-width: $desktop) {
-		margin: 32px auto;
+		margin: 32px auto 24px auto;
 		max-width: 516px;
 		font-size: 18px;
 		line-height: calc(24 / 18);
@@ -117,10 +117,16 @@
 }
 
 .project__wrap {
+	margin-bottom: 72px;
 	display: flex;
 	gap: 24px;
 
+	@media screen and (max-width: $desktop) {
+		margin-bottom: 50px;
+	}
+
 	@media screen and (max-width: $tablet) {
+		margin-bottom: 32px;
 		flex-direction: column;
 		gap: 10px;
 	}
