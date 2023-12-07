@@ -321,6 +321,7 @@
 			flex-direction: column;
 			gap: 8px;
 			max-width: 267px;
+			text-align: center;
 			@media screen and (max-width: $desktop) {
 				gap: 12px;
 			}
