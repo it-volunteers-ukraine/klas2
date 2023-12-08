@@ -29,7 +29,8 @@ get_header();
           $tab_classes = ($active_tab === $tab_slug) ? 'tab tab-active' : 'tab';
           $tab_link = ($tab_slug === 'all') ? get_permalink() : add_query_arg('tab', $tab_slug, get_permalink());
         ?>
-          <div class="<?php echo esc_attr($tab_classes); ?>" data-target="<?php echo esc_attr('tab' . ucfirst($tab_slug)); ?>"><a href="<?php echo esc_url($tab_link); ?>"><?php echo esc_html($tab_label); ?></a></div>
+          <a class="<?php echo esc_attr($tab_classes); ?>" href="<?php echo esc_url($tab_link); ?>"><?php echo esc_html($tab_label); ?>
+          </a>
         <?php
         }
         ?>
@@ -84,25 +85,37 @@ get_header();
               </div>
               <div class="description__wrap">
                 <p class="project__description"><?php the_field('project__description'); ?></p>
-                <p class="project__budget"><?php the_field('project__budget'); ?></p>
+                <?php
+                $project_budget = get_field('project__budget');
+                if ($project_budget) {
+                  echo '<p class="project__budget">' . esc_html($project_budget) . '</p>';
+                }
+                ?>
               </div>
             </div>
+
           </div>
         </article>
       <?php
       endwhile;
 
       // Додаємо пагінацію
-      echo '<div class="pagination">';
-      echo paginate_links(array(
+      $pagination_args = array(
         'total' => $projects_query->max_num_pages,
-      ));
+        'format' => 'page/%#%',
+        'prev_text' => ('&lt;'),
+        'next_text' => ('&gt;'),
+      );
+
+      echo '<div class="pagination">';
+      echo paginate_links($pagination_args);
       echo '</div>';
 
       wp_reset_postdata();
       ?>
     </div>
   </section>
+  <?php get_template_part('template-parts/join-us'); ?>
 </main>
 
 <?php get_footer(); ?>
