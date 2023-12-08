@@ -27,6 +27,7 @@ get_header();
                 <div class="banner__gallary">
                     <?php
                     $gallary = get_field('gallary');
+                    if($gallary){
                     $size = 'full';
 
                     foreach ($gallary as $key => $gallary_id) { ?>
@@ -37,7 +38,7 @@ get_header();
                     </div>
 
                     <?php }
-                    ?>
+                    }?>
 
                 </div>
             </div>
