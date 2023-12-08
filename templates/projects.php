@@ -100,6 +100,17 @@ get_header();
                     echo '<p class="project__budget">' . esc_html($project_budget) . '</p>';
                   }
                   ?>
+
+                  <button class="button read-more_button read-more_button-mobile">Читати більше<svg class="arrow-icon">
+                      <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#arrow"></use>
+                    </svg>
+                  </button>
+
+                  <button class="button read-more_button read-more_button-mobile">Сховати <svg class="arrow-icon">
+                      <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#close"></use>
+                    </svg>
+                  </button>
+
                 </div>
               </div>
             </div>
