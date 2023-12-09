@@ -93,7 +93,11 @@ get_header();
                   <p><?php the_field('project__period'); ?></p>
                 </div>
                 <div class="description__wrap">
-                  <p class="project__description"><?php the_field('project__description'); ?></p>
+
+                  <p class="project__description">
+                    <?php the_field('project__description'); ?>
+                  </p>
+
                   <?php
                   $project_budget = get_field('project__budget');
                   if ($project_budget) {
@@ -101,15 +105,15 @@ get_header();
                   }
                   ?>
 
-                  <button class="button read-more_button read-more_button-mobile">Читати більше<svg class="arrow-icon">
+                  <!-- <button class="button read-more_button read-more_button-mobile">Читати більше<svg class="arrow-icon">
                       <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#arrow"></use>
                     </svg>
                   </button>
 
-                  <button class="button read-more_button read-more_button-mobile">Сховати <svg class="arrow-icon">
+                  <button class="button read-less_button read-more_button-mobile">Сховати <svg class="arrow-icon">
                       <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#close"></use>
                     </svg>
-                  </button>
+                  </button> -->
 
                 </div>
               </div>

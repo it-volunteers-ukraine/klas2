@@ -204,28 +204,13 @@
 }
 
 .project__description {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 9;
-	white-space: normal;
-	height: 180px;
-
 	font-size: 18px;
 	font-weight: 400;
 	line-height: calc(20 / 18);
 
 	@media screen and (max-width: $desktop) {
-		height: 120px;
-		-webkit-line-clamp: 5;
 		font-size: 16px;
 		line-height: calc(24 / 16);
-	}
-
-	@media screen and (max-width: $tablet) {
-		height: 75px;
-		-webkit-line-clamp: 3;
 	}
 }
 

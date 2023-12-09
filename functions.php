@@ -53,7 +53,8 @@ function wp_it_volunteers_scripts()
 
   if (is_page_template('templates/projects.php')) {
     wp_enqueue_style('projects-style', get_template_directory_uri() . '/assets/styles/template-styles/projects.css', array('main'));
-    wp_enqueue_script('projects-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/projects.js', array(), false, true);
+    wp_enqueue_script('jquery'); // це включає вбудований jQuery в WordPress
+    wp_enqueue_script('projects-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/projects.js', array('jquery'), false, true);
   }
 
   if (is_page_template('templates/support.php')) {
@@ -84,7 +85,6 @@ function wp_it_volunteers_scripts()
   if (is_singular() && locate_template('template-parts/aside-posts.php')) {
     wp_enqueue_style('aside-posts-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/aside-posts.css', array('main'));
   }
-
 }
 /** add fonts */
 function add_google_fonts()
@@ -137,47 +137,51 @@ if (function_exists('acf_add_options_page')) {
   ));
 }
 
-  add_filter( 'excerpt_more', function( $more ) {
-    return '...';
-  } );
+add_filter('excerpt_more', function ($more) {
+  return '...';
+});
 
 //add CPT to archive
-function my_cptui_add_post_types_to_archives( $query ) {
+function my_cptui_add_post_types_to_archives($query)
+{
 
-	if ( is_admin() || ! $query->is_main_query() ) {
-		return;    
-	}
+  if (is_admin() || !$query->is_main_query()) {
+    return;
+  }
 
-	if ( is_category() && empty( $query->query_vars['suppress_filters'] ) ) {
+  if (is_category() && empty($query->query_vars['suppress_filters'])) {
 
-		$cptui_post_types = array( 'materials' );
+    $cptui_post_types = array('materials');
 
-		$query->set(
-	  		'post_type',
-			array_merge(
-				array( 'post' ),
-				$cptui_post_types
-			)
-		);
-	}
+    $query->set(
+      'post_type',
+      array_merge(
+        array('post'),
+        $cptui_post_types
+      )
+    );
+  }
 }
-add_filter( 'pre_get_posts', 'my_cptui_add_post_types_to_archives' );
+add_filter('pre_get_posts', 'my_cptui_add_post_types_to_archives');
 
 // change request to WP for pagination on the taxonomy page
-function codernote_request($query_string ) {
-  if ( isset( $query_string['page'] ) ) {
-    if ( ''!=$query_string['page'] ) {
-      if ( isset( $query_string['name'] ) ) {
-        unset( $query_string['name'] ); }
+function codernote_request($query_string)
+{
+  if (isset($query_string['page'])) {
+    if ('' != $query_string['page']) {
+      if (isset($query_string['name'])) {
+        unset($query_string['name']);
       }
     }
-    return $query_string;
+  }
+  return $query_string;
 }
 add_filter('request', 'codernote_request');
 
 add_action('pre_get_posts', 'codernote_pre_get_posts');
-function codernote_pre_get_posts( $query ) {
-  if ( $query->is_main_query() && !$query->is_feed() && !is_admin()  && is_archive()) {
-    $query->set( 'paged', str_replace( '/', '', get_query_var( 'page' ) ) );
+function codernote_pre_get_posts($query)
+{
+  if ($query->is_main_query() && !$query->is_feed() && !is_admin()  && is_archive()) {
+    $query->set('paged', str_replace('/', '', get_query_var('page')));
   }
 }
