@@ -1,0 +1,1 @@
+const newsSwiper=new Swiper(".single-post__slider",{loop:!0,spaceBetween:21,slidesPerView:4,freeMode:!0,watchSlidesProgress:!0});var newsSwiper2=new Swiper(".single-post__slider2",{loop:!1,spaceBetween:10,navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"},pagination:{el:".swiper-pagination",clickable:!0},thumbs:{swiper:newsSwiper}});
