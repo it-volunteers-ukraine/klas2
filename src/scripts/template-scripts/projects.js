@@ -59,12 +59,14 @@ jQuery(document).ready(function ($) {
 		let wordsCount;
 		let windowWidth = $(window).width();
 
-		if (windowWidth >= 576 && windowWidth < 992) {
+		if (windowWidth >= 992 && windowWidth < 1140) {
+			wordsCount = 65;
+		} else if (windowWidth >= 576 && windowWidth < 992) {
 			wordsCount = 30;
 		} else if (windowWidth < 576) {
 			wordsCount = 10;
 		} else {
-			wordsCount = 60;
+			wordsCount = 70;
 		}
 		return wordsCount;
 	}

@@ -117,6 +117,7 @@
 }
 
 .project__wrap {
+	position: relative;
 	margin-bottom: 72px;
 	display: flex;
 	gap: 24px;
@@ -134,10 +135,10 @@
 
 .project__img {
 	width: 100%;
-	border-radius: $btn-border-radius;
-	overflow: hidden;
 
 	& img {
+		border-radius: $btn-border-radius;
+		overflow: hidden;
 		max-height: 336px;
 		object-fit: cover;
 	}
@@ -204,6 +205,7 @@
 }
 
 .project__description {
+	margin-bottom: 56px;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: calc(20 / 18);
@@ -212,17 +214,30 @@
 		font-size: 16px;
 		line-height: calc(24 / 16);
 	}
+
+	& button {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		padding-bottom: 0;
+	}
 }
 
 .project__budget {
+	width: 340px;
 	margin-left: 16px;
-	margin-top: 10px;
-	position: relative;
+	position: absolute;
+	bottom: 0;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: calc(24 / 18);
 
+	@media screen and (max-width: 1080px) {
+		width: 300px;
+	}
+
 	@media screen and (max-width: $desktop) {
+		width: 280px;
 		font-size: 16px;
 		line-height: calc(24 / 16);
 	}
