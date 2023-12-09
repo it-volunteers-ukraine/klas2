@@ -154,7 +154,7 @@
 		@media screen and (max-width: $desktop) {
 			gap: 16px;
 		}
-		@media screen and (max-width: $tablet) {
+		@media screen and (max-width: $big-tablet) {
 			flex-direction: column;
 			gap: 80px;
 		}

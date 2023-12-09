@@ -20,7 +20,12 @@ get_header();
         </div>
         <a class="button primary_button donate-button" href="<?php the_field('bank_link'); ?>"><?php the_field('donate_button'); ?></a>
         <div class="donate-image__wrap">
-          <img class="donate-img" width="250" height="250" src='<?php the_field('donate_qr-code'); ?>' alt='qr-code'>
+          <?php 
+            $image = get_field('donate_qr-code');
+            $size = 'medium'; // (thumbnail, medium, large, full or custom size)
+            if( $image ) {
+                echo wp_get_attachment_image( $image, $size );
+          } ?>
         </div>
       </div>
     </div>
@@ -31,7 +36,12 @@ get_header();
       <div class="support_inner__container">
         <div class="support-image__wrap">
           <div class="support-image_wrapper">
-            <img class="support-img" src='<?php the_field('support_middle_image'); ?>' alt='<?php the_field('support_image_alt') ?>'>
+            <?php 
+            $image = get_field('support_middle_image');
+            $size = 'large'; // (thumbnail, medium, large, full or custom size)
+            if( $image ) {
+                echo wp_get_attachment_image( $image, $size );
+          } ?>
           </div>
           <svg class="support-left__image" width="112px" height="98px">
             <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#fon_left"></use>
