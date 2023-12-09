@@ -6,6 +6,12 @@
     margin-bottom: 72px;
     margin-top: 56px;
     position: relative;
+
+    @media screen and (max-width: $desktop) {
+        margin-top: 40px;
+        margin-bottom: 32px;
+        height: 238px;
+    }
 }
 
 .single__banner img{
@@ -25,6 +31,11 @@
     bottom: 52px;
     width: 100%;
     text-align: center;
+    @media screen and (max-width: $desktop) {
+        font-size: 16px;
+        line-height: 22.5px;
+        bottom: 36px;
+    }
 }
 
 .single__post-time{
@@ -35,26 +46,35 @@
     color: $main-white;
     line-height: 20px;
     font-weight: 500;
-
+    @media screen and (max-width: $desktop) {
+        font-size: 14px;
+        line-height: 4px;
+        bottom: 16px;
+    }
 }
 
-.main__post{
-   max-width: 66%;
+.single__container{
+    display: grid;
+    grid-template-columns: 65% 32%;
+    gap: 30px;
+
+    @media screen and (max-width: $desktop) {
+        max-width: 100%;
+        display: block;
+   }
 }
 
-.aside{
-    background-color: red;
-    min-width: 296px;
-    height: 700px;
-
-}
-
-.post__text{
+.post__content p{
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-    margin-bottom: 40px;
+    
+    @media screen and (max-width: $desktop) {
+        
+        font-size: 16px;
+        
+    }
 }
 
 .swiper-slide {
@@ -65,25 +85,33 @@
     justify-content: center;
     align-items: center;
     margin-right: 21px;
+    @media screen and (max-width: $desktop) {
+        margin-right: 16px;
+    }
     
   }
-  li.swiper-slide.swiper-slide-active{
+li.swiper-slide.swiper-slide-active{
     height: auto;
     background-size: cover;
     background-position: center;
+    border-radius: 4px;
 }
 
 .swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 4px;
 }
 
 .swiper-container {
     width: 100%;
-    height: 300px;
+    max-height: 448px;
     margin-left: auto;
     margin-right: auto;
+    @media screen and (max-width: $desktop) {
+        max-height: 428px;
+    }
   }
 
 .swiper-slide {
@@ -93,17 +121,21 @@
 }
 
 .single-post__slider {
-    height: 80%;
-    width: 100%;
     overflow: hidden;
+    @media screen and (max-width: $tablet) {
+        display: none;
+    }
   }
 
 .single-post__slider2 {
-    max-height: 448px;
     box-sizing: border-box;
     margin-top: 40px;
     margin-bottom: 21px;
     overflow: hidden;
+    position: relative;
+    @media screen and (max-width: $desktop) {
+        margin-top: 32px;
+    }
 }
 
 .single-post__slider2 .swiper-slide {
@@ -112,7 +144,7 @@
    
   }
 
-  .single-post__slider2 .swiper-slide-thumb-active {
+.single-post__slider2 .swiper-slide-thumb-active {
     opacity: 1;
   }
 
@@ -121,4 +153,18 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+    border-radius: 4px;
+}
+
+.swiper-pagination{
+    display: none;
+    @media screen and (max-width: $tablet) {
+        display: block;
+    }
+}
+.swiper-pagination-bullets.swiper-pagination-horizontal{
+    bottom: var(--swiper-pagination-bottom,auto);
+    top: var(--swiper-pagination-top,auto);
+    left: 0;
+    width: 100%;
+}
