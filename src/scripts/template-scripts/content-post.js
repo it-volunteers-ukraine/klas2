@@ -5,6 +5,10 @@ const newsSwiper = new Swiper(".single-post__slider", {
     slidesPerView: 4,
     freeMode: true,
     watchSlidesProgress: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+  },
   });
   var newsSwiper2 = new Swiper(".single-post__slider2", {
     loop: false,
