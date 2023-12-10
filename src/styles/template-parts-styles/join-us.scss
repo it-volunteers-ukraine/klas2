@@ -59,32 +59,9 @@
 		line-height: 24px;
 	}
 	&__button {
-		width: 151px;
-		height: max-content;
-		padding: 12px 0;
-
-		display: inline-block;
-		background: $dark-violet;
-		border: none;
-
-		color: $main-white;
-		font-size: 18px;
-		font-weight: 600;
-		line-height: 24px;
-		text-align: center;
-
-		&:hover,
-		&:focus {
-			background-color: transparent;
-			border: 1.5px solid $dark-violet;
-			color: $dark-violet;
-		}
-
 		@media screen and (max-width: $desktop) {
-			height: auto;
 			width: 344px;
 			font-size: 16px;
-			padding: 8px 0;
 		}
 		@media screen and (max-width: $tablet) {
 			width: 100%;
