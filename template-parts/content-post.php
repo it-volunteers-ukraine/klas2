@@ -32,8 +32,8 @@
                                 <?php endwhile;?>
                             </ul>
                             <div class="swiper-pagination"></div>  
-                    <?php endif; ?> 
                         </div>
+                    <?php endif; ?> 
                 </div>
                <?php get_template_part( 'template-parts/latest-posts'); ?>
             </div> 
