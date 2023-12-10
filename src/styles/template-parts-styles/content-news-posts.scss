@@ -32,8 +32,8 @@
     margin-top: 36px;
     width: 100%;
     height: 384px;
-    background-color: blueviolet;
     position: relative;
+   
     @media screen and (max-width: $desktop) {
        height: 237px;
        margin-top: 25px;
@@ -49,6 +49,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 4px;
 }
 
 .banner__title{
@@ -60,6 +61,8 @@
     position: absolute;
     bottom: 40px;
     padding-left: 32px;
+    backdrop-filter: contrast(0.5);
+    max-width: 62%;
     
     @media screen and (max-width: $desktop) {
         font-size: 16px;
@@ -79,7 +82,7 @@
     }
 }
 
-.banner__button{
+.news-banner__button{
 	background-color: transparent;
 	border-color: transparent;
 	font-weight: 500;
@@ -89,6 +92,7 @@
     position: absolute;
     bottom: 29px;
     right: 11px;
+    backdrop-filter: contrast(0.5);
     @media screen and (max-width: $desktop) {
         bottom: 0px;
         right: 0px;
@@ -100,6 +104,7 @@
         right: 1%;
         position: static;
         margin: 0 auto;
+        backdrop-filter: none;
     }
 }
 
@@ -147,6 +152,7 @@
     min-width: 49%;
     width: 558px;
     height: 336px;
+   
 
     @media screen and (max-width: $desktop) {
         width: 344px;
@@ -161,6 +167,7 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
+    border-radius: 4px;
 }
 
 .post__img-mobile{
@@ -170,6 +177,7 @@
         display: block;
         margin-top: 24px;
         height: 206px;
+        border-radius: 4px;
  }
 }
 
@@ -177,6 +185,7 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
+    border-radius: 5px;
 }
 
 .post__text{
