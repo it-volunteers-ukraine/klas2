@@ -17,7 +17,7 @@ get_header();
             ?>                
                 <img alt="main banner" src="<?php the_field('main-banner'); ?>">
                 <h2 class="banner__title"><?php the_title(); ?></h2>
-                <a href="<?php the_permalink(); ?>" class="button banner__button">Читати більше<svg class="banner__arrow-icon">
+                <a href="<?php the_permalink(); ?>" class="button news-banner__button">Читати більше<svg class="banner__arrow-icon">
                             <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#arrow"></use>
                             </svg></a>
             <?php

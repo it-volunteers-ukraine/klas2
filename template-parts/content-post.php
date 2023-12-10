@@ -16,15 +16,12 @@
                                         <li class="swiper-slide">
                                             <img id="image-link" src="<?php echo $img; ?>" alt="img">
                                         </li>
-                                       
                                 <?php endwhile;?>
-                                             
                             </ul>
                             <div class="swiper-pagination"></div>  
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>        
                         </div>
-                        
                         <div thumbsSlider="" class="single-post__slider">
                             <ul class="swiper-wrapper ">
                                 <?php while(have_rows('gallery')): the_row();
@@ -32,17 +29,14 @@
                                         <li class="swiper-slide">
                                             <img id="image-link" src="<?php echo esc_url($img); ?>" alt="img">
                                         </li>
-                                       
                                 <?php endwhile;?>
                             </ul>
+                            <div class="swiper-pagination"></div>  
                     <?php endif; ?> 
-                             
                         </div>
-
-               </div>
+                </div>
                <?php get_template_part( 'template-parts/latest-posts'); ?>
             </div> 
-            
       </div>
 </section>
 
