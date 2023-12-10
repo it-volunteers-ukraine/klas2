@@ -206,6 +206,7 @@
 
 .project__description {
 	margin-bottom: 56px;
+
 	font-size: 18px;
 	font-weight: 400;
 	line-height: calc(20 / 18);
@@ -220,6 +221,20 @@
 		right: 0;
 		bottom: 0;
 		padding-bottom: 0;
+
+		@media screen and (max-width: $desktop) {
+			left: 51.5%;
+			bottom: -5px;
+		}
+
+		@media screen and (max-width: 715px) {
+			bottom: 0;
+		}
+
+		@media screen and (max-width: $tablet) {
+			left: 0;
+			bottom: -10px;
+		}
 	}
 }
 
@@ -233,17 +248,25 @@
 	line-height: calc(24 / 18);
 
 	@media screen and (max-width: 1080px) {
-		width: 300px;
+		width: 295px;
 	}
 
 	@media screen and (max-width: $desktop) {
-		width: 280px;
+		bottom: 30px;
+		width: 46%;
 		font-size: 16px;
 		line-height: calc(24 / 16);
 	}
 
+	@media screen and (max-width: $big-tablet) {
+		font-size: 14px;
+		line-height: calc(20 / 14);
+		letter-spacing: -0.7px;
+	}
+
 	@media screen and (max-width: $tablet) {
-		margin-top: 16px;
+		width: 98%;
+		bottom: 25px;
 	}
 }
 

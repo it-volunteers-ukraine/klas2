@@ -61,10 +61,12 @@ jQuery(document).ready(function ($) {
 
 		if (windowWidth >= 992 && windowWidth < 1140) {
 			wordsCount = 65;
-		} else if (windowWidth >= 576 && windowWidth < 992) {
-			wordsCount = 30;
+		} else if (windowWidth >= 766 && windowWidth < 992) {
+			wordsCount = 25;
+		} else if (windowWidth >= 576 && windowWidth < 766) {
+			wordsCount = 15;
 		} else if (windowWidth < 576) {
-			wordsCount = 10;
+			wordsCount = 45;
 		} else {
 			wordsCount = 70;
 		}
