@@ -35,7 +35,7 @@
                         </div>
                     <?php endif; ?> 
                 </div>
-               <?php get_template_part( 'template-parts/latest-posts'); ?>
+               <?php get_template_part( 'template-parts/aside-posts'); ?>
             </div> 
       </div>
 </section>
