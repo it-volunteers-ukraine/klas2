@@ -85,7 +85,7 @@ get_header();
           <div class="our-team__buttons-wrapper">
                 <button class="swiper-button-prev"></button>
                 <button class="swiper-button-next"></button>
-                </div>
+            </div>
       </div>
           <div class="swiper-container">
             <div class="our-team__slider swiper">
