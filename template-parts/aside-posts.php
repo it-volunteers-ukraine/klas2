@@ -1,18 +1,29 @@
-<article class="aside-post-box">
-            <div class="aside-post__img">
-                <a class="aside-image__link" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                <?php get_template_part( 'template-parts/check_thumbnail' ); ?>
-                </a>
-            </div>
-            <div class="aside-post__text">
-                <h3 class="aside-post__title"><?php the_title(); ?></h3>
-                
-                <div class="aside-post__details">
-                    <p class="aside-post__time"><?php the_time('d.m.y'); ?></p>
-                    <a href="<?php the_permalink(); ?>" class="button read-more_button">Читати більше<svg class="arrow-icon">
-                        <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#arrow"></use>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-</article>
+<div class="latest-posts__container">
+  
+<?php
+          
+        $args = array(
+          'post_type' => 'post',
+          'post__not_in' => [ get_the_ID() ],
+          'posts_per_page' => 4,
+        );
+
+        $query = new WP_Query( $args );
+            query_posts( $args ); ?>
+            
+            <h2 class="latest-posts__title"><?php the_field('latest-news_title', 'options') ?></h2>
+            <div class="aside-posts__list">
+              
+            <?php if ( have_posts() ) :
+            while(have_posts()): the_post(); 
+
+                get_template_part( 'template-parts/aside-one-post');
+
+            endwhile; 
+            
+            wp_reset_query();
+             else : ?>
+              <p class="nothing-found"><?php the_field('nothing-found', 'options') ?></p>
+            <?php endif; ?>
+        </div> 
+</div>        
