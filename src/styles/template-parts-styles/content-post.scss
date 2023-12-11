@@ -55,8 +55,8 @@
 
 .single__container{
     display: grid;
-    grid-template-columns: 65% 32%;
-    gap: 30px;
+    grid-template-columns: 66% 26%;
+    gap: 61px;
 
     @media screen and (max-width: $desktop) {
         max-width: 100%;
