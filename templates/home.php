@@ -17,8 +17,7 @@ get_header();
                     <div class="front-page__banner-title">
                         <p><?php the_field('subtitle'); ?>Громадська організація</p>
                         <h1><?php the_field('title_h1'); ?></h1>
-                        <a class="primary_button button banner__btn" href="<?php the_field( 'banner__btn'
-                        ); ?> ">
+                        <a class="primary_button button banner__btn" href="<?php the_field( 'banner__btn'); ?> ">
                             Підтримати нас
                         </a>
                     </div>
@@ -27,9 +26,10 @@ get_header();
                 <div class="banner__gallary">
                     <?php
                     $gallary = get_field('gallary');
-                    $size = 'full';
+                    if ($gallary) {
+                        $size = 'full';
 
-                    foreach ($gallary as $key => $gallary_id) { ?>
+                        foreach ($gallary as $key => $gallary_id) { ?>
                     <div class="banner__gallary-img">
                         <img src="<?php echo $gallary_id['url']; ?>" alt=" <?php echo $gallary_id['title']; ?>">
 
@@ -37,7 +37,7 @@ get_header();
                     </div>
 
                     <?php }
-                    ?>
+                    } ?>
 
                 </div>
             </div>
@@ -63,7 +63,8 @@ get_header();
                 </div>
                 <div class="banner__cards-card">
                     <div class="banner__cards-card-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/infinity.svg" alt='infinity'>
+                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/infinity.svg"
+                            alt='infinity'>
                     </div>
 
                     <p>бажання допомагати </p>
@@ -122,11 +123,15 @@ get_header();
 
                         </div>
 
-                        <button class="button read-more_button" type="button">Читати більше<svg class="arrow-icon">
+                        <a href="<?php echo get_field('about_link')?>" class="button read-more_button">
+                            <span> Читати більше</span>
+
+                            <svg class="arrow-icon">
                                 <use href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#arrow">
                                 </use>
                             </svg>
-                        </button>
+                        </a>
+
                     </div>
 
 
@@ -183,9 +188,6 @@ get_header();
                     $args = [
                         'post_type' => 'post', //это вид
                         'posts_per_page' => 4, //количество
-                        'paged' => $current_page,
-                        'category_name' => 'News',
-                        'order' => 'ASC',
                     ];
 
                     $query = new WP_Query($args);
@@ -202,7 +204,7 @@ get_header();
 
                             <div class="new__body-content">
                                 <a href="<?php the_permalink(); ?>" class="new__back">
-                                    <?php echo get_template_part( 'template-parts/check_thumbnail' ); ?>
+                                    <?php echo get_template_part('template-parts/check_thumbnail'); ?>
 
                                 </a>
                                 <div class="new__desc">
@@ -217,13 +219,16 @@ get_header();
 
                                 </div>
                             </div>
+
                             <div class="new__footer">
                                 <time datatime='2023-06-24'><?php the_time(
                                                                         'd.m.y'
                                                                     ); ?></time>
-                                <a href="<?php the_permalink(); ?>" class="button read-more_button" type="button">Читати
+                                <a href="<?php the_permalink(); ?>" class="button read-more_button">Читати
                                     більше<svg class="arrow-icon">
-                                        <use href="http://klas2/wp-content/themes/klas2/assets/images/sprite.svg#arrow">
+
+                                        <use
+                                            href="<?php echo  get_template_directory_uri() ?>/assets/images/sprite.svg#arrow">
                                         </use>
                                     </svg>
                                 </a>
@@ -250,9 +255,7 @@ get_header();
 
 
                 </div>
-                <a class="primary_button button front-page__news-btn" href=" <?php the_field(
-                                                                                    'news_link'
-                                                                                ); ?>">
+                <a class="primary_button button front-page__news-btn" href=" <?php get_page_link( 'news_link' ); ?>">
                     Усі новини
                 </a>
             </div>
@@ -265,26 +268,22 @@ get_header();
                 Наші партнери
             </h2>
         </div>
-        <div class="front-page__slider-wrap slider">
+        <div class="front-page__slider-wrap slider ">
             <div class="slider__inner">
-                <div class="slider__item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/logo/logo1.svg" alt="">
-                </div>
-                <div class="slider__item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/logo/logo2.svg" alt="">
-                </div>
-                <div class="slider__item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/logo/logo3.svg" alt="">
-                </div>
-                <div class="slider__item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/logo/logo4.svg" alt="">
-                </div>
-                <div class="slider__item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/logo/logo5.svg" alt="">
-                </div>
+                <?php
+            $images = get_field('slider');
+            $sizes = 'full';
+            if ($images) : ?>
 
-
-
+                <?php foreach ($images as $image) :
+                
+                        ?>
+                <div class="slider__item ">
+                    <img src="<?php echo esc_url($image['sizes']['medium']); ?>"
+                        alt="<?php echo esc_attr($image['alt']); ?>" />
+                </div>
+                <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </div>
     </section>

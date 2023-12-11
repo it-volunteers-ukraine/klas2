@@ -6,6 +6,7 @@ const autoprefixer = require("gulp-autoprefixer")
 const imagemin = require("gulp-imagemin")
 const newer = require("gulp-newer")
 
+
 function images() {
 	return src("src/images/*.*")
 		.pipe(newer("assets/images"))
@@ -19,6 +20,7 @@ function stylesTemplates() {
 		.pipe(scss().on("error", scss.logError))
 		.pipe(scss({ outputStyle: "compressed" }))
 		.pipe(dest("assets/styles/template-styles"))
+	
 }
 
 function stylesTemplatesParts() {
@@ -29,6 +31,7 @@ function stylesTemplatesParts() {
 			.pipe(scss().on("error", scss.logError))
 			.pipe(scss({ outputStyle: "compressed" }))
 			.pipe(dest("assets/styles/template-parts-styles"))
+		
 	)
 }
 
@@ -38,6 +41,7 @@ function styles() {
 		.pipe(scss().on("error", scss.logError))
 		.pipe(scss({ outputStyle: "compressed" }))
 		.pipe(dest("assets/styles"))
+	
 }
 
 function scripts() {
@@ -45,22 +49,25 @@ function scripts() {
 		.pipe(concat("main.js"))
 		.pipe(uglify())
 		.pipe(dest("assets/scripts"))
+	
 }
 
 function scriptsTemplates() {
 	return src(["src/scripts/template-scripts/*.js"])
 		.pipe(uglify())
 		.pipe(dest("assets/scripts/template-scripts"))
+	
 }
 
 function watching() {
-	watch("src/styles/*scss", styles)
-	watch("src/styles/template-styles/*scss", stylesTemplates)
-	watch("src/styles/template-parts-styles/*scss", stylesTemplatesParts)
+	watch("src/styles/**/*.scss", styles)
+	watch("src/styles/template-styles/**/*.scss", stylesTemplates)
+	watch("src/styles/template-parts-styles/**/*.scss", stylesTemplatesParts)
 	watch(["src/images"], images)
-	watch("src/scripts/*js", scripts)
-	watch("src/scripts/template-scripts/*js", scriptsTemplates)
+	watch("src/scripts/**/*js", scripts)
+	watch("src/scripts/template-scripts/**/*js", scriptsTemplates)
 }
+
 
 exports.styles = styles
 exports.stylesTemplates = stylesTemplates
@@ -76,13 +83,15 @@ exports.default = parallel(
 	images,
 	scripts,
 	scriptsTemplates,
-	watching,
+	watching
+
 );
 exports.dev = parallel(
 	styles,
 	stylesTemplates,
 	stylesTemplatesParts,
 )
+
 
 
 
