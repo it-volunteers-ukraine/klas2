@@ -255,7 +255,7 @@ get_header();
 
 
                 </div>
-                <a class="primary_button button front-page__news-btn" href=" <?php the_field( 'news_link' ); ?>">
+                <a class="primary_button button front-page__news-btn" href=" <?php the_field( 'news_link'); ?>">
                     Усі новини
                 </a>
             </div>
