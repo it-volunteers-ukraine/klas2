@@ -65,25 +65,9 @@
 		}
 	}
 	&__button {
-		width: 100%;
-		max-width: 148px;
-		display: inline-block;
-		background: $dark-violet;
-
-		color: $main-white;
-		font-size: 18px;
-		font-weight: 600;
-		line-height: 24px;
-		text-align: center;
-
-		&:hover,
-		&:focus {
-			background-color: transparent;
-			border: 1.5px solid $dark-violet;
-			color: $dark-violet;
-		}
 		@media screen and (max-width: $desktop) {
-			max-width: 344px;
+			width: 344px;
+			font-size: 16px;
 		}
 		@media screen and (max-width: $tablet) {
 			width: 100%;

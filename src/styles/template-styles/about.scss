@@ -386,22 +386,22 @@
 	}
 }
 // slider
-.swiper-button-prev,
-.swiper-button-next {
+.our-team__buttons-wrapper .swiper-button-prev,
+.our-team__buttons-wrapper .swiper-button-next {
 	position: static;
 	margin: 0;
 }
-.swiper-button-prev::after,
-.swiper-button-next::after {
+.our-team__head .swiper-button-prev::after,
+.our-team__head .swiper-button-next::after {
 	font-size: 24px;
 	color: $main-black;
 }
-.swiper-pagination {
+.our-team .swiper-pagination {
 	display: flex;
 	justify-content: center;
 	bottom: -28px !important;
 	padding: 0 27px;
 }
-.swiper-grid-column .swiper-wrapper {
+.our-team .swiper-grid-column .swiper-wrapper {
 	flex-direction: row !important;
 }
