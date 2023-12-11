@@ -386,6 +386,9 @@
 	}
 }
 // slider
+.our-team .swiper-button-lock {
+	display: block;
+}
 .our-team__buttons-wrapper .swiper-button-prev,
 .our-team__buttons-wrapper .swiper-button-next {
 	position: static;
