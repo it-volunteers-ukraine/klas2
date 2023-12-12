@@ -15,7 +15,7 @@ get_header();
             <div class="container">
                 <div class="banner__wrap">
                     <div class="front-page__banner-title">
-                        <p><?php the_field('subtitle'); ?>Громадська організація</p>
+                        <p><?php the_field('subtitle'); ?></p>
                         <h1><?php the_field('title_h1'); ?></h1>
                         <a class="primary_button button banner__btn" href="<?php the_field( 'banner__btn'); ?> ">
                             Підтримати нас
@@ -123,7 +123,7 @@ get_header();
 
                         </div>
 
-                        <a href="<?php echo the_field('about_link')?>" class="button read-more_button">
+                        <a href="<?php the_field('about_link')?>" class="button read-more_button">
                             <span> Читати більше</span>
 
                             <svg class="arrow-icon">
@@ -149,7 +149,7 @@ get_header();
 
                     <?php
                     $works = get_field('works');
-
+                    if ($works) {
                     foreach ($works as $key => $work) { ?>
 
                     <div class="articles__article">
@@ -164,6 +164,7 @@ get_header();
                     </div>
 
                     <?php }
+                    }
                     ?>
                 </div>
 
