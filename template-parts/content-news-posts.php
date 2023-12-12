@@ -8,7 +8,7 @@ get_header();
    <div class="container">
         <h1 class="main__title">Новини</h1>
         <!-- banner  -->
-        <div class="main__banner">
+        <div class="news-main__banner">
             <?php 
             $latest_post = get_posts('numberposts=1');
                 if($latest_post) {
@@ -16,8 +16,8 @@ get_header();
                         setup_postdata($post);
             ?>                
                 <img alt="main banner" src="<?php the_field('main-banner'); ?>">
-                <h2 class="banner__title"><?php the_title(); ?></h2>
-                <a href="<?php the_permalink(); ?>" class="button banner__button">Читати більше<svg class="banner__arrow-icon">
+                <h2 class="news-banner__title"><?php the_title(); ?></h2>
+                <a href="<?php the_permalink(); ?>" class="button news-banner__button">Читати більше<svg class="banner__arrow-icon">
                             <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#arrow"></use>
                             </svg></a>
             <?php
@@ -41,19 +41,19 @@ get_header();
                             $query->the_post();
                      ?> 
         <div class="post__box">
-            <div class="post__img"><?php if ( has_post_thumbnail()) { ?>
+            <div class="post__img">
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                   <?php the_post_thumbnail(); ?>
+                <?php get_template_part( 'template-parts/check_thumbnail' ); ?> 
                 </a>
-                <?php } ?>
+                
             </div>
             <div class="post__text">
                 <h2 class="post__title"><?php the_title(); ?></h2>
-                <div class="post__img-mobile"><?php if ( has_post_thumbnail()) { ?>
+                <div class="post__img-mobile">
                    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                   <?php the_post_thumbnail(); ?>
+                   <?php get_template_part( 'template-parts/check_thumbnail' ); ?> 
                    </a>
-                <?php } ?>
+               
             </div>
                 <div class="post__content-desktop"><?php echo wp_trim_words(get_the_excerpt(), 50); ?></div>
                 <div class="post__content-tablet"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></div>

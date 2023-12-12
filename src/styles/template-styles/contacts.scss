@@ -58,6 +58,12 @@
 				font-size: 18px;
 				font-weight: 600;
 				line-height: 24px;
+				transition: color $transition-function;
+
+				&:hover,
+				&:focus {
+					color: $dark-violet;
+				}
 				@media screen and (max-width: $desktop) {
 					font-size: 16px;
 					line-height: 23px;
@@ -104,9 +110,9 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			gap: 16px;
 			@media screen and (max-width: $tablet) {
 				flex-direction: column;
-				gap: 16px;
 			}
 			&__title {
 				width: 385px;
@@ -154,7 +160,7 @@
 		@media screen and (max-width: $desktop) {
 			gap: 16px;
 		}
-		@media screen and (max-width: $tablet) {
+		@media screen and (max-width: $big-tablet) {
 			flex-direction: column;
 			gap: 80px;
 		}

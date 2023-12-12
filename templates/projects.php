@@ -19,18 +19,26 @@ get_header();
         <?php
         $active_tab = isset($_GET['tab']) ? sanitize_key($_GET['tab']) : 'all';
 
-        $tabs = array(
-          'all' => 'Всі проєкти',
-          'current' => 'Поточні',
-          'completed' => 'Реалізовані',
-        );
+        // Отримуємо всі терміни з таксономії project_categories
+        $taxonomy_terms = get_terms(array(
+          'taxonomy' => 'project_categories',
+          'hide_empty' => false, // Показуємо навіть ті, які не мають записів
+        ));
 
-        foreach ($tabs as $tab_slug => $tab_label) {
-          $tab_classes = ($active_tab === $tab_slug) ? 'tab tab-active' : 'tab';
-          $tab_link = ($tab_slug === 'all') ? get_permalink() : add_query_arg('tab', $tab_slug, get_permalink());
+        // Виводимо вкладку для "Всі проєкти"
+        $all_tab_classes = ($active_tab === 'all') ? 'tab tab-active' : 'tab';
+        $all_tab_link = get_permalink();
         ?>
-          <a class="<?php echo esc_attr($tab_classes); ?>" href="<?php echo esc_url($tab_link); ?>"><?php echo esc_html($tab_label); ?>
-          </a>
+        <a class="<?php echo esc_attr($all_tab_classes); ?>" href="<?php echo esc_url($all_tab_link); ?>">Всі проєкти</a>
+
+        <?php
+        foreach ($taxonomy_terms as $term) {
+          $tab_slug = $term->slug;
+          $tab_label = $term->name;
+          $tab_classes = ($active_tab === $tab_slug) ? 'tab tab-active' : 'tab';
+          $tab_link = add_query_arg('tab', $tab_slug, get_permalink());
+        ?>
+          <a class="<?php echo esc_attr($tab_classes); ?>" href="<?php echo esc_url($tab_link); ?>"><?php echo esc_html($tab_label); ?></a>
         <?php
         }
         ?>
@@ -44,74 +52,92 @@ get_header();
         'posts_per_page' => 4,
       );
 
-      if ($active_tab === 'current') {
+      if ($active_tab !== 'all') {
         $args['tax_query'] = array(
           array(
             'taxonomy' => 'project_categories',
             'field' => 'slug',
-            'terms' => 'поточні',
-          ),
-        );
-      } elseif ($active_tab === 'completed') {
-        $args['tax_query'] = array(
-          array(
-            'taxonomy' => 'project_categories',
-            'field' => 'slug',
-            'terms' => 'реалізовані',
+            'terms' => $active_tab,
           ),
         );
       }
 
       $projects_query = new WP_Query($args);
 
-      while ($projects_query->have_posts()) :
-        $projects_query->the_post();
+      if ($projects_query->have_posts()) :
+        while ($projects_query->have_posts()) :
+          $projects_query->the_post();
       ?>
-        <article>
-          <h3 class="project__title"><?php the_title(); ?></h3>
-          <div class="project__wrap">
-            <div class="project__flex">
-              <?php
-              $image = get_field('project__img');
-              if ($image) {
-                echo '<img class="project__img" src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
-              }
-              ?>
-            </div>
-            <div class="project__flex">
-              <div class="text__wrap">
-                <p class="text__btn"><?php the_field('project__category'); ?></p>
-                <p><?php the_field('project__period'); ?></p>
+          <article>
+            <h3 class="project__title"><?php the_title(); ?></h3>
+            <div class="project__wrap">
+              <div class="project__flex project__img">
+                <?php get_template_part('template-parts/check_thumbnail'); ?>
               </div>
-              <div class="description__wrap">
-                <p class="project__description"><?php the_field('project__description'); ?></p>
-                <?php
-                $project_budget = get_field('project__budget');
-                if ($project_budget) {
-                  echo '<p class="project__budget">' . esc_html($project_budget) . '</p>';
-                }
-                ?>
-              </div>
-            </div>
+              <div class="project__flex">
+                <div class="text__wrap">
 
-          </div>
-        </article>
+                  <?php
+                  $categories = get_the_terms($post, 'project_categories');
+
+                  if (count($categories) > 0) : ?>
+                    <p class="text__btn">
+                      <?php
+                      $catNames = array_column($categories, 'name');
+                      // виводимо через кому
+                      echo implode(', ', $catNames)
+                      ?>
+                    </p>
+                  <?php endif; ?>
+
+                  <p><?php the_field('project__period'); ?></p>
+                </div>
+                <div class="description__wrap">
+
+                  <?php
+                  $project_budget = get_field('project__budget');
+                  $margin_bottom = $project_budget ? '60px' : '30px';
+                  ?>
+
+                  <p class="project__description" style="margin-bottom: <?php echo esc_attr($margin_bottom); ?>">
+                    <?php the_field('project__description'); ?>
+
+                    <?php if ($project_budget) : ?>
+                  <p class="project__budget"><?php echo esc_html($project_budget); ?></p>
+                <?php endif; ?>
+                </p>
+
+                </div>
+              </div>
+            </div>
+          </article>
       <?php
-      endwhile;
+        endwhile;
 
-      // Додаємо пагінацію
-      $pagination_args = array(
-        'total' => $projects_query->max_num_pages,
-        'format' => 'page/%#%',
-        'prev_text' => ('&lt;'),
-        'next_text' => ('&gt;'),
-      );
+        // Додаємо пагінацію
+        $pagination_args = array(
+          'total' => $projects_query->max_num_pages,
+          'format' => 'page/%#%',
+          'prev_text' => ('&lt;'),
+          'next_text' => ('&gt;'),
+        );
 
-      echo '<div class="pagination">';
-      echo paginate_links($pagination_args);
-      echo '</div>';
+        $pagination_html = paginate_links($pagination_args);
+
+        if ($pagination_html) {
+          echo '<div class="pagination">';
+          echo $pagination_html;
+          echo '</div>';
+        }
+      endif;
 
       wp_reset_postdata();
+      ?>
+      <!-- Якщо немає постів для відображення -->
+      <?php
+      if (!$projects_query->have_posts()) {
+        echo '<p class="project__title">Немає проєктів для відображення.</p>';
+      }
       ?>
     </div>
   </section>

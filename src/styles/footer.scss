@@ -54,7 +54,7 @@
 }
 
 .footer__wraper {
-	margin-bottom: 36px;
+	margin-bottom: 48px;
 	display: flex;
 	justify-content: space-around;
 	font-size: 18px;
@@ -62,14 +62,14 @@
 	line-height: calc(24 / 18);
 
 	@media screen and (max-width: $desktop) {
-		margin-bottom: 12px;
+		margin-bottom: 20px;
 		font-size: 12px;
 		font-weight: 600;
 		line-height: 1;
 	}
 
 	@media screen and (max-width: 575.9px) {
-		margin-bottom: 24px;
+		margin-bottom: 30px;
 		justify-content: space-between;
 	}
 }
@@ -107,11 +107,12 @@
 }
 
 .fcontact__list a {
-	transition: color $transition-function;
+	transition: color $transition-function, scale $transition-function;
 
 	&:hover,
 	&:focus {
 		color: $dark-violet;
+		scale: 1.03;
 	}
 }
 
@@ -242,6 +243,13 @@ footer .menu-item {
 
 .footer-icon {
 	background-color: transparent;
+
+	transition: scale $transition-function;
+
+	&:hover,
+	&:focus {
+		scale: 1.03;
+	}
 
 	@media screen and (max-width: $desktop) {
 		width: 24px;
