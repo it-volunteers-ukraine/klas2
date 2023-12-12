@@ -11,7 +11,7 @@
 
 			<section class="error-404">
 				<div class="container">
-							 <?php $errorImage = get_field('error_image', 'option'); ?>
+							<?php $errorImage = get_field('error_image', 'option'); ?>
 							<?php if ($errorImage): ?>
 								<img class="error-404__image" src="<?php echo esc_url($errorImage['url']); ?>" alt="<?php echo esc_attr($errorImage['alt']); ?>" />
 							<?php endif; ?>
