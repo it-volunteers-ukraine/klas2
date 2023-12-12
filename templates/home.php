@@ -123,7 +123,7 @@ get_header();
 
                         </div>
 
-                        <a href="<?php echo get_field('about_link')?>" class="button read-more_button">
+                        <a href="<?php echo get_page_link(10)?>" class="button read-more_button">
                             <span> Читати більше</span>
 
                             <svg class="arrow-icon">
@@ -255,7 +255,8 @@ get_header();
 
 
                 </div>
-                <a class="primary_button button front-page__news-btn" href=" <?php get_page_link( 'news_link' ); ?>">
+                <a class="primary_button button front-page__news-btn" 
+                href=" <?php get_page_link(14); ?>">
                     Усі новини
                 </a>
             </div>
