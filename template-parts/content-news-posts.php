@@ -8,7 +8,7 @@ get_header();
    <div class="container">
         <h1 class="main__title">Новини</h1>
         <!-- banner  -->
-        <div class="main__banner">
+        <div class="news-main__banner">
             <?php 
             $latest_post = get_posts('numberposts=1');
                 if($latest_post) {
