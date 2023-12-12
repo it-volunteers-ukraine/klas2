@@ -123,7 +123,7 @@ get_header();
 
                         </div>
 
-                        <a href="<?php echo get_page_link(10)?>" class="button read-more_button">
+                        <a href="<?php echo the_field('about_link')?>" class="button read-more_button">
                             <span> Читати більше</span>
 
                             <svg class="arrow-icon">
