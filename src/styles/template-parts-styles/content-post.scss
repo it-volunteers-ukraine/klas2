@@ -126,6 +126,14 @@
         height: 428px;
     }
   }
+  .single-post__slider .swiper-wrapper {
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (max-width: $desktop) {
+        height: 116px;
+    }
+  }
 
 .single-post__slider2 .swiper-slide {
     height: 100%;
