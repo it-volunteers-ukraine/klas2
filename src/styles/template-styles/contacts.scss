@@ -5,7 +5,7 @@
 		padding: 40px 0 36px;
 	}
 	@media screen and (max-width: $tablet) {
-		padding: 40px 0 27px;
+		padding: 40px 0 13px;
 	}
 	&__title {
 		font-size: 40px;
@@ -79,7 +79,7 @@
 		padding: 36px 0;
 	}
 	@media screen and (max-width: $tablet) {
-		padding: 40px 0 27px;
+		padding: 40px 0;
 	}
 	&__title {
 		font-size: 24px;
@@ -145,12 +145,12 @@
 }
 
 .team {
-	padding: 56px 0;
+	padding: 56px 0 112px;
 	@media screen and (max-width: $desktop) {
-		padding: 36px 0;
+		padding: 36px 0 72px;
 	}
 	@media screen and (max-width: $tablet) {
-		padding: 40px 0;
+		padding: 40px 0 80px;
 	}
 
 	&__container {
