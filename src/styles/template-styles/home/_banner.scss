@@ -79,6 +79,7 @@
     
     
             &-img {
+                border-radius:4px;
                 &:not(:nth-child(3n)){
                     width:18.5%;
                 }
