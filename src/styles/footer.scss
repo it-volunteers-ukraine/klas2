@@ -107,11 +107,12 @@
 }
 
 .fcontact__list a {
-	transition: color $transition-function;
+	transition: color $transition-function, scale $transition-function;
 
 	&:hover,
 	&:focus {
 		color: $dark-violet;
+		scale: 1.03;
 	}
 }
 
@@ -242,6 +243,13 @@ footer .menu-item {
 
 .footer-icon {
 	background-color: transparent;
+
+	transition: scale $transition-function;
+
+	&:hover,
+	&:focus {
+		scale: 1.03;
+	}
 
 	@media screen and (max-width: $desktop) {
 		width: 24px;
