@@ -31,9 +31,13 @@
                                         </li>
                                 <?php endwhile;?>
                             </ul>
-                            <div class="swiper-pagination"></div>  
+                            <!-- <div class="swiper-pagination"></div>  
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>   -->
                         </div>
                     <?php endif; ?> 
+                    <!-- <button id="show-more-buttom">ще фото</button>
+                    <div id="additional-photos" style="display:none;"></div> -->
                 </div>
                <?php get_template_part( 'template-parts/aside-posts'); ?>
             </div> 
