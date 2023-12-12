@@ -1,12 +1,13 @@
 @import "../variables.scss";
 .join-us {
-	padding: 56px 0;
+	margin: 56px 0 112px;
 	@media screen and (max-width: $desktop) {
-		padding: 36px 0;
+		background-color: $light-violet;
+		margin: 36px 0 72px;
 	}
 
 	@media screen and (max-width: $tablet) {
-		padding: 40px 0;
+		margin: 39px 0 80px;
 	}
 	&__container {
 		background-color: $light-violet;
@@ -20,6 +21,7 @@
 		@media screen and (max-width: $desktop) {
 			text-align: center;
 			flex-direction: column;
+			background-color: transparent;
 		}
 		@media screen and (max-width: $tablet) {
 			text-align: left;
