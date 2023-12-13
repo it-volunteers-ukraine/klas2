@@ -12,6 +12,11 @@
         margin-bottom: 32px;
         height: 238px;
     }
+    @media screen and (max-width: $tablet) {
+        margin-top: 40px;
+        margin-bottom: 8px;
+        height: 115px;
+    }
 }
 
 .single__banner::after {
@@ -50,10 +55,18 @@
         line-height: 22.5px;
         bottom: 36px;
     }
+    @media screen and (max-width: $tablet) {
+        max-width: 297px;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
 }
 
 .single__post-time{
     position: absolute;
+    font-style: normal;
     bottom: 15px;
     width: 100%;
     text-align: center;
@@ -67,6 +80,13 @@
         line-height: 4px;
         bottom: 16px;
     }
+    @media screen and (max-width: $tablet) {
+        line-height: 20px;
+        font-size: 16px;
+        color: $main-black;
+        position: static;
+        margin-top: 8px;
+    }
 }
 
 .single__container{
@@ -77,8 +97,16 @@
     @media screen and (max-width: $desktop) {
        display: block;
    }
+   @media screen and (max-width: $tablet) {
+       margin-top: 52px;
+   }
 }
 
+.post__content{
+    @media screen and (max-width: $tablet) {
+        margin-bottom: 46px;
+    }
+}
 .post__content p{
     font-size: 18px;
     font-style: normal;
@@ -125,7 +153,12 @@
     @media screen and (max-width: $desktop) {
         height: 428px;
     }
+    @media screen and (max-width: $tablet) {
+       height: 209px;
+    }
+
   }
+  
   .single-post__slider .swiper-wrapper {
     height: 120px;
     margin-left: auto;
@@ -159,6 +192,9 @@
     @media screen and (max-width: $desktop) {
         margin-top: 32px;
     }
+    @media screen and (max-width: $tablet) {
+        margin-top: 24px;
+    }
 }
 
 .single-post__slider2 .swiper-slide {
@@ -178,6 +214,8 @@
 
 .single-post__slider .swiper-pagination{
     position: static;
+    margin-top: 22px;
+    padding-bottom: 64px;
     @media screen and (max-width: $tablet) {
       
     }
@@ -188,32 +226,8 @@
     @media screen and (max-width: $tablet) {
       display: block;
       position: static;
+      margin-top: 22px;
     }
-}
-
-.single-post__slider .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
-    bottom: var(--swiper-pagination-bottom,auto);
-    top: var(--swiper-pagination-top,auto);
-    left: 0;
-    width: var(--swiper-pagination-bullet-width,var(--swiper-pagination-bullet-size,29px));
-    height: var(--swiper-pagination-bullet-height,var(--swiper-pagination-bullet-size,1px));
-    display: inline-block;
-    
-
-    
-}
-.single-post__slider2 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
-    display: none;
-    @media screen and (max-width: $tablet) {
-        width: var(--swiper-pagination-bullet-width,var(--swiper-pagination-bullet-size,29px));
-        height: var(--swiper-pagination-bullet-height,var(--swiper-pagination-bullet-size,1px));
-        display: inline-block;
-    }
-}
-
-.single-post__slider2 span.swiper-pagination-bullet .swiper-pagination-bullet-active{
-	background-color: $main-black;
 }
 
 .single-post__slider2 .swiper-button-prev ,.single-post__slider2 .swiper-button-next {
@@ -221,9 +235,10 @@
 
     @media screen and (max-width: $tablet) {
     display: block;
-    top: var(--swiper-navigation-top-offset,95%);
+    top: var(--swiper-navigation-top-offset,92%);
     color: $main-black;
     font-size: 24px;
+    width: auto;
     }
 }
 .single-post__slider2 .swiper-button-prev::after,.single-post__slider2 .swiper-button-next::after {
@@ -231,6 +246,24 @@
     @media screen and (max-width: $tablet) {
     font-size: 24px;
     color: #070707;
-    
+    width: auto;
     }
+}
+
+.single-post__slider__pagination-span,
+ .single-post__slider2__pagination-span{
+        width: 29px;
+        height: 2px;
+        border-radius: 0;
+
+        @media screen and (max-width: $tablet) {
+           width: 8%;
+           max-width: 29px;
+           flex-shrink: 0;
+        }
+    
+}
+.single-post__slider__pagination-span.swiper-pagination-bullet-active,
+.single-post__slider2__pagination-span.swiper-pagination-bullet-active {
+    background: #000;
 }
