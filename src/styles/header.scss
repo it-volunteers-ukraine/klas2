@@ -48,10 +48,11 @@
 }
 
 .menu__body li{
+	line-height: 24px;
 	display: flex;
 	justify-content: space-around;
 	font-size: 18px;
-	
+		
 	@media screen and (max-width: 1050px){
 		font-size: 16px;
 	}
@@ -69,16 +70,17 @@
 }
 
 .menu__body>li:nth-child(odd){
+	transition: all $transition-function;
 	&:hover,
 	&:focus {
 		color: $dark-violet;
 		transform: scale(1.05);
-		
+
 	}
 }
 
 .header__btn{
-	
+	line-height: 24px;
 	@media screen and (max-width: $desktop) {
 		display: none;
    }
@@ -121,11 +123,11 @@
 		background-color: white;
         height: fit-content;
 		width: 100%;
-	
 	}
 }
 
 .header_list .menu-item{
+	transition: all $transition-function;
 	&:hover,
 	&:focus {
 		color: $dark-violet;
