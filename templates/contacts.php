@@ -24,7 +24,7 @@ get_header();
                 </a>
               </li>
               <li>
-                <a class="contacts__list__item" href="tel:<?php echo str_replace(' ', '', get_field('second-phone', 'options')); ?>" aria-label="телефон">
+                <a class="contacts__list__item" href="https://wa.me/<?php echo str_replace(' ', '', get_field('second-phone', 'options')); ?>"  target="_blank" aria-label="телефон">
                   <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-WhatsApp"></use></svg>
                       <p class="contacts__list__item__text"><?php the_field('second-phone', 'options'); ?></p>
               </a>
