@@ -94,26 +94,18 @@ get_header();
                 </div>
                 <div class="description__wrap">
 
-                  <p class="project__description">
-                    <?php the_field('project__description'); ?>
-                  </p>
-
                   <?php
                   $project_budget = get_field('project__budget');
-                  if ($project_budget) {
-                    echo '<p class="project__budget">' . esc_html($project_budget) . '</p>';
-                  }
+                  $margin_bottom = $project_budget ? '60px' : '30px';
                   ?>
 
-                  <!-- <button class="button read-more_button read-more_button-mobile">Читати більше<svg class="arrow-icon">
-                      <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#arrow"></use>
-                    </svg>
-                  </button>
+                  <p class="project__description" style="margin-bottom: <?php echo esc_attr($margin_bottom); ?>">
+                    <?php the_field('project__description'); ?>
 
-                  <button class="button read-less_button read-more_button-mobile">Сховати <svg class="arrow-icon">
-                      <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#close"></use>
-                    </svg>
-                  </button> -->
+                    <?php if ($project_budget) : ?>
+                  <p class="project__budget"><?php echo esc_html($project_budget); ?></p>
+                <?php endif; ?>
+                </p>
 
                 </div>
               </div>

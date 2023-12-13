@@ -210,6 +210,14 @@ textarea.contact__input {
 	top: 16px;
 	left: 102px;
 	background-color: $dark-violet;
+
+	@media screen and (max-width: $desktop) {
+		top: 12px;
+	}
+
+	@media screen and (max-width: $tablet) {
+		left: 65%;
+	}
 }
 
 .wpcf7-response-output {

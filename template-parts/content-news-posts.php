@@ -8,7 +8,7 @@ get_header();
    <div class="container">
         <h1 class="main__title">Новини</h1>
         <!-- banner  -->
-        <div class="main__banner">
+        <div class="news-main__banner">
             <?php 
             $latest_post = get_posts('numberposts=1');
                 if($latest_post) {
@@ -16,7 +16,7 @@ get_header();
                         setup_postdata($post);
             ?>                
                 <img alt="main banner" src="<?php the_field('main-banner'); ?>">
-                <h2 class="banner__title"><?php the_title(); ?></h2>
+                <h2 class="news-banner__title"><?php the_title(); ?></h2>
                 <a href="<?php the_permalink(); ?>" class="button news-banner__button">Читати більше<svg class="banner__arrow-icon">
                             <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#arrow"></use>
                             </svg></a>
