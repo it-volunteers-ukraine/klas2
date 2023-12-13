@@ -15,9 +15,9 @@
     font-style: normal;
     font-weight: 700;
     line-height: 48px; 
-    margin-top: 58px;
+    margin-top: 56px;
     @media screen and (max-width: $desktop) {
-        margin-top: 46px;
+        margin-top: 40px;
         font-size: 30px;
         line-height: 34px
     }
@@ -36,7 +36,7 @@
    
     @media screen and (max-width: $desktop) {
        height: 237px;
-       margin-top: 25px;
+       margin-top: 32px;
     }
     @media screen and (max-width: $tablet) {
         height: 115px;
@@ -272,7 +272,7 @@
 
 .post__details{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     width: 100%;
     position: absolute;
@@ -299,6 +299,8 @@
 }
 
 .read-more_button-mobile{
+    display: flex;
+    align-items: flex-end;
     @media screen and (max-width: $desktop) {
         font-size: 16px;
     }

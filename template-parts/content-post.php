@@ -12,7 +12,6 @@
                     $images = get_field('gallery');
                     $size = 'full'; // (thumbnail, medium, large, full or custom size)
                     if( $images ): ?>
-                    if( $images ): ?>
                         <div class="single-post__slider2 swiper-container">
                             <ul class="swiper-wrapper " id="lightgallery">
                             <?php foreach( $images as $image_id ): ?>
@@ -33,14 +32,12 @@
                                 </li>
                             <?php endforeach; ?>
                             </ul>
-                            <!-- <div class="swiper-pagination"></div>  
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>   -->
+                            <div class="swiper-pagination"></div>
+                            <!-- <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div> -->
                         </div>
                     <?php endif; ?> 
-                    <!-- <button id="show-more-buttom">ще фото</button>
-                    <div id="additional-photos" style="display:none;"></div> -->
-                </div>
+                    </div>
                <?php get_template_part( 'template-parts/aside-posts'); ?>
             </div> 
       </div>
