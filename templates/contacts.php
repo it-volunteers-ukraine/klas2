@@ -90,9 +90,13 @@ get_header();
         $teamText = get_field('team_text');?>
           <img class="team__container__content__fon-image" src='<?php echo get_template_directory_uri()?>/assets/images/fon_right.png' alt="Fon photo" />
           <?php if ($teamImage): ?>
+             <div class="team__wrapper">
               <img class="team__image" src="<?php echo esc_url($teamImage['url']); ?>" alt="<?php echo esc_attr($teamImage['alt']); ?>"/>
-              <h3 class="team__title"><?php echo esc_html($teamTitle); ?></h3>
-              <p class="team__text"><?php echo esc_html($teamText); ?></p>
+             </div>
+              <div class="team__text-container">
+                <h3 class="team__title"><?php echo esc_html($teamTitle); ?></h3>
+                <p class="team__text"><?php echo esc_html($teamText); ?></p>
+              </div>
           <?php endif; ?>
         </div>
       </div>
