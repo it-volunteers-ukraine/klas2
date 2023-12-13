@@ -139,31 +139,31 @@
 	& img {
 		border-radius: $btn-border-radius;
 		overflow: hidden;
-		max-height: 336px;
+		height: 336px;
 		object-fit: cover;
 	}
 
 	@media screen and (max-width: $desktop) {
 		& img {
-			max-height: 244px;
+			height: 244px;
 		}
 	}
 
 	@media screen and (max-width: $big-tablet) {
 		& img {
-			max-height: 200px;
+			height: 200px;
 		}
 	}
 
 	@media screen and (max-width: $tablet) {
 		& img {
-			max-height: 206px;
+			height: 206px;
 		}
 	}
 
 	@media screen and (max-width: $mobile) {
 		& img {
-			max-height: 185px;
+			height: 185px;
 		}
 	}
 }
@@ -205,8 +205,6 @@
 }
 
 .project__description {
-	margin-bottom: 56px;
-
 	font-size: 18px;
 	font-weight: 400;
 	line-height: calc(20 / 18);

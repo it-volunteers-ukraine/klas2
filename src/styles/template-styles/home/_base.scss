@@ -1,14 +1,20 @@
 .front-page {
     font-size: 18px;
+    @media(max-width:$desktop){         
+        font-size: 16px;
+
+    }
 
     &__main {
         &>section {
+      
             margin-bottom: 112px;
-
+            @media(max-width:$desktop){         
+                margin-bottom: 72px;
+    
+            }
         }
-        @media(max-width:$desktop){
-            margin-bottom: 72px;
-        }
+     
     }
 
     &__articles {
@@ -66,7 +72,9 @@
         }
 
         &-new {
+            position: relative;
             width: 33.33%;
+      
             &:nth-child(4n){
                 display: none;
             }

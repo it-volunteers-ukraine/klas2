@@ -1,5 +1,6 @@
 .front-page{
 
+
     &__banner-title {
     
         text-align: center;
@@ -28,6 +29,10 @@
         min-height: 300px;
         margin-bottom: 112px;
         margin-top: 64px;
+        @media(max-width:$desktop) {
+            margin-top: 40px;
+            margin-bottom: 72px;
+        }
     
     
         &__back {
@@ -74,6 +79,7 @@
     
     
             &-img {
+                border-radius:4px;
                 &:not(:nth-child(3n)){
                     width:18.5%;
                 }
