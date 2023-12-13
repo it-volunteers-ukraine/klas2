@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-			<meta charset="<?php bloginfo('charset'); ?>">
-			<meta http-equiv="X-UA-Compatible" content="IE=edge">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">    
-			<?php wp_head(); ?>
-	</head>
-	<body>
+<?php
+
+/**
+ * The template for displaying 404 pages (not found)
+ *
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
+ * @package wp-it-volunteers
+ */
+
+get_header();
+?>
 		<main id="primary" class="site-main">
 
 			<section class="error-404">
@@ -25,7 +28,7 @@
 							</div>
 				</div>
 			</section>
-		</main>
-	</body>
-	
-</html>
+			</main>
+
+<?php
+get_footer();

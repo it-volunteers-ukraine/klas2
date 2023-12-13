@@ -24,7 +24,7 @@ get_header();
                 </a>
               </li>
               <li>
-                <a class="contacts__list__item" href="tel:<?php echo str_replace(' ', '', get_field('second-phone', 'options')); ?>" aria-label="телефон">
+                <a class="contacts__list__item" href="https://wa.me/<?php echo str_replace(' ', '', get_field('second-phone', 'options')); ?>"  target="_blank" aria-label="телефон">
                   <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-WhatsApp"></use></svg>
                       <p class="contacts__list__item__text"><?php the_field('second-phone', 'options'); ?></p>
               </a>
@@ -90,9 +90,13 @@ get_header();
         $teamText = get_field('team_text');?>
           <img class="team__container__content__fon-image" src='<?php echo get_template_directory_uri()?>/assets/images/fon_right.png' alt="Fon photo" />
           <?php if ($teamImage): ?>
+             <div class="team__wrapper">
               <img class="team__image" src="<?php echo esc_url($teamImage['url']); ?>" alt="<?php echo esc_attr($teamImage['alt']); ?>"/>
-              <h3 class="team__title"><?php echo esc_html($teamTitle); ?></h3>
-              <p class="team__text"><?php echo esc_html($teamText); ?></p>
+             </div>
+              <div class="team__text-container">
+                <h3 class="team__title"><?php echo esc_html($teamTitle); ?></h3>
+                <p class="team__text"><?php echo esc_html($teamText); ?></p>
+              </div>
           <?php endif; ?>
         </div>
       </div>

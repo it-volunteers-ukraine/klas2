@@ -5,7 +5,7 @@
 		padding: 40px 0 36px;
 	}
 	@media screen and (max-width: $tablet) {
-		padding: 40px 0 27px;
+		padding: 40px 0 13px;
 	}
 	&__title {
 		font-size: 40px;
@@ -79,7 +79,7 @@
 		padding: 36px 0;
 	}
 	@media screen and (max-width: $tablet) {
-		padding: 40px 0 27px;
+		padding: 40px 0;
 	}
 	&__title {
 		font-size: 24px;
@@ -112,10 +112,10 @@
 			justify-content: space-between;
 			gap: 16px;
 			@media screen and (max-width: $tablet) {
-				flex-direction: column;
+				flex-direction: column-reverse;
 			}
 			&__title {
-				width: 385px;
+				max-width: 408px;
 				padding-left: 12px;
 				border-left: 8px solid $main-yellow;
 				border-radius: 4px;
@@ -123,7 +123,7 @@
 				font-size: 18px;
 				line-height: 24px;
 				@media screen and (max-width: $desktop) {
-					width: 327px;
+					max-width: 344px;
 					font-size: 16px;
 					line-height: 24px;
 				}
@@ -145,18 +145,19 @@
 }
 
 .team {
-	padding: 56px 0;
+	padding: 56px 0 112px;
 	@media screen and (max-width: $desktop) {
-		padding: 36px 0;
+		padding: 36px 0 72px;
 	}
 	@media screen and (max-width: $tablet) {
-		padding: 40px 0;
+		padding: 40px 0 80px;
 	}
 
 	&__container {
 		display: flex;
 		align-items: center;
 		gap: 98px;
+		justify-content: space-between;
 		@media screen and (max-width: $desktop) {
 			gap: 16px;
 		}
@@ -167,11 +168,16 @@
 		&__content {
 			position: relative;
 			max-width: 484px;
+			display: flex;
+			flex-direction: column;
+			gap: 86px;
 			@media screen and (max-width: $desktop) {
 				max-width: 344px;
+				gap: 42px;
 			}
 			@media screen and (max-width: $tablet) {
 				max-width: none;
+				gap: 20px;
 			}
 			&__fon-image {
 				width: 112px;
@@ -185,27 +191,34 @@
 			}
 		}
 	}
-	&__image {
-		max-width: 484px;
-		margin-bottom: 86px;
+	&__text-container {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
 		@media screen and (max-width: $desktop) {
-			max-width: 344px;
-			margin-bottom: 42px;
+			gap: 16px;
 		}
-		@media screen and (max-width: $tablet) {
-			max-width: 342px;
-			margin: 0 auto 20px;
-		}
+	}
+	&__wrapper {
+		width: 100%;
+		padding-top: 56.25%;
+		position: relative;
+		overflow: hidden;
+	}
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
 	}
 	&__title {
 		font-size: 24px;
 		font-weight: 600;
 		line-height: 28px;
-		margin-bottom: 24px;
 		@media screen and (max-width: $desktop) {
 			font-size: 18px;
 			line-height: 24px;
-			margin-bottom: 16px;
 		}
 		@media screen and (max-width: $tablet) {
 			text-align: center;
