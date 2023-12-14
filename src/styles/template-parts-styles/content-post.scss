@@ -103,8 +103,12 @@
 }
 
 .post__content{
+    
+    @media screen and (max-width: $desktop) {
+        margin-bottom: 50px;
+    }
     @media screen and (max-width: $tablet) {
-        margin-bottom: 46px;
+        margin-top: 72px;
     }
 }
 .post__content p{
@@ -115,9 +119,13 @@
     
     @media screen and (max-width: $desktop) {
         font-size: 16px;
+
     }
 }
 
+.wrapper-for-sliders{
+    position: relative;
+}
 .single-post__slider .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -159,7 +167,7 @@
 
   }
   
-  .single-post__slider .swiper-wrapper {
+.single-post__slider .swiper-wrapper {
     height: 120px;
     margin-left: auto;
     margin-right: auto;
@@ -180,6 +188,7 @@
     position: relative;
     @media screen and (max-width: $tablet) {
         display: none;
+   
     }
   }
 
@@ -194,6 +203,7 @@
     }
     @media screen and (max-width: $tablet) {
         margin-top: 24px;
+        position: static;
     }
 }
 
@@ -212,36 +222,18 @@
     border-radius: 4px;
 }
 
-.single-post__slider .swiper-pagination{
-    position: static;
-    margin-top: 22px;
-    padding-bottom: 64px;
-    @media screen and (max-width: $tablet) {
-      
-    }
-}
-
-.single-post__slider2 .swiper-pagination{
-    display: none;
-    @media screen and (max-width: $tablet) {
-      display: block;
-      position: static;
-      margin-top: 22px;
-    }
-}
-
-.single-post__slider2 .swiper-button-prev ,.single-post__slider2 .swiper-button-next {
+.wrapper-for-sliders .swiper-button-prev ,.wrapper-for-sliders .swiper-button-next {
     color: $main-white;
-
+    top: var(--swiper-navigation-top-offset,36%);
     @media screen and (max-width: $tablet) {
     display: block;
-    top: var(--swiper-navigation-top-offset,92%);
+    top: var(--swiper-navigation-top-offset,101.05%);
     color: $main-black;
     font-size: 24px;
     width: auto;
     }
 }
-.single-post__slider2 .swiper-button-prev::after,.single-post__slider2 .swiper-button-next::after {
+.wrapper-for-sliders .swiper-button-prev::after,.wrapper-for-sliders .swiper-button-next::after {
     color: $main-white;
     @media screen and (max-width: $tablet) {
     font-size: 24px;
@@ -249,12 +241,28 @@
     width: auto;
     }
 }
+.single-post__slider2 .swiper-horizontal>.swiper-pagination-bullets,.swiper-pagination-bullets.swiper-pagination-horizontal,.swiper-pagination-custom,.swiper-pagination-fraction{
+     width: 87%;
+}
+.single-post__swiper__pagination{
+    margin: 22px auto 0 auto;
+    text-align: center;
+    left:0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: $tablet) {
+        margin: 16px auto 0 auto;
+       
+    }
 
-.single-post__slider__pagination-span,
+}
+
  .single-post__slider2__pagination-span{
         width: 29px;
         height: 2px;
         border-radius: 0;
+        left:0;
 
         @media screen and (max-width: $tablet) {
            width: 8%;
@@ -263,7 +271,8 @@
         }
     
 }
-.single-post__slider__pagination-span.swiper-pagination-bullet-active,
+
 .single-post__slider2__pagination-span.swiper-pagination-bullet-active {
     background: #000;
 }
+
