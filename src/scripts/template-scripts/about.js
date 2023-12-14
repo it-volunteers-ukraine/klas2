@@ -29,3 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		},
 	})
 })
+document.addEventListener("DOMContentLoaded", function () {
+	var swiperContainer = document.querySelector(".swiper-container")
+	if (swiperContainer) {
+		var swiperSlides = swiperContainer.querySelectorAll(".swiper-slide")
+		swiperSlides.forEach(function (slide) {
+			slide.removeAttribute("role")
+			slide.setAttribute("role", "listitem")
+		})
+	}
+})

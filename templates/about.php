@@ -12,7 +12,7 @@ get_header();
     <h2 class="about__title"><?php the_title(); ?></h2>
       <div class="about__content">
         <div class="about__first-container">
-          <img class="about__fon-left" src='<?php echo get_template_directory_uri()?>/assets/images/fon_left.png' />
+          <img class="about__fon-left" src='<?php echo get_template_directory_uri()?>/assets/images/fon_left.png' alt="Background picture left"/>
           <?php $firstImage = get_field("first_image"); ?>
           <?php if ($firstImage): ?>
             <div class="about__wrapper">
@@ -29,7 +29,7 @@ get_header();
               <?php endif; ?>
             </div>
             <div class="about__second-container">
-              <img class="about__fon-right" src='<?php echo get_template_directory_uri()?>/assets/images/fon_right.png' />
+              <img class="about__fon-right" src='<?php echo get_template_directory_uri()?>/assets/images/fon_right.png' alt="Background picture right"/>
         <?php $secondImage = get_field("second_image"); ?>
         <?php if ($secondImage): ?>
           <div class="about__wrapper">
@@ -87,27 +87,27 @@ get_header();
                 <button class="swiper-button-next"></button>
             </div>
       </div>
-          <div class="swiper-container">
-            <div class="our-team__slider swiper">
-            <ul class="our-team__list swiper-wrapper">
-                <?php while(have_rows('our_team_slider')) : the_row(); 
-                    $image = get_sub_field('our_team_slider_image');
-                    $person = get_sub_field('our_team_slider_person');
-                    $position = get_sub_field('our_team_slider_position');
-                ?>
-                  <li class="our-team__list__item swiper-slide">
-                      <img class="our-team__list__item__img" src='<?php echo $image['url'] ?>' alt="<?php echo esc_attr($image['alt']); ?>"/>
-                      <div class="our-team__list__item__text-container">
-                        <h3 class="our-team__list__item__person"><?php echo $person ?></h3>
-                        <p class="our-team__list__item__position"><?php echo $position ?></p>
-                      </div>
-                  </li>
-                  <?php endwhile; ?>
-                </ul>
+            <div class="swiper-container">
+              <div class="our-team__slider swiper">
+              <ul class="our-team__list swiper-wrapper" role="list">
+                  <?php while(have_rows('our_team_slider')) : the_row(); 
+                      $image = get_sub_field('our_team_slider_image');
+                      $person = get_sub_field('our_team_slider_person');
+                      $position = get_sub_field('our_team_slider_position');
+                  ?>
+                    <li class="our-team__list__item swiper-slide">
+                        <img class="our-team__list__item__img" src='<?php echo $image['url'] ?>' alt="<?php echo esc_attr($image['alt']); ?>"/>
+                        <div class="our-team__list__item__text-container">
+                          <h3 class="our-team__list__item__person"><?php echo $person ?></h3>
+                          <p class="our-team__list__item__position"><?php echo $position ?></p>
+                        </div>
+                    </li>
+                    <?php endwhile; ?>
+                  </ul>
 
-                <div class="swiper-pagination"></div>
-                </div>
-              <?php endif; ?>
+                  <div class="swiper-pagination"></div>
+                  </div>
+                <?php endif; ?>
           </div>
     </div>
   </div>
