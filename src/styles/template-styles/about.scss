@@ -332,6 +332,7 @@
 		align-items: baseline;
 		justify-content: center;
 		@media screen and (max-width: $desktop) {
+			justify-content: flex-start;
 			gap: 16px;
 		}
 		@media screen and (max-width: $tablet) {
@@ -345,12 +346,18 @@
 			gap: 8px;
 			max-width: 267px;
 			text-align: center;
+			padding: 0 13px 0 14px;
 			@media screen and (max-width: $desktop) {
 				gap: 12px;
+				padding: 0;
 			}
 			&__img {
 				@media screen and (max-width: $desktop) {
-					width: auto;
+					max-width: 164px;
+					margin: 0 auto;
+				}
+				@media screen and (max-width: $tablet) {
+					max-width: none;
 				}
 			}
 			&__text-container {
