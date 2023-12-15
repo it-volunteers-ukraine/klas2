@@ -12,14 +12,18 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
+    
       
-    - run: set -eu
-    - run: mkdir "$HOME/.ssh"
-    - run: echo "${{ secrets.DEPLOY_KEY }}" > "$HOME/.ssh/key"
-    - run: chmod 600 "$HOME/.ssh/key"
-      # uses: tiyee/action-ssh@v1.0.1
-      # with:
-      #   privateKey: ${{ secrets.DEPLOY_KEY }}
+    # - run: set -eu
+    # - run: mkdir "$HOME/.ssh"
+    # - run: echo "${{ secrets.DEPLOY_KEY }}" > "$HOME/.ssh/key"
+    # - run: chmod 600 "$HOME/.ssh/key"
+    - name: Auth
+      uses: tiyee/action-ssh@v1.0.1
+      with:
+        privateKey: ${{ secrets.DEPLOY_KEY }}
+        host: ${{secrets.HOST}} 
+        user: ${{secrets.USER}}
 
     - name: Deploy to Server
       run: |
