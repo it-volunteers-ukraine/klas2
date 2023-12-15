@@ -105,10 +105,11 @@
 .post__content{
     
     @media screen and (max-width: $desktop) {
-        margin-bottom: 50px;
+        margin-bottom: 52px;
     }
     @media screen and (max-width: $tablet) {
-        margin-top: 72px;
+        margin-top: 52px;
+        margin-bottom: 72px;
     }
 }
 .post__content p{
@@ -119,7 +120,6 @@
     
     @media screen and (max-width: $desktop) {
         font-size: 16px;
-
     }
 }
 
@@ -194,7 +194,7 @@
         height: 428px;
     }
     @media screen and (max-width: $tablet) {
-       height: 209px;
+        height: 209px;
     }
   }
 

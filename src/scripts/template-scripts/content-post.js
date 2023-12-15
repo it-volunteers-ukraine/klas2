@@ -30,3 +30,13 @@ const newsSwiper = new Swiper(".single-post__slider", {
         swiper: newsSwiper,
     },
   });
+
+  lightbox.option({
+    alwaysShowNavOnTouchDevices: true,
+    wrapAround: true,
+    fitImagesInViewport: true,
+    disableScrolling: true,
+    wrapAround: true,
+    positionFromTop: 60,
+  });
+  

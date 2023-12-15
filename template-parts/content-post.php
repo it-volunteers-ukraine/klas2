@@ -10,23 +10,24 @@
                     <?php the_content(); ?>
                     <?php 
                     $images = get_field('gallery');
-                    $size = 'full'; // (thumbnail, medium, large, full or custom size)
                     if( $images ): ?>
                         <div class="wrapper-for-sliders">
                             <div class="single-post__slider2 swiper-container">
                                 <ul class="swiper-wrapper " id="lightgallery">
-                                <?php foreach( $images as $image_id ): ?>
-                                    <li class="swiper-slide">
-                                        <?php echo wp_get_attachment_image( $image_id, $size ); ?>
+                                <?php foreach( $images as $image ) : ?>
+                                    <li class="swiper-slide" >
+                                        <a href="<?php echo esc_url($image['url']); ?>" data-lightbox="gallery">
+                                            <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                         </a>
                                     </li>
                                 <?php endforeach; ?>
                                 </ul>
                             </div>
                             <div thumbsSlider="" class="single-post__slider">
                                 <ul class="swiper-wrapper ">
-                                <?php foreach( $images as $image_id ): ?>
+                                <?php foreach( $images as $image ): ?>
                                     <li class="swiper-slide">
-                                        <?php echo wp_get_attachment_image( $image_id ); ?>
+                                        <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                                     </li>
                                 <?php endforeach; ?>
                                 </ul>
