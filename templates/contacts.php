@@ -11,20 +11,20 @@ get_header();
     <h2 class="contacts__title"><?php the_title(); ?></h2>
     <div class="contacts__wrapper">
       <ul class="contacts__list">
-              <li>
-                <a class="contacts__list__item" href="mailto:<?php the_field('email', 'options'); ?>" aria-label="email">
+              <li aria-label="Надіслати листа на електронну пошту">
+                <a class="contacts__list__item" href="mailto:<?php the_field('email', 'options'); ?>">
                   <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-Gmail"></use></svg>
                       <p class="contacts__list__item__text"><?php the_field('email', 'options'); ?></p>
                 </a>
               </li>
-              <li>
-                <a class="contacts__list__item" href="tel:<?php echo str_replace(' ', '', get_field('first-phone', 'options')); ?>" aria-label="телефон">
+              <li aria-label="Зателефонувати">
+                <a class="contacts__list__item" href="tel:<?php echo str_replace(' ', '', get_field('first-phone', 'options')); ?>">
                   <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-Phone"></use></svg>
                       <p class="contacts__list__item__text"><?php the_field('first-phone', 'options'); ?></p>
                 </a>
               </li>
-              <li>
-                <a class="contacts__list__item" href="https://wa.me/<?php echo str_replace(' ', '', get_field('second-phone', 'options')); ?>"  target="_blank" aria-label="телефон">
+              <li aria-label="Написати в WhatsApp">
+                <a class="contacts__list__item" href="https://wa.me/<?php echo str_replace(' ', '', get_field('second-phone', 'options')); ?>"  target="_blank">
                   <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-WhatsApp"></use></svg>
                       <p class="contacts__list__item__text"><?php the_field('second-phone', 'options'); ?></p>
               </a>
@@ -33,13 +33,13 @@ get_header();
 
             <ul class="contacts__list">
                   <li>
-                    <a class="contacts__list__item" href="<?php echo esc_attr(get_field('facebook', 'options')); ?>" target="_blank" aria-label="facebook">
+                    <a class="contacts__list__item" href="<?php echo esc_attr(get_field('facebook', 'options')); ?>" target="_blank" aria-label="Відвідати нашу сторінку на Facebook">
                       <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-Facebook"></use></svg>
                         <p class="contacts__list__item__text"><?php the_field('contacts_facebook') ?></p>           
                     </a>
                   </li>
                 <li>
-                  <a class="contacts__list__item" href="<?php echo esc_attr(get_field('youtube', 'options')); ?>" target="_blank" aria-label="youtube">
+                  <a class="contacts__list__item" href="<?php echo esc_attr(get_field('youtube', 'options')); ?>" target="_blank" aria-label="Переглянути наш канал на YouTube">
                     <svg class="contacts__list__item__icon"><use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon-YouTube"></use></svg>
                         <p class="contacts__list__item__text"><?php the_field('contacts_youtube') ?></p>
                   </a>
@@ -63,6 +63,7 @@ get_header();
                   <li class="maps__list__item">
                     <p class="maps__list__item__title"><?php echo $text ?></p>
                     <iframe 
+                      title="Map"
                       class="maps__list__item__map"
                       src="<?php echo $map ?>" 
                       width="484" 

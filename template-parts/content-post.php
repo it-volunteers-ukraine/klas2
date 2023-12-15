@@ -12,29 +12,28 @@
                     $images = get_field('gallery');
                     $size = 'full'; // (thumbnail, medium, large, full or custom size)
                     if( $images ): ?>
-                        <div class="single-post__slider2 swiper-container">
-                            <ul class="swiper-wrapper " id="lightgallery">
-                            <?php foreach( $images as $image_id ): ?>
-                                <li class="swiper-slide">
-                                    <?php echo wp_get_attachment_image( $image_id, $size ); ?>
-                                </li>
-                            <?php endforeach; ?>
-                            </ul>
-                            <div class="swiper-pagination"></div>  
+                        <div class="wrapper-for-sliders">
+                            <div class="single-post__slider2 swiper-container">
+                                <ul class="swiper-wrapper " id="lightgallery">
+                                <?php foreach( $images as $image_id ): ?>
+                                    <li class="swiper-slide">
+                                        <?php echo wp_get_attachment_image( $image_id, $size ); ?>
+                                    </li>
+                                <?php endforeach; ?>
+                                </ul>
+                            </div>
+                            <div thumbsSlider="" class="single-post__slider">
+                                <ul class="swiper-wrapper ">
+                                <?php foreach( $images as $image_id ): ?>
+                                    <li class="swiper-slide">
+                                        <?php echo wp_get_attachment_image( $image_id ); ?>
+                                    </li>
+                                <?php endforeach; ?>
+                                </ul>
+                            </div>
+                            <div class="single-post__swiper__pagination"></div>
                             <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>        
-                        </div>
-                        <div thumbsSlider="" class="single-post__slider">
-                            <ul class="swiper-wrapper ">
-                            <?php foreach( $images as $image_id ): ?>
-                                <li class="swiper-slide">
-                                    <?php echo wp_get_attachment_image( $image_id ); ?>
-                                </li>
-                            <?php endforeach; ?>
-                            </ul>
-                            <div class="swiper-pagination"></div>
-                            <!-- <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div> -->
+                            <div class="swiper-button-prev"></div>      
                         </div>
                     <?php endif; ?> 
                     </div>
