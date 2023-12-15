@@ -14,9 +14,13 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up SSH
-      uses: tiyee/action-ssh@v1.0.1
-      with:
-        privateKey: ${{ secrets.DEPLOY_KEY }}
+    - run: set -eu
+    - run: mkdir "$HOME/.ssh"
+    - run: echo "${{ secrets.DEPLOY_KEY }}" > "$HOME/.ssh/key"
+    - run: chmod 600 "$HOME/.ssh/key"
+      # uses: tiyee/action-ssh@v1.0.1
+      # with:
+      #   privateKey: ${{ secrets.DEPLOY_KEY }}
 
     - name: Deploy to Server
       run: |
