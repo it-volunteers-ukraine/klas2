@@ -119,13 +119,13 @@
     
     @media screen and (max-width: $desktop) {
         font-size: 16px;
-
     }
 }
 
 .wrapper-for-sliders{
     position: relative;
 }
+
 .single-post__slider .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -162,7 +162,7 @@
         height: 428px;
     }
     @media screen and (max-width: $tablet) {
-       height: 209px;
+        height: 209px;
     }
 
   }
@@ -195,7 +195,7 @@
 .single-post__slider2 {
     box-sizing: border-box;
     margin-top: 40px;
-    padding-bottom: 21px;
+    padding-bottom: 47px;
     overflow: hidden;
     position: relative;
     @media screen and (max-width: $desktop) {
