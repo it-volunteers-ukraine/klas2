@@ -83,25 +83,27 @@
 		color: $dark-violet;
 	}
 
-	&::before {
-		content: "";
-		position: absolute;
-		bottom: -2px;
-		left: 0;
-		width: 0;
-		height: 2px;
-		background-color: $dark-violet;
-		transition: width 0.3s ease-in-out;
-	}
-
-	&:hover::before {
-		width: 100%;
-	}
-
-	&.active {
-		color: $dark-violet;
+	@media screen and (min-width: $desktop) {
 		&::before {
+			content: "";
+			position: absolute;
+			bottom: -2px;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background-color: $dark-violet;
+			transition: width 0.3s ease-in-out;
+		}
+
+		&:hover::before {
 			width: 100%;
+		}
+
+		&.active {
+			color: $dark-violet;
+			&::before {
+				width: 100%;
+			}
 		}
 	}
 }
@@ -237,6 +239,7 @@ footer .menu-item {
 	}
 
 	@media screen and (max-width: 575.9px) {
+		margin-left: 0;
 		margin-bottom: 10px;
 	}
 }

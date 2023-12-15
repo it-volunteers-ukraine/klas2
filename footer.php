@@ -43,7 +43,7 @@
           </a>
         </li>
         <li>
-          <a class="fcontac__link" href="tel:<?php echo str_replace(' ', '', get_field('second-phone', 'options')); ?>" aria-label="телефон">
+          <a class="fcontac__link" href="https://api.whatsapp.com/send?phone=<?php echo ltrim(str_replace(' ', '', get_field('second-phone', 'options')), '+'); ?>" target="_blank" aria-label="whatsapp">
             <svg class="footer-icon" width="40" height="40" viewBox="0 0 40 40">
               <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#icon-WhatsApp"></use>
             </svg>
@@ -94,7 +94,7 @@
           </a>
         </li>
         <li>
-          <a class="fcontac__link" href="tel:<?php echo str_replace(' ', '', get_field('second-phone', 'options')); ?>" aria-label="телефон">
+          <a class="fcontac__link" href="https://api.whatsapp.com/send?phone=<?php echo ltrim(str_replace(' ', '', get_field('second-phone', 'options')), '+'); ?>" target="_blank" aria-label="whatsapp">
             <svg class="footer-icon" width="40" height="40" viewBox="0 0 40 40">
               <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#icon-WhatsApp"></use>
             </svg>
