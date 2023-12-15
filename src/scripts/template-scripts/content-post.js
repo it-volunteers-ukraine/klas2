@@ -4,10 +4,9 @@ const newsSwiper = new Swiper(".single-post__slider", {
     slidesPerView: 4,
     freeMode: true,
     watchSlidesProgress: true,
-    pagination: {
-      el: '.single-post__swiper__pagination',
-      clickable: true,
-    },
+    keyboard: {
+            enabled: true,
+        },
   });
 
   var newsSwiper2 = new Swiper(".single-post__slider2", {
@@ -24,8 +23,10 @@ const newsSwiper = new Swiper(".single-post__slider", {
             '<span class="single-post__slider2__pagination-span ' + className + '"></span>'
           )
         },
-        // dynamicBullets: true,
     },
+    keyboard: {
+            enabled: true,
+        },
     thumbs: {
         swiper: newsSwiper,
     },
@@ -34,9 +35,21 @@ const newsSwiper = new Swiper(".single-post__slider", {
   lightbox.option({
     alwaysShowNavOnTouchDevices: true,
     wrapAround: true,
-    fitImagesInViewport: true,
     disableScrolling: true,
     wrapAround: true,
     positionFromTop: 60,
   });
   
+  //dynamic bullets width
+const bulletContainer = document.querySelector('.single-post__swiper__pagination');
+const bulletEls = document.querySelectorAll('.single-post__slider2__pagination-span');
+
+const bulletsCount = bulletContainer.childElementCount;
+const bulletContainerWidth = bulletContainer.offsetWidth;
+
+function calcFunc (bulletsCount, bulletContainerWidth) {
+  const bulletWidth = ((bulletContainerWidth - ((bulletsCount-1) * 10)) / bulletsCount);
+  return Math.round(bulletWidth);
+}
+
+bulletEls.forEach((bulletEl) => bulletEl.style.width = `${calcFunc (bulletsCount, bulletContainerWidth)}px`);

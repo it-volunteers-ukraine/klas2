@@ -1,19 +1,28 @@
 @import "../variables.scss";
 
-.single__banner{
+.post__section {
+  padding-top: 56px;
+  padding-bottom: 56px;
+  @media screen and (max-width: $desktop) {
+    padding-top: 40px;
+    padding-bottom: 36px;
+  }
+    @media screen and (max-width: $tablet) {
+      padding-bottom: 40px;
+    }
+}
+
+.single__banner {
     width: 100%;
     height: 384px;
     margin-bottom: 72px;
-    margin-top: 56px;
     position: relative;
 
     @media screen and (max-width: $desktop) {
-        margin-top: 40px;
         margin-bottom: 32px;
         height: 238px;
     }
     @media screen and (max-width: $tablet) {
-        margin-top: 40px;
         margin-bottom: 8px;
         height: 115px;
     }
@@ -205,21 +214,20 @@
     height: auto;
 }
 
-
 .single-post__slider2 .swiper-slide img {
     height: 100%;
     object-fit: cover;
     border-radius: 4px;
 }
 
-.wrapper-for-sliders .swiper-button-prev ,.wrapper-for-sliders .swiper-button-next {
+.wrapper-for-sliders .swiper-button-prev , .wrapper-for-sliders .swiper-button-next {
     top: 36%;
     @media screen and (max-width: $tablet) {
     top: 99.5%;
     width: auto;
     }
 }
-.wrapper-for-sliders .swiper-button-prev::after,.wrapper-for-sliders .swiper-button-next::after {
+.wrapper-for-sliders .swiper-button-prev::after, .wrapper-for-sliders .swiper-button-next::after {
     color: $main-white;
     @media screen and (max-width: $tablet) {
     font-size: 24px;
@@ -227,12 +235,17 @@
     width: auto;
     }
 }
-.single-post__slider2 .swiper-horizontal>.swiper-pagination-bullets,.swiper-pagination-bullets.swiper-pagination-horizontal,.swiper-pagination-custom,.swiper-pagination-fraction{
-     width: 87%;
+.wrapper-for-sliders .swiper-pagination-bullets.swiper-pagination-horizontal {
+  display: none;
+  @media screen and (max-width: $tablet) {
+    display: flex;
+    width: 90%;
+  }
 }
+     
 
-.single-post__swiper__pagination{
-    margin: 22px auto 0 auto;
+.single-post__swiper__pagination {
+    margin: 22px auto 0;
     left:0;
     overflow: hidden;
     display: flex;
@@ -243,16 +256,11 @@
 
 }
 
- .single-post__slider2__pagination-span{
-        min-width: 29px;
-        height: 2px;
-        border-radius: 0;
-        left:0;
-
-        @media screen and (max-width: $tablet) {
-           min-width: 8%;
-           flex-shrink: 1;
-        }
+ .single-post__slider2__pagination-span {
+    max-width: 29px;
+    height: 2px;
+    border-radius: 0;
+    left: 0;
 }
 
 .single-post__slider2__pagination-span.swiper-pagination-bullet-active {
