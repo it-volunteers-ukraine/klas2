@@ -16,7 +16,7 @@ jobs:
     - name: Set up SSH
       uses: tiyee/action-ssh@v1.0.1
       with:
-        ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+        privateKey: ${{ secrets.DEPLOY_KEY }}
 
     - name: Deploy to Server
       run: |
