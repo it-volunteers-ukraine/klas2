@@ -19,7 +19,7 @@ jobs:
     # - run: echo "${{ secrets.DEPLOY_KEY }}" > "$HOME/.ssh/key"
     # - run: chmod 600 "$HOME/.ssh/key"
     - name: Auth
-      uses: tiyee/action-ssh@v1.0.1
+      uses: webfactory/ssh-agent@v0.5.0
       with:
         privateKey: ${{ secrets.DEPLOY_KEY }}
         host: ${{secrets.HOST}} 
