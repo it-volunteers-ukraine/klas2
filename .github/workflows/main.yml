@@ -12,8 +12,7 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-
-    - name: Set up SSH
+      
     - run: set -eu
     - run: mkdir "$HOME/.ssh"
     - run: echo "${{ secrets.DEPLOY_KEY }}" > "$HOME/.ssh/key"
