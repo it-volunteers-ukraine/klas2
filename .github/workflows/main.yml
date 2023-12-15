@@ -23,7 +23,7 @@ jobs:
       with:
         privateKey: ${{ secrets.DEPLOY_KEY }}
         host: ${{secrets.HOST}} 
-        user: ${{secrets.USER}}
+        username: ${{secrets.USER}}
 
     - name: Deploy to Server
       run: |
