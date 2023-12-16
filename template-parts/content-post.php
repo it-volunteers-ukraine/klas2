@@ -16,18 +16,18 @@
                                 <ul class="swiper-wrapper " id="lightgallery">
                                 <?php foreach( $images as $image ) : ?>
                                     <li class="swiper-slide" >
-                                        <a href="<?php echo esc_url($image['url']); ?>" data-lightbox="gallery">
-                                            <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                        <a href="<?php echo esc_url($image['url']); ?>" data-lightbox="gallery" aria-label="Подивитись фото у повному розмірі">
+                                            <img class="swiper-lazy" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                                          </a>
                                     </li>
                                 <?php endforeach; ?>
                                 </ul>
                             </div>
-                            <div thumbsSlider="" class="single-post__slider">
+                            <div class="single-post__slider">
                                 <ul class="swiper-wrapper ">
                                 <?php foreach( $images as $image ): ?>
                                     <li class="swiper-slide">
-                                        <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                        <img class="swiper-lazy" src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                                     </li>
                                 <?php endforeach; ?>
                                 </ul>
