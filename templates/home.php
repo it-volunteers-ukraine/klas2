@@ -50,7 +50,7 @@ get_header();
                         <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/40.svg" alt='forty' loading="lazy">
                     </div>
 
-                    <p>виконаних проєктів test</p>
+                    <p>виконаних проєктів</p>
 
                 </div>
                 <div class="banner__cards-card">
