@@ -47,7 +47,7 @@ get_header();
             <div class="banner__cards">
                 <div class="banner__cards-card">
                     <div class="banner__cards-card-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/40.svg" alt='forty'>
+                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/40.svg" alt='forty' loading="lazy">
                     </div>
 
                     <p>виконаних проєктів</p>
@@ -55,7 +55,7 @@ get_header();
                 </div>
                 <div class="banner__cards-card">
                     <div class="banner__cards-card-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/8.svg" alt='eight'>
+                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/8.svg" alt='eight' loading="lazy">
                     </div>
 
                     <p>проєктів в роботі </p>
@@ -64,7 +64,7 @@ get_header();
                 <div class="banner__cards-card">
                     <div class="banner__cards-card-img">
                         <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/infinity.svg"
-                            alt='infinity'>
+                            alt='infinity' loading="lazy">
                     </div>
 
                     <p>бажання допомагати </p>
@@ -75,10 +75,6 @@ get_header();
                 <p><?php the_field('banner_text'); ?></p>
             </div>
         </div>
-
-
-
-
     </section>
     <section class="about">
         <div class="container">
@@ -280,7 +276,7 @@ get_header();
                         ?>
                 <div class="slider__item ">
                     <img src="<?php echo esc_url($image['sizes']['medium']); ?>"
-                        alt="<?php echo esc_attr($image['alt']); ?>" />
+                        alt="<?php echo esc_attr($image['alt']); ?>" loading="lazy" />
                 </div>
                 <?php endforeach; ?>
                 <?php endif; ?>
@@ -330,21 +326,9 @@ get_header();
                                 <?php echo the_field('collaboration_text'); ?>
 
                             </div>
-
-
-
-
-
-
                         </div>
 
-
-
-
                     </div>
-
-
-
                 </div>
                 <div class="collaboration__btn">
                     <a class="primary_button button" href=" <?php the_field(
@@ -377,7 +361,7 @@ get_header();
                             <a class="contacts__list-link" href="mailto:<?php echo $contacts['google_email'] ?> "
                                 target="_blank">
                                 <img src="<?php echo get_template_directory_uri() ?>/src/images/contact/Gmail.svg"
-                                    alt="Gmail">
+                                    alt="Gmail" loading="lazy" width="40" height="40">
                                 <span><?php echo $contacts['google_email'] ?></span>
 
                             </a>
@@ -385,7 +369,7 @@ get_header();
                         <li class="contacts__list-item">
                             <a class="contacts__list-link" href="tel:<?php echo $contacts['phone'] ?>" target="_blank">
                                 <img src="<?php echo get_template_directory_uri() ?>/src/images/contact/Phone.svg"
-                                    alt="Phone">
+                                    alt="Phone" loading="lazy" width="40" height="40">
                                 <span>+<?php echo $contacts['phone'] ?> </span>
                             </a>
                         </li>
@@ -393,14 +377,14 @@ get_header();
                             <a class="contacts__list-link" href="https://wa.me/<?php echo $contacts['whatsapp'] ?>"
                                 target="_blank">
                                 <img src="<?php echo get_template_directory_uri() ?>/src/images/contact/WhatsApp.svg"
-                                    alt="WhatsApp">
+                                    alt="WhatsApp" loading="lazy" width="40" height="40">
                                 <span>+<?php echo $contacts['whatsapp'] ?></span>
                             </a>
                         </li>
                         <li class="contacts__list-item">
                             <a class="contacts__list-link" href="<?php echo $contacts['facebook'] ?>" target="_blank">
                                 <img src="<?php echo get_template_directory_uri() ?>/src/images/contact/Facebook.svg"
-                                    alt="Facebook">
+                                    alt="Facebook" loading="lazy" width="40" height="40">
 
                                 <span> Facebook</span>
                             </a>
@@ -408,7 +392,7 @@ get_header();
                         <li class="contacts__list-item">
                             <a class="contacts__list-link" href="<?php echo $contacts['youtube'] ?>" target="_blank">
                                 <img src="<?php echo get_template_directory_uri() ?>/src/images/contact/YouTube.svg"
-                                    alt="YouTube">
+                                    alt="YouTube" loading="lazy" width="40" height="40">
                                 <span>YouTube</span>
                             </a>
                         </li>
