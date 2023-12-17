@@ -52,18 +52,9 @@ if(bulletContainer&&bulletEls) {
 const bulletsCount = bulletContainer.childElementCount;
 const bulletContainerWidth = bulletContainer.offsetWidth;
 
-let gap = 0;
-if (bulletsCount>16) {
-  gap=4;
-} else if (bulletsCount>10){
-  gap=8;
-} else if(bulletsCount>6){
-  gap=12;
-} else {gap=16};
-
 
 function calcFunc (bulletsCount, bulletContainerWidth) {
-  const bulletWidth = ((bulletContainerWidth - ((bulletsCount-1) * gap)) / bulletsCount);
+  const bulletWidth = ((bulletContainerWidth - ((bulletsCount-1) * 8)) / bulletsCount);
   return Math.round(bulletWidth);
 }
 
