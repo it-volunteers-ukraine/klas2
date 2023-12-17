@@ -11,7 +11,7 @@ const newsSwiper = new Swiper(".single-post__slider", {
         },
   });
 
-  var newsSwiper2 = new Swiper(".single-post__slider2", {
+  const newsSwiper2 = new Swiper(".single-post__slider2", {
     spaceBetween: 10,
     preloadImages: false,
     lazy: true,
