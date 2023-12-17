@@ -56,22 +56,22 @@
         <li>
           <p>Соцмережі</p>
         </li>
-        <div class="flex__wraper">
-          <li>
+        <li class="flex__wraper">
+          <div>
             <a href="<?php echo esc_attr(get_field('facebook', 'options')); ?>" target="_blank" aria-label="facebook">
               <svg class="footer-icon" width="41" height="40" viewBox="0 0 41 40">
                 <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#icon-Facebook"></use>
               </svg>
             </a>
-          </li>
-          <li>
+          </div>
+          <div>
             <a href="<?php echo esc_attr(get_field('youtube', 'options')); ?>" target="_blank" aria-label="youtube">
               <svg class="footer-icon" width="40" height="40" viewBox="0 0 40 40">
                 <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#icon-YouTube"></use>
               </svg>
             </a>
-          </li>
-        </div>
+          </div>
+        </li>
       </ul>
     </div>
 
