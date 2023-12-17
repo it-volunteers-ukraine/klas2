@@ -8,6 +8,7 @@ const newsSwiper = new Swiper(".single-post__slider", {
     loadOnTransitionStart: true,
     loadPrevNext: true,
   },
+    lazyPreloadPrevNext: 1,
     watchSlidesProgress: true,
     keyboard: {
             enabled: true,
@@ -54,7 +55,6 @@ const bulletEls = document.querySelectorAll('.single-post__slider2__pagination-s
 if(bulletContainer&&bulletEls) {
 const bulletsCount = bulletContainer.childElementCount;
 const bulletContainerWidth = bulletContainer.offsetWidth;
-
 
 function calcFunc (bulletsCount, bulletContainerWidth) {
   const bulletWidth = ((bulletContainerWidth - ((bulletsCount-1) * 8)) / bulletsCount);
