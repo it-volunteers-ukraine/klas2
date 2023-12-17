@@ -3,6 +3,8 @@ const newsSwiper = new Swiper(".single-post__slider", {
     spaceBetween: 21,
     slidesPerView: 4,
     freeMode: true,
+    preloadImages: false,
+    lazy: true,
     watchSlidesProgress: true,
     keyboard: {
             enabled: true,
@@ -11,6 +13,8 @@ const newsSwiper = new Swiper(".single-post__slider", {
 
   var newsSwiper2 = new Swiper(".single-post__slider2", {
     spaceBetween: 10,
+    preloadImages: false,
+    lazy: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -44,12 +48,15 @@ const newsSwiper = new Swiper(".single-post__slider", {
 const bulletContainer = document.querySelector('.single-post__swiper__pagination');
 const bulletEls = document.querySelectorAll('.single-post__slider2__pagination-span');
 
+if(bulletContainer&&bulletEls) {
 const bulletsCount = bulletContainer.childElementCount;
 const bulletContainerWidth = bulletContainer.offsetWidth;
 
+
 function calcFunc (bulletsCount, bulletContainerWidth) {
-  const bulletWidth = ((bulletContainerWidth - ((bulletsCount-1) * 10)) / bulletsCount);
+  const bulletWidth = ((bulletContainerWidth - ((bulletsCount-1) * 8)) / bulletsCount);
   return Math.round(bulletWidth);
 }
 
 bulletEls.forEach((bulletEl) => bulletEl.style.width = `${calcFunc (bulletsCount, bulletContainerWidth)}px`);
+}

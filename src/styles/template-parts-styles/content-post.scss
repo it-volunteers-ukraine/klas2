@@ -231,7 +231,7 @@
     color: $main-white;
     @media screen and (max-width: $tablet) {
     font-size: 24px;
-    color: #070707;
+    color: $main-black;
     width: auto;
     }
 }
@@ -251,7 +251,7 @@
     display: flex;
     justify-content: center;
     @media screen and (max-width: $tablet) {
-        margin: 16px auto 0 auto;
+        margin: 16px auto 0;
     }
 
 }
@@ -264,6 +264,6 @@
 }
 
 .single-post__slider2__pagination-span.swiper-pagination-bullet-active {
-    background: #000;
+    background: $main-black;
 }
 
