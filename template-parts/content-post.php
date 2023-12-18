@@ -10,37 +10,34 @@
                     <?php the_content(); ?>
                     <?php 
                     $images = get_field('gallery');
-                    $size = 'full'; // (thumbnail, medium, large, full or custom size)
                     if( $images ): ?>
-                    if( $images ): ?>
-                        <div class="single-post__slider2 swiper-container">
-                            <ul class="swiper-wrapper " id="lightgallery">
-                            <?php foreach( $images as $image_id ): ?>
-                                <li class="swiper-slide">
-                                    <?php echo wp_get_attachment_image( $image_id, $size ); ?>
-                                </li>
-                            <?php endforeach; ?>
-                            </ul>
-                            <div class="swiper-pagination"></div>  
+                        <div class="wrapper-for-sliders">
+                            <div class="single-post__slider2 swiper-container">
+                                <ul class="swiper-wrapper " id="lightgallery">
+                                <?php foreach( $images as $image ) : ?>
+                                    <li class="swiper-slide" >
+                                        <a href="<?php echo esc_url($image['url']); ?>" data-lightbox="gallery" aria-label="Подивитись фото у повному розмірі">
+                                            <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" loading="lazy" />
+                                         </a>
+                                    </li>
+                                <?php endforeach; ?>
+                                </ul>
+                            </div>
+                            <div class="single-post__slider">
+                                <ul class="swiper-wrapper ">
+                                <?php foreach( $images as $image ): ?>
+                                    <li class="swiper-slide">
+                                        <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" loading="lazy" />
+                                    </li>
+                                <?php endforeach; ?>
+                                </ul>
+                            </div>
+                            <div class="single-post__swiper__pagination"></div>
                             <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>        
-                        </div>
-                        <div thumbsSlider="" class="single-post__slider">
-                            <ul class="swiper-wrapper ">
-                            <?php foreach( $images as $image_id ): ?>
-                                <li class="swiper-slide">
-                                    <?php echo wp_get_attachment_image( $image_id ); ?>
-                                </li>
-                            <?php endforeach; ?>
-                            </ul>
-                            <!-- <div class="swiper-pagination"></div>  
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>   -->
+                            <div class="swiper-button-prev"></div>      
                         </div>
                     <?php endif; ?> 
-                    <!-- <button id="show-more-buttom">ще фото</button>
-                    <div id="additional-photos" style="display:none;"></div> -->
-                </div>
+                    </div>
                <?php get_template_part( 'template-parts/aside-posts'); ?>
             </div> 
       </div>

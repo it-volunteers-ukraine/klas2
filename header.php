@@ -43,8 +43,8 @@
                         </li>
                     </ul>
                 </div>
-                <a class="secondary_button button header__btn" href="<?php echo esc_attr(get_field('header-button-link', 'option') ); ?>>" >
-                    <?php the_field('need-help_button', 'option'); ?><?php the_field('header-button-name', 'option'); ?></a>
+                <a class="secondary_button button header__btn" href="<?php echo esc_attr(get_field('header-button-link', 'option') ); ?>" >
+                    <?php the_field('header-button-name', 'option'); ?></a>
                 <div class="burger">
                     <span></span>
                 </div>
