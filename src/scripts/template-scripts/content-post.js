@@ -8,7 +8,7 @@ const newsSwiper = new Swiper(".single-post__slider", {
     loadOnTransitionStart: true,
     loadPrevNext: true,
   },
-    lazyPreloadPrevNext: 1,
+    lazyPreloadPrevNext: 2,
     watchSlidesProgress: true,
     keyboard: {
             enabled: true,
