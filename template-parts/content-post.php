@@ -17,7 +17,7 @@
                                 <?php foreach( $images as $image ) : ?>
                                     <li class="swiper-slide" >
                                         <a href="<?php echo esc_url($image['url']); ?>" data-lightbox="gallery" aria-label="Подивитись фото у повному розмірі">
-                                            <img class="swiper-lazy" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                            <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" loading="lazy" />
                                          </a>
                                     </li>
                                 <?php endforeach; ?>
@@ -27,7 +27,7 @@
                                 <ul class="swiper-wrapper ">
                                 <?php foreach( $images as $image ): ?>
                                     <li class="swiper-slide">
-                                        <img class="swiper-lazy" src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                        <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" loading="lazy" />
                                     </li>
                                 <?php endforeach; ?>
                                 </ul>
