@@ -116,6 +116,7 @@
 			}
 			&__title {
 				max-width: 408px;
+				width: 100%;
 				padding-left: 12px;
 				border-left: 8px solid $main-yellow;
 				border-radius: 4px;
@@ -129,6 +130,7 @@
 				}
 				@media screen and (max-width: $tablet) {
 					align-self: start;
+					max-width: none;
 				}
 			}
 			&__map {
