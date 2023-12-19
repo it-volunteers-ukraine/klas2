@@ -89,6 +89,9 @@ if (is_page_template('templates/home.php')) {
   if (is_singular() && locate_template('template-parts/aside-one-post.php')) {
     wp_enqueue_style('aside-one-post-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/aside-one-post.css', array('main'));
   }
+  if (is_singular() && locate_template('template-parts/content-banner.php')) {
+    wp_enqueue_style('content-banner', get_template_directory_uri() . '/assets/styles/template-parts-styles/content-banner.css', array('main'));
+  }
 }
 /** add fonts */
 function add_google_fonts()

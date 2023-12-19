@@ -1,0 +1,123 @@
+@import "../variables.scss";
+
+.news-main__banner{
+    margin-top: 36px;
+    width: 100%;
+    height: 384px;
+    position: relative;
+   
+    @media screen and (max-width: $desktop) {
+       height: 237px;
+       margin-top: 32px;
+    }
+    @media screen and (max-width: $tablet) {
+        height: 115px;
+        margin-top: 24px;
+        margin-bottom: 79px;
+    }
+}
+.news-main__banner::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 0px 0px 4px 4px;
+    background: linear-gradient(180deg, rgba(7, 7, 7, 0.00) 0%, rgba(7, 7, 7, 0.50) 51.56%);
+  }
+
+.news-main__banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.news-banner__title{
+    color: $main-white;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; 
+    position: absolute;
+    bottom: 40px;
+    padding-left: 32px;
+    border-radius: 0px 0px 4px 4px;
+    max-width: 62%;
+    z-index: 1;
+    
+    @media screen and (max-width: $desktop) {
+        font-size: 16px;
+        line-height: 22.5px;
+        bottom: 14px;
+        padding-left: 20px;
+    }
+
+    @media screen and (max-width: $tablet) {
+        width: 297px;
+        text-align: center;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        bottom: 0;
+        padding-left: 0;
+        max-width: 96%;
+    }
+}
+
+.news-banner__button{
+	background-color: transparent;
+	border-color: transparent;
+	font-weight: 500;
+	line-height: 1.25;
+	color: $main-white;
+    font-size: 16px;
+    position: absolute;
+    bottom: 29px;
+    right: 11px;
+    z-index: 1;
+    @media screen and (max-width: $desktop) {
+        bottom: 0px;
+        right: 0px;
+    }
+
+    @media screen and (max-width: $tablet) {
+        color: $main-black;
+        bottom: 9%;
+        right: 1%;
+        position: static;
+        margin: 0 auto;
+        backdrop-filter: none;
+    }
+}
+
+.banner__arrow-icon{
+	width: 24px;
+	height: 24px;
+	margin-left: 4px;
+	fill: $main-white;
+	transition: all $transition-function;
+   
+    @media screen and (max-width: $tablet) {
+        fill: $main-black;
+ }
+}
+
+.news-banner__button:hover,
+.news-banner__button:focus {
+	font-weight: 600;
+    color: $main-white;
+    @media screen and (max-width: $tablet) {
+        color: $dark-violet;
+ }
+
+	.banner__arrow-icon {
+		transform: rotate(-45deg);
+        fill: $main-white;
+        @media screen and (max-width: $tablet) {
+            fill: $dark-violet;
+      }
+    }
+}
