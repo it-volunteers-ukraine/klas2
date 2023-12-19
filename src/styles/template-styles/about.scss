@@ -266,6 +266,7 @@
 	.swiper-button-next {
 		position: static;
 		margin: 0;
+		width: auto;
 	}
 	& .swiper-button-prev::after,
 	.swiper-button-next::after {
@@ -275,7 +276,7 @@
 	& .swiper-pagination {
 		display: flex;
 		justify-content: center;
-		bottom: -28px !important;
+		bottom: 20px !important;
 		padding: 0 27px;
 	}
 	& .swiper-grid-column .swiper-wrapper {
@@ -295,13 +296,17 @@
 	&__buttons-wrapper {
 		display: flex;
 		gap: 48px;
-		left: 30%;
+		position: absolute;
+		top: -78px;
+		right: 0;
 		@media screen and (max-width: $desktop) {
-			position: absolute;
-			bottom: -50px;
+			position: static;
 			width: 100%;
-			left: 0;
 			justify-content: space-between;
+			margin-top: 12px;
+		}
+		@media screen and (max-width: $tablet) {
+			margin-top: 24px;
 		}
 	}
 	&__pagination-span {

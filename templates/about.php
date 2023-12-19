@@ -82,31 +82,30 @@ get_header();
       <?php if($ourTeamTitle): ?>
           <h2 class="title our-team__title"><?php echo esc_html($ourTeamTitle); ?></h2>
           <?php endif ?>
-          <div class="our-team__buttons-wrapper">
-                <button class="swiper-button-prev"></button>
-                <button class="swiper-button-next"></button>
-            </div>
       </div>
             <div class="swiper-container">
               <div class="our-team__slider swiper">
-              <ul class="our-team__list swiper-wrapper" role="list">
-                  <?php while(have_rows('our_team_slider')) : the_row(); 
-                      $image = get_sub_field('our_team_slider_image');
-                      $person = get_sub_field('our_team_slider_person');
-                      $position = get_sub_field('our_team_slider_position');
-                  ?>
-                    <li class="our-team__list__item swiper-slide">
-                        <img class="our-team__list__item__img" src='<?php echo $image['url'] ?>' alt="<?php echo esc_attr($image['alt']); ?>"  loading="lazy"/>
-                        <div class="our-team__list__item__text-container">
-                          <h3 class="our-team__list__item__person"><?php echo $person ?></h3>
-                          <p class="our-team__list__item__position"><?php echo $position ?></p>
-                        </div>
-                    </li>
-                    <?php endwhile; ?>
+                <ul class="our-team__list swiper-wrapper" role="list">
+                    <?php while(have_rows('our_team_slider')) : the_row(); 
+                        $image = get_sub_field('our_team_slider_image');
+                        $person = get_sub_field('our_team_slider_person');
+                        $position = get_sub_field('our_team_slider_position');
+                    ?>
+                      <li class="our-team__list__item swiper-slide">
+                          <img class="our-team__list__item__img" src='<?php echo $image['url'] ?>' alt="<?php echo esc_attr($image['alt']); ?>"  loading="lazy"/>
+                          <div class="our-team__list__item__text-container">
+                            <h3 class="our-team__list__item__person"><?php echo $person ?></h3>
+                            <p class="our-team__list__item__position"><?php echo $position ?></p>
+                          </div>
+                      </li>
+                      <?php endwhile; ?>
                   </ul>
-
-                  <div class="swiper-pagination"></div>
-                  </div>
+                  <div class="our-team__buttons-wrapper">
+                    <button class="swiper-button-prev"></button>
+                    <button class="swiper-button-next"></button>
+                </div>
+                    <div class="swiper-pagination"></div>
+                </div>
                 <?php endif; ?>
           </div>
     </div>
