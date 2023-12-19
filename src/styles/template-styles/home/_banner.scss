@@ -39,6 +39,7 @@
             padding-bottom: 40px;
             background-size: cover;
             background-position: top center;
+            background-attachment: fixed;
     
         }
     
@@ -51,7 +52,7 @@
     
             @media(max-width:$desktop) {
                 margin: 24px auto 0;
-                width: 45%;
+                width: 344px;
             }
     
             @media(max-width:$tablet) {

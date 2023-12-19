@@ -17,12 +17,13 @@
  
     }
     &__btn{
-        width: 50%;
+        width: 344px;
         margin-top: 40px;
         margin-left: auto;
         @media (max-width:$desktop){
             margin: 60px auto 0;
             &>a{
+                width: 100%;
                 margin: 0 auto;
             }
         }
