@@ -9,7 +9,7 @@ get_header();
 <section class="about">
   <div class="container">
    <div class="about__container">
-    <h2 class="about__title"><?php the_title(); ?></h2>
+    <h2 class="title about__title"><?php the_title(); ?></h2>
       <div class="about__content">
         <div class="about__first-container">
           <img class="about__fon-left" src='<?php echo get_template_directory_uri()?>/assets/images/fon_left.png' alt="Background picture left"/>
@@ -55,7 +55,7 @@ get_header();
   <?php if(have_rows('we_are')): ?>
     <?php $weAreTitle = get_field("we_are_title"); ?>
       <?php if ($weAreTitle): ?>
-        <h2 class="we-are__title"><?php echo esc_html($weAreTitle); ?></h2>
+        <h2 class="title we-are__title"><?php echo esc_html($weAreTitle); ?></h2>
         <?php endif; ?>
           <ul class="we-are__list">
             <?php while(have_rows('we_are')) : the_row(); 
@@ -80,7 +80,7 @@ get_header();
         <?php $ourTeamTitle = get_field("our_team_tilte"); ?>
       <div class="our-team__head">
       <?php if($ourTeamTitle): ?>
-          <h2 class="our-team__title"><?php echo esc_html($ourTeamTitle); ?></h2>
+          <h2 class="title our-team__title"><?php echo esc_html($ourTeamTitle); ?></h2>
           <?php endif ?>
           <div class="our-team__buttons-wrapper">
                 <button class="swiper-button-prev"></button>
@@ -96,7 +96,7 @@ get_header();
                       $position = get_sub_field('our_team_slider_position');
                   ?>
                     <li class="our-team__list__item swiper-slide">
-                        <img class="our-team__list__item__img" src='<?php echo $image['url'] ?>' alt="<?php echo esc_attr($image['alt']); ?>"/>
+                        <img class="our-team__list__item__img" src='<?php echo $image['url'] ?>' alt="<?php echo esc_attr($image['alt']); ?>"  loading="lazy"/>
                         <div class="our-team__list__item__text-container">
                           <h3 class="our-team__list__item__person"><?php echo $person ?></h3>
                           <p class="our-team__list__item__position"><?php echo $position ?></p>

@@ -5,13 +5,14 @@ const newsSwiper = new Swiper(".single-post__slider", {
     freeMode: true,
     preloadImages: false,
     lazy: true,
+    lazyPreloadPrevNext: 1,
     watchSlidesProgress: true,
     keyboard: {
             enabled: true,
         },
   });
 
-  var newsSwiper2 = new Swiper(".single-post__slider2", {
+  const newsSwiper2 = new Swiper(".single-post__slider2", {
     spaceBetween: 10,
     preloadImages: false,
     lazy: true,
@@ -51,7 +52,6 @@ const bulletEls = document.querySelectorAll('.single-post__slider2__pagination-s
 if(bulletContainer&&bulletEls) {
 const bulletsCount = bulletContainer.childElementCount;
 const bulletContainerWidth = bulletContainer.offsetWidth;
-
 
 function calcFunc (bulletsCount, bulletContainerWidth) {
   const bulletWidth = ((bulletContainerWidth - ((bulletsCount-1) * 8)) / bulletsCount);
