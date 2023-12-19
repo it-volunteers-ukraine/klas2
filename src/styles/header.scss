@@ -75,7 +75,6 @@
 	&:focus {
 		color: $dark-violet;
 		transform: scale(1.05);
-
 	}
 }
 
@@ -151,7 +150,7 @@
 	display: none;
 
 	@media screen and (max-width: $desktop) {
-		display:block;
+		display:flex;
 		width: 100%;
 		color: $main-white;
 		background-color: $main-violet;
@@ -161,6 +160,7 @@
 		text-align: end;
 	}
 }
+
 
 .header_list .menu-item:first-child{
 	
@@ -194,7 +194,8 @@
 		position: relative;
 		z-index: 50;
 		align-items: center;
-		width: 36px;justify-content: flex-end;
+		width: 36px;
+		justify-content: flex-end;
 		height: 26px;
 		margin-right: 5px;
 		cursor: pointer;
