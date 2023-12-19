@@ -14,10 +14,22 @@
                         <div class="wrapper-for-sliders">
                             <div class="single-post__slider2 swiper-container">
                                 <div class="swiper-wrapper ">
-                                <?php foreach( $images as $image ) : ?>
+                                  <?php foreach( $images as $image ) :
+
+                                      $mediumSize = $image['sizes']['medium']; //300
+                                      $mediumLargeSize = $image['sizes']['medium_large']; //500
+                                      $largeSize = $image['sizes']['large']; //768
+                                      ?>
+
                                     <div class="swiper-slide" >
-                                        <a href="<?php echo esc_url($image['url']); ?>" data-lightbox="gallery" aria-label="Подивитись фото у повному розмірі">
-                                            <img src="<?php echo esc_url($image['sizes']['medium_large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" loading="lazy" />
+                                      <a href="<?php echo esc_url($image['url']); ?>" data-lightbox="gallery" aria-label="Подивитись фото у повному розмірі">
+                                        <img 
+                                        srcset="<?php echo esc_url($mediumSize); ?> 375w, <?php echo esc_url($mediumLargeSize); ?> 568w, <?php echo esc_url($largeSize); ?> 992w"
+
+                                        sizes="(min-width: 992px) 768px, (min-width: 568px) 500px, (min-width: 375px) 300px, 100vw"
+
+                                        src="<?php echo esc_url($mediumLargeSize); ?>"
+                                        alt="<?php echo esc_attr($image['alt']); ?>" loading="lazy" />
                                          </a>
                                     </div>
                                 <?php endforeach; ?>
