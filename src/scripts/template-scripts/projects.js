@@ -60,15 +60,15 @@ jQuery(document).ready(function ($) {
 		let windowWidth = $(window).width();
 
 		if (windowWidth >= 992 && windowWidth < 1140) {
-			wordsCount = 65;
+			wordsCount = 60;
 		} else if (windowWidth >= 766 && windowWidth < 992) {
 			wordsCount = 25;
 		} else if (windowWidth >= 576 && windowWidth < 766) {
-			wordsCount = 15;
+			wordsCount = 12;
 		} else if (windowWidth < 576) {
-			wordsCount = 45;
+			wordsCount = 50;
 		} else {
-			wordsCount = 70;
+			wordsCount = 65;
 		}
 		return wordsCount;
 	}

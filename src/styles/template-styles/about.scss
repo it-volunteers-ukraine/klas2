@@ -1,4 +1,15 @@
 @import "../variables.scss";
+.title {
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 48px;
+	margin-bottom: 36px;
+	@media screen and (max-width: $desktop) {
+		font-size: 30px;
+		line-height: 34px;
+		margin-bottom: 32px;
+	}
+}
 .about {
 	padding: 52px 0 56px;
 	@media screen and (max-width: $desktop) {
@@ -54,16 +65,6 @@
 		}
 	}
 	&__title {
-		color: $main-black;
-		font-size: 40px;
-		font-weight: 700;
-		line-height: 48px;
-		margin-bottom: 36px;
-		@media screen and (max-width: $desktop) {
-			font-size: 30px;
-			line-height: 34px;
-			margin-bottom: 32px;
-		}
 		@media screen and (max-width: $tablet) {
 			margin-bottom: 22px;
 		}
@@ -196,16 +197,6 @@
 		padding: 40px 0;
 	}
 	&__title {
-		color: $main-black;
-		font-size: 40px;
-		font-weight: 700;
-		line-height: 48px;
-		margin-bottom: 36px;
-		@media screen and (max-width: $desktop) {
-			font-size: 30px;
-			line-height: 34px;
-			margin-bottom: 32px;
-		}
 		@media screen and (max-width: $tablet) {
 			margin-bottom: 24px;
 		}
@@ -308,8 +299,8 @@
 		@media screen and (max-width: $desktop) {
 			position: absolute;
 			bottom: -50px;
-			width: 90%;
-			left: 5%;
+			width: 100%;
+			left: 0;
 			justify-content: space-between;
 		}
 	}
@@ -393,16 +384,6 @@
 		}
 	}
 	&__title {
-		color: $main-black;
-		font-size: 40px;
-		font-weight: 700;
-		line-height: 48px;
-		margin-bottom: 36px;
-		@media screen and (max-width: $desktop) {
-			font-size: 30px;
-			line-height: 34px;
-			margin-bottom: 32px;
-		}
 		@media screen and (max-width: $tablet) {
 			margin-bottom: 24px;
 		}

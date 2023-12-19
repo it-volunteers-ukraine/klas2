@@ -47,7 +47,8 @@ get_header();
             <div class="banner__cards">
                 <div class="banner__cards-card">
                     <div class="banner__cards-card-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/40.svg" alt='forty' loading="lazy">
+                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/40.svg" alt='forty'
+                            loading="lazy">
                     </div>
 
                     <p>виконаних проєктів</p>
@@ -55,7 +56,8 @@ get_header();
                 </div>
                 <div class="banner__cards-card">
                     <div class="banner__cards-card-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/8.svg" alt='eight' loading="lazy">
+                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/8.svg" alt='eight'
+                            loading="lazy">
                     </div>
 
                     <p>проєктів в роботі </p>
@@ -359,31 +361,31 @@ get_header();
 
                         ?>
                         <li class="contacts__list-item">
-                            <a class="contacts__list-link" href="mailto:<?php echo $contacts['google_email'] ?> "
+                            <a class="contacts__list-link" href="mailto:<?php the_field('email', 'options'); ?> "
                                 target="_blank">
                                 <img src="<?php echo get_template_directory_uri() ?>/src/images/contact/Gmail.svg"
                                     alt="Gmail" loading="lazy" width="40" height="40">
-                                <span><?php echo $contacts['google_email'] ?></span>
+                                <span><?php the_field('email', 'options'); ?></span>
 
                             </a>
                         </li>
                         <li class="contacts__list-item">
-                            <a class="contacts__list-link" href="tel:<?php echo $contacts['phone'] ?>" target="_blank">
+                            <a class="contacts__list-link" href="tel:<?php echo str_replace(' ', '', get_field('first-phone', 'options')); ?>" target="_blank">
                                 <img src="<?php echo get_template_directory_uri() ?>/src/images/contact/Phone.svg"
                                     alt="Phone" loading="lazy" width="40" height="40">
-                                <span>+<?php echo $contacts['phone'] ?> </span>
+                                <span><?php the_field('first-phone', 'options'); ?> </span>
                             </a>
                         </li>
                         <li class="contacts__list-item">
-                            <a class="contacts__list-link" href="https://wa.me/<?php echo $contacts['whatsapp'] ?>"
+                        <a class="contacts__list-link" href="https://wa.me/<?php echo str_replace(' ', '', get_field('second-phone', 'options')); ?>"
                                 target="_blank">
                                 <img src="<?php echo get_template_directory_uri() ?>/src/images/contact/WhatsApp.svg"
                                     alt="WhatsApp" loading="lazy" width="40" height="40">
-                                <span>+<?php echo $contacts['whatsapp'] ?></span>
+                                <span><?php the_field('second-phone', 'options'); ?></span>
                             </a>
                         </li>
                         <li class="contacts__list-item">
-                            <a class="contacts__list-link" href="<?php echo $contacts['facebook'] ?>" target="_blank">
+                            <a class="contacts__list-link" href="<?php echo esc_attr(get_field('facebook', 'options')); ?>" target="_blank">
                                 <img src="<?php echo get_template_directory_uri() ?>/src/images/contact/Facebook.svg"
                                     alt="Facebook" loading="lazy" width="40" height="40">
 
@@ -391,7 +393,7 @@ get_header();
                             </a>
                         </li>
                         <li class="contacts__list-item">
-                            <a class="contacts__list-link" href="<?php echo $contacts['youtube'] ?>" target="_blank">
+                            <a class="contacts__list-link" href="<?php echo esc_attr(get_field('youtube', 'options')); ?>" target="_blank">
                                 <img src="<?php echo get_template_directory_uri() ?>/src/images/contact/YouTube.svg"
                                     alt="YouTube" loading="lazy" width="40" height="40">
                                 <span>YouTube</span>
