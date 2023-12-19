@@ -1,6 +1,6 @@
 ### Волонтерський проєкт зі створення сайту ГО «Всеукраїнська організація "Клас"»
 
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: center; align-items: center;">
 <img src="./src/images/screenshot_site.png" alt="скріншот сайту">
 </div>
 
