@@ -17,7 +17,7 @@
                                   <?php foreach( $images as $image ) :
 
                                       $mediumSize = $image['sizes']['medium']; //300
-                                      $largeSize = $image['sizes']['large']; //500
+                                      $largeSize = $image['sizes']['large']; //1024
                                       $mediumLargeSize = $image['sizes']['medium_large']; //768
 
                                       ?>
@@ -25,11 +25,12 @@
                                     <div class="swiper-slide" >
                                       <a href="<?php echo esc_url($image['url']); ?>" data-lightbox="gallery" aria-label="Подивитись фото у повному розмірі">
                                         <img 
-                                        srcset="<?php echo esc_url($mediumSize); ?> 300w, <?php echo esc_url($largeSize); ?> 500w, <?php echo esc_url($mediumLargeSize); ?> 768w"
+                                        src="<?php echo esc_url($mediumLargeSize); ?>"
 
-                                        sizes="(min-width: 992px) 768px, (min-width: 568px) 500px, (min-width: 320px) 300px, 100vw"
+                                        srcset="<?php echo esc_url($mediumSize); ?> 300w, <?php echo esc_url($mediumLargeSize); ?> 768w, <?php echo esc_url($largeSize); ?> 1024w"
 
-                                        src="<?php echo esc_url($mediumSize); ?>"
+                                        sizes="(min-width: 992px) 1024px, (min-width: 568px) 768px, (min-width: 320px) 300px, 100vw"
+
                                         alt="<?php echo esc_attr($image['alt']); ?>" loading="lazy" />
                                          </a>
                                     </div>
