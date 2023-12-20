@@ -63,20 +63,67 @@ get_header();
 
   <section class="remittance-section">
     <div class="container">
-      <ul class="remittance__inner-container">
-        <?php if (have_rows('transfer_money')) : ?>
+      <div class="remittance__inner-container">
+        <ul class="remittance__list">
+          <?php if (have_rows('transfer_money')) : ?>
 
-          <?php while (have_rows('transfer_money')) : the_row(); ?>
+            <?php while (have_rows('transfer_money')) : the_row(); ?>
 
-            <li class="remittance__name-value">
-              <p class="remittance__name"><?php the_sub_field('transfer_field_name'); ?></p>
-              <p class="remittance__value"><?php the_sub_field('transfer_field_value'); ?></p>
-            </li>
+              <li class="remittance__name-value">
+                <p class="remittance__name"><?php the_sub_field('transfer_field_name'); ?></p>
+                <p class="remittance__value"><?php the_sub_field('transfer_field_value'); ?></p>
+              </li>
 
-          <?php endwhile; ?>
-        <?php endif; ?>
+            <?php endwhile; ?>
+          <?php endif; ?>
+          
+        </ul>
+
+        <div class="remittance__list">
+          <?php if (have_rows('current_account')) : ?>
+
+            <?php while (have_rows('current_account')) : the_row(); ?>
+
+              <div class="remittance__name-value">
+                <p class="remittance__name"><?php the_sub_field('transfer_field_name'); ?></p>
+                <div class="current_account">
+                  <p id="current_account" class="remittance__value"><?php the_sub_field('transfer_field_value'); ?></p>
+                  <button id="copy_current_account" class="icon_copy">
+                    <svg width="24px" height="24px">
+                      <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon_copy"></use>
+                    </svg>
+                    <svg id="hidden-checkmark" class="hidden-checkmark" width="12px" height="12px">
+                      <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#checkmark"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              
+
+            <?php endwhile; ?>
+          <?php endif; ?>
+          
+        </div>
+
         
-      </ul>
+
+        <ul class="">
+          <?php if (have_rows('transfer_money_copy')) : ?>
+
+            <?php while (have_rows('transfer_money_copy')) : the_row(); ?>
+
+              <li class="remittance__name-value">
+                <p class="remittance__name"><?php the_sub_field('transfer_field_name'); ?></p>
+                <p class="remittance__value"><?php the_sub_field('transfer_field_value'); ?></p>
+              </li>
+
+            <?php endwhile; ?>
+          <?php endif; ?>
+          
+        </ul>
+      </div>
+      
     </div>
   </section>
 

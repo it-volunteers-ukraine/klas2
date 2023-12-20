@@ -204,6 +204,10 @@
   }
 }
 
+.remittance__list {
+  margin-bottom: 24px;
+}
+
 .remittance__name-value {
   display: flex;
   font-size: 18px;
@@ -230,4 +234,22 @@
   @media screen and (max-width: 820px) {
     min-width: 252px;
   }
+}
+
+.current_account {
+  display: flex;
+}
+
+.icon_copy {
+  display: flex;
+  margin-left: 20px;
+}
+
+.hidden-checkmark {
+  display: none;
+}
+
+.hidden-checkmark.checked {
+  display: block;
+  fill: green;
 }
