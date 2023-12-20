@@ -11,5 +11,6 @@ function closeByBgdClick(e) {
 	if (e.target === menu) {
 		menu.classList.remove("open");
 		menuButton.classList.remove("active");
+		document.body.classList.remove("modal-open");
 	}
 }
