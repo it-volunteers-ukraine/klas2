@@ -1,15 +1,23 @@
 const currentAccount = document.getElementById("current_account");
-const copyCurrentAccount = document.getElementById("copy_current_account");
+const copyCurrentAccounbtn = document.getElementById("copy_current_account");
 
-if(copyCurrentAccount && currentAccount) {
-  copyCurrentAccount.addEventListener("click", onCopyBtnClick);
+if(copyCurrentAccounbtn && currentAccount) {
+    copyCurrentAccounbtn.addEventListener("click", function() {
+    var range = document.createRange();
+    range.selectNode(currentAccount);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
 
-  function onCopyBtnClick(e) {
-  const copyAccount = currentAccount.innerHTML;
-  console.log(copyAccount);
+    appearCheckMark();
+});
+}
 
-  window.navigator.clipboard.writeText(copyAccount)
-
-  alert("Скопійвано у буфер обміну: " + copyAccount);
-  }
+function appearCheckMark() {
+  const checkmarkEl = document.getElementById("hidden-checkmark");
+    checkmarkEl.classList.add("checked");
+    setTimeout(() => {
+      checkmarkEl.classList.remove("checked");
+    }, "2000");
 }

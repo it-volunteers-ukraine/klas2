@@ -244,3 +244,12 @@
   display: flex;
   margin-left: 20px;
 }
+
+.hidden-checkmark {
+  display: none;
+}
+
+.hidden-checkmark.checked {
+  display: block;
+  fill: green;
+}

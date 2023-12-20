@@ -90,9 +90,12 @@ get_header();
                   <p id="current_account" class="remittance__value"><?php the_sub_field('transfer_field_value'); ?></p>
                   <button id="copy_current_account" class="icon_copy">
                     <svg width="24px" height="24px">
-                    <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon_copy"></use>
+                      <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#icon_copy"></use>
+                    </svg>
+                    <svg id="hidden-checkmark" class="hidden-checkmark" width="12px" height="12px">
+                      <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#checkmark"></use>
+                    </svg>
                   </button>
-                </svg>
                 </div>
               </div>
 
