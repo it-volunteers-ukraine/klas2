@@ -11,10 +11,17 @@
         & .new__back {
             position: relative;
             display: block;
-            height: 180px;
+            height: 230px;
             margin-bottom: 12px;
-            
-            @media(max-width:$desktop) {
+
+           
+            @media(max-width:800px) {
+                height: 170px;
+            }
+            @media(max-width:$tablet) {
+                height: 230px;
+            }
+            @media(max-width:420px) {
                 height: 170px;
             }
 
@@ -22,7 +29,7 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                border-radius: 4px 4px 0 0;
+                border-radius: 4px;
             }
 
         }
@@ -42,18 +49,34 @@
 
     &__body {
         display: flex;
+        &-content{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
     }
 
     &__desc {
-
+        flex-grow: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 4px;
         &>h3 {
+        margin-bottom: auto;
             font-size: 20px;
             font-weight: 600;
             line-height: 110%;
+           
         }
 
         &>p {
             color: $grey55;
+            color: #717171;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
     }
 
