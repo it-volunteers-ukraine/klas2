@@ -47,9 +47,13 @@
     &__desc {
 
         &>h3 {
+        margin-bottom: 8px;
             font-size: 20px;
             font-weight: 600;
             line-height: 110%;
+            @media(max-width:$desktop) {
+                margin-bottom: 4px;
+            }
         }
 
         &>p {
