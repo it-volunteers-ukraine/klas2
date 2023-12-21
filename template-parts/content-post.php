@@ -16,6 +16,7 @@
                                 <div class="swiper-wrapper ">
                                   <?php foreach( $images as $image ) :
 
+                                      $thumbnailSize = $image['sizes']['thumbnail'];
                                       $mediumSize = $image['sizes']['medium']; //300
                                       $largeSize = $image['sizes']['large']; //1024
                                       $mediumLargeSize = $image['sizes']['medium_large']; //768
@@ -24,14 +25,15 @@
 
                                     <div class="swiper-slide" >
                                       <a href="<?php echo esc_url($image['url']); ?>" data-lightbox="gallery" aria-label="Подивитись фото у повному розмірі">
-                                        <img 
-                                        src="<?php echo esc_url($mediumLargeSize); ?>"
+                                        <img class="swiper-lazy"
+                                        data-src="<?php echo esc_url($mediumLargeSize); ?>"
+                                        src="<?php echo esc_url($thumbnailSize); ?>"
 
                                         srcset="<?php echo esc_url($mediumSize); ?> 300w, <?php echo esc_url($mediumLargeSize); ?> 768w, <?php echo esc_url($largeSize); ?> 1024w"
 
                                         sizes="(min-width: 992px) 1024px, (min-width: 568px) 768px, (min-width: 320px) 300px, 100vw"
 
-                                        alt="<?php echo esc_attr($image['alt']); ?>" loading="lazy" />
+                                        alt="<?php echo esc_attr($image['alt']); ?>" />
                                          </a>
                                     </div>
                                 <?php endforeach; ?>
@@ -41,7 +43,7 @@
                                 <ul class="swiper-wrapper ">
                                 <?php foreach( $images as $image ): ?>
                                     <li class="swiper-slide">
-                                        <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" loading="lazy" />
+                                        <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="swiper-lazy" />
                                     </li>
                                 <?php endforeach; ?>
                                 </ul>

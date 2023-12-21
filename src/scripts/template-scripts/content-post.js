@@ -4,8 +4,11 @@ const newsSwiper = new Swiper(".single-post__slider", {
     slidesPerView: 4,
     freeMode: true,
     preloadImages: false,
-    lazy: true,
-    lazyPreloadPrevNext: 2,
+    lazy: {
+    loadOnTransitionStart: false,
+    loadPrevNext: true,
+  },
+    lazyPreloadPrevNext: 1,
     watchSlidesProgress: true,
     keyboard: {
             enabled: true,
