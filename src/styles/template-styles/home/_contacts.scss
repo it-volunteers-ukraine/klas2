@@ -6,6 +6,7 @@
 
         @media(max-width:767px) {
             flex-direction: column-reverse;
+            gap: 80px
 
         }
     }
@@ -14,7 +15,7 @@
         font-size: 1.33em;
         font-weight: 700;
 
-        @media(max-width:768px) {
+        @media(max-width:767px) {
             font-size: 1em;
 
         }
@@ -28,7 +29,7 @@
     &__inner-list {
         width: 40%;
 
-        @media(max-width:768px) {
+        @media(max-width:767px) {
             width: 100%;
             text-align: center;
 
