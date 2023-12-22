@@ -39,7 +39,6 @@
             padding-bottom: 40px;
             background-size: cover;
             background-position: top center;
-            background-attachment: fixed;
     
         }
     
@@ -160,6 +159,10 @@
                 align-items: center;
                 gap: 16px;
                 text-align: center;
+
+                @media screen and (max-width: $desktop) {
+                  gap: 4px;
+                }
     
                 &-img {
                     height: 34px;
@@ -168,23 +171,41 @@
                 }
     
                 & img {
+                  max-width: 70px;
+                  @media screen and (max-width: $desktop) {
                     max-width: 44px;
+                  }
                 }
-    
-                &:nth-child(2n) {
-                    & img {
-                        max-width: 20px;
-    
-                    }
-                }
-    
-                &:last-child {
-                    & img {
-                        max-width: 38px;
-    
-                    }
+
+                & p {
+                  font-size: 20px;
+                  font-weight: 600;
+                  line-height: 1.1;
+                  @media screen and (max-width: $desktop) {
+                    font-size: 12px;
+                  }
                 }
             }
+
+                & .finished-proj__amount,
+                & .work-proj__amount {
+                  text-transform: uppercase;
+                  font-size: 54px;
+                  font-weight: 600;
+                  line-height: 1;
+
+                  @media screen and (max-width: $desktop) {
+                    font-size: 32px;
+                  }
+                }
+
+                & .finished-proj__amount {
+                  color: $dark-violet;
+                }
+                
+                & .work-proj__amount {
+                  color: $dark-mint;
+                }
         }
     
         &__desc {

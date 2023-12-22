@@ -19,4 +19,27 @@ $(document).ready(function () {
 		pauseOnDotsHover: false,
 		variableWidth: true,
 	});
+
+
+// numbers count
+const time = 3000;
+const step = 1;
+
+function countNum(num, e) {
+  let n = 0;
+  let t = Math.round(time / (num / step));
+  let interval = setInterval(() => {
+    n = n + step;
+    if (n == num) {
+      clearInterval(interval);
+    }
+    e.innerHTML = n;
+  }, t);
+}
+
+const countArr = document.querySelectorAll("#count");
+countArr.forEach(e => {
+  const amountEl = e.dataset.amount;
+  countNum(amountEl, e)
+});
 });

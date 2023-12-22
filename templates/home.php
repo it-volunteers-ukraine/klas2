@@ -47,20 +47,18 @@ get_header();
             <div class="banner__cards">
                 <div class="banner__cards-card">
                     <div class="banner__cards-card-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/40.svg" alt='forty'
-                            loading="lazy">
+                        <p id="count" data-amount="<?php the_field('finished_projects_amount'); ?>" class="finished-proj__amount">0</p>
                     </div>
 
-                    <p>виконаних проєктів</p>
+                    <p><?php the_field('finished_projects_text'); ?></p>
 
                 </div>
                 <div class="banner__cards-card">
                     <div class="banner__cards-card-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/front-page/8.svg" alt='eight'
-                            loading="lazy">
+                        <p id="count" class="work-proj__amount" data-amount="<?php the_field('projects_in_work_amount'); ?>">0</p>
                     </div>
 
-                    <p>проєктів в роботі </p>
+                    <p><?php the_field('projects_in_work_text'); ?></p>
 
                 </div>
                 <div class="banner__cards-card">
@@ -69,7 +67,7 @@ get_header();
                             alt='infinity' loading="lazy">
                     </div>
 
-                    <p>бажання допомагати </p>
+                    <p><?php the_field( 'passion_to_help'); ?></p>
 
                 </div>
             </div>
