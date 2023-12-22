@@ -9,39 +9,42 @@ get_header();
 <main class="front-page__main">
 
     <section class="banner">
-        <div class="banner__back" style="background-image: url('<?php echo get_field(
-                                                                    'banner_back'
-                                                                ); ?>')">
-            <div class="container">
-                <div class="banner__wrap">
-                    <div class="front-page__banner-title">
-                        <p><?php the_field('subtitle'); ?></p>
-                        <h1><?php the_field('title_h1'); ?></h1>
-                        <a class="primary_button button banner__btn" href="<?php the_field( 'banner__btn'); ?> ">
-                            Підтримати нас
-                        </a>
-                    </div>
-                </div>
-
-                <div class="banner__gallary">
-                    <?php
-                    $gallary = get_field('gallary');
-                    if ($gallary) {
-                        $size = 'full';
-
-                        foreach ($gallary as $key => $gallary_id) { ?>
-                    <div class="banner__gallary-img">
-                        <img src="<?php echo $gallary_id['url']; ?>" alt=" <?php echo $gallary_id['title']; ?>">
-
-
-                    </div>
-
-                    <?php }
-                    } ?>
-
-                </div>
-            </div>
+      
+      <div id="mouse-parallax" class="mouse-parallax">
+        <div id="mouse-parallax-bg" class="banner__back" style="background-image: url('<?php  echo get_field('banner_back'); ?>')">
         </div>
+      </div>  
+
+      <div class="container">
+          <div class="banner__wrap">
+              <div class="front-page__banner-title">
+                  <p><?php the_field('subtitle'); ?></p>
+                  <h1><?php the_field('title_h1'); ?></h1>
+                  <a class="primary_button button banner__btn" href="<?php the_field( 'banner__btn'); ?> ">
+                      Підтримати нас
+                  </a>
+              </div>
+          </div>
+
+          <div class="banner__gallary">
+              <?php
+              $gallary = get_field('gallary');
+              if ($gallary) {
+                  $size = 'full';
+
+                  foreach ($gallary as $key => $gallary_id) { ?>
+              <div class="banner__gallary-img">
+                  <img src="<?php echo $gallary_id['url']; ?>" alt=" <?php echo $gallary_id['title']; ?>">
+
+
+              </div>
+
+              <?php }
+              } ?>
+
+          </div>
+      </div>
+        
 
         <div class="container banner__container">
             <div class="banner__cards">
