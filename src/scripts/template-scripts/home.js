@@ -39,7 +39,19 @@ function countNum(num, e) {
 
 const countArr = document.querySelectorAll("#count");
 countArr.forEach(e => {
-  const amountEl = e.dataset.amount;
-  countNum(amountEl, e)
-});
+    const amountEl = e.dataset.amount;
+    countNum(amountEl, e)
+  });
+
+  
+  //parallax
+window.onload = function () {
+  const parallax = document.getElementById("mouse-parallax")
+  
+  if (parallax) {
+    const bgImage = document.getElementById("mouse-parallax-bg");
+    bgImage.classList.add("parallax");
+  }
+}
+
 });
