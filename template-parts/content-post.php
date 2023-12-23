@@ -1,7 +1,14 @@
 <section class="post__section">     
      <div class="container">
             <div class="single__banner">
-                <img alt="main banner" src="<?php the_field('main-banner'); ?>">
+
+                <?php 
+                  $image = get_field('main-banner');
+                  $size = 'medium_large'; // (thumbnail, medium, large, full or custom size)
+                  if( $image ) {
+                      echo wp_get_attachment_image( $image, $size );
+                  }; ?>
+                  
                 <h1 class="single__post-title"><?php the_title(); ?></h1>
                 <p class="single__post-time"><?php the_time('d.m.y'); ?></p>
             </div>
