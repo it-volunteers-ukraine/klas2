@@ -326,7 +326,6 @@
 		flex-wrap: nowrap;
 		gap: 24px;
 		align-items: baseline;
-		justify-content: center;
 		@media screen and (max-width: $desktop) {
 			justify-content: flex-start;
 			gap: 16px;
