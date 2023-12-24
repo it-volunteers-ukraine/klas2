@@ -348,6 +348,7 @@
 				padding: 0;
 			}
 			&__img {
+				border-radius: 50%;
 				@media screen and (max-width: $desktop) {
 					max-width: 164px;
 					margin: 0 auto;
