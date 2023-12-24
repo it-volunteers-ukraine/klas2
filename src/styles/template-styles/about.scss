@@ -348,13 +348,6 @@
 			}
 			&__img {
 				border-radius: 50%;
-				@media screen and (max-width: $desktop) {
-					max-width: 164px;
-					margin: 0 auto;
-				}
-				@media screen and (max-width: $tablet) {
-					max-width: none;
-				}
 			}
 			&__text-container {
 				display: flex;
