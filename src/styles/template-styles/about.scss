@@ -194,7 +194,7 @@
 	}
 
 	@media screen and (max-width: $tablet) {
-		padding: 40px 0;
+		padding: 39px 0;
 	}
 	&__title {
 		@media screen and (max-width: $tablet) {
@@ -257,10 +257,10 @@
 .our-team {
 	padding: 56px 0;
 	@media screen and (max-width: $desktop) {
-		padding: 75px 0;
+		padding: 36px 0;
 	}
 	@media screen and (max-width: $tablet) {
-		padding: 79px 0;
+		padding: 39px 0;
 	}
 	& .swiper-button-prev,
 	.swiper-button-next {
@@ -326,7 +326,6 @@
 		flex-wrap: nowrap;
 		gap: 24px;
 		align-items: baseline;
-		justify-content: center;
 		@media screen and (max-width: $desktop) {
 			justify-content: flex-start;
 			gap: 16px;
@@ -348,13 +347,7 @@
 				padding: 0;
 			}
 			&__img {
-				@media screen and (max-width: $desktop) {
-					max-width: 164px;
-					margin: 0 auto;
-				}
-				@media screen and (max-width: $tablet) {
-					max-width: none;
-				}
+				border-radius: 50%;
 			}
 			&__text-container {
 				display: flex;
