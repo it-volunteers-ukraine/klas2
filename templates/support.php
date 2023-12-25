@@ -16,9 +16,9 @@ get_header();
       <div class="donate__inner-container">
         <div class="donate-text__wrap">
           <h2 class="donate-section__title"><?php the_field('donate_title'); ?></h2>
-          <p class="donate-section__subtitle"><?php the_field('donate_subtitle'); ?><a href="<?php the_field('bank_link'); ?>" class="donate-section__bank"><?php the_field('donate_bank'); ?></a></p>
+          <p class="donate-section__subtitle"><?php the_field('donate_subtitle'); ?><a target="_blank" href="<?php the_field('bank_link'); ?>" class="donate-section__bank"><?php the_field('donate_bank'); ?></a></p>
         </div>
-        <a class="button primary_button donate-button" href="<?php the_field('bank_link'); ?>"><?php the_field('donate_button'); ?></a>
+        <a class="button primary_button donate-button" target="_blank" href="<?php the_field('bank_link'); ?>"><?php the_field('donate_button'); ?></a>
         <div class="donate-image__wrap">
           <?php 
             $image = get_field('donate_qr-code');
