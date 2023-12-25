@@ -8,12 +8,7 @@ get_header();
 <main>
   <section class="projects">
     <div class="container">
-      <?php
-      $projects_title = get_field('projects__title');
-      if ($projects_title) :
-      ?>
-        <h2 class="projects__title"><?php echo esc_html($projects_title); ?></h2>
-      <?php endif; ?>
+      <h2 class="projects__title"><?php the_title(); ?></h2>
 
       <div class="tabs-container">
         <?php
