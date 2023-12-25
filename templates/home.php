@@ -21,7 +21,7 @@ get_header();
                   <p><?php the_field('subtitle'); ?></p>
                   <h1><?php the_field('title_h1'); ?></h1>
                   <a class="primary_button button banner__btn" href="<?php the_field( 'banner__btn'); ?> ">
-                      Підтримати нас
+                      <?php the_field( 'banner__btn_name'); ?>
                   </a>
               </div>
           </div>
@@ -123,7 +123,7 @@ get_header();
                         </div>
 
                         <a href="<?php the_field('about_link')?>" class="button read-more_button">
-                            <span> Читати більше</span>
+                            <span><?php the_field('read-more_button', 'option'); ?></span>
 
                             <svg class="arrow-icon">
                                 <use href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#arrow">
@@ -224,8 +224,7 @@ get_header();
                                 <time datatime='2023-06-24'><?php the_time(
                                                                         'd.m.y'
                                                                     ); ?></time>
-                                <a href="<?php the_permalink(); ?>" class="button read-more_button">Читати
-                                    більше<svg class="arrow-icon">
+                                <a href="<?php the_permalink(); ?>" class="button read-more_button"><?php the_field('read-more_button', 'option'); ?><svg class="arrow-icon">
 
                                         <use
                                             href="<?php echo  get_template_directory_uri() ?>/assets/images/sprite.svg#arrow">
@@ -246,7 +245,7 @@ get_header();
 
                     <?php else : ?>
                     <p><?php esc_html_e(
-                                'Нет постов по вашим критериям.'
+                                'Немає постів по вашому запиту.'
                             ); ?></p>
                     <?php endif; ?>
 
@@ -256,7 +255,7 @@ get_header();
 
                 </div>
                 <a class="primary_button button front-page__news-btn" href=" <?php the_field( 'news_link'); ?>">
-                    Усі новини
+                    <?php the_field('news_link_name'); ?>
                 </a>
             </div>
 
@@ -265,7 +264,7 @@ get_header();
     <section class="front-page__slider">
         <div class="container">
             <h2 class="title">
-                Наші партнери
+                <?php the_field('collaboration_main_title'); ?>
             </h2>
         </div>
         <div class="front-page__slider-wrap slider ">
@@ -338,7 +337,7 @@ get_header();
                     <a class="primary_button button" href=" <?php the_field(
                                                                 'collaboration_link'
                                                             ); ?>">
-                        Стати партнером
+                        <?php the_field('collaboration_link_name') ?>
                     </a>
                 </div>
 
@@ -350,11 +349,11 @@ get_header();
             <div class="contacts__wrap">
                 <div class="contacts__inner-list">
                     <h2 class="title">
-                        Контакти
+                        <?php the_field('contacts_title'); ?>
                     </h2>
 
                     <p class="contacts__sub">
-                        Громадська організація «Всеукраїнська організація "Клас"»
+                        <?php the_field('subtitle'); ?> <?php the_field('title_h1'); ?>
                     </p>
                     <ul class="list__contact contacts__list">
                         <?php
