@@ -9,6 +9,9 @@
 		line-height: 34px;
 		margin-bottom: 32px;
 	}
+	@media screen and (max-width: $tablet) {
+		text-align: center;
+	}
 }
 .about {
 	padding: 52px 0 56px;
@@ -293,6 +296,9 @@
 	&__head {
 		display: flex;
 		justify-content: space-between;
+		@media screen and (max-width: $tablet) {
+			justify-content: center;
+		}
 	}
 	&__slider {
 		position: relative;
