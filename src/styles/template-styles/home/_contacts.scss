@@ -13,17 +13,19 @@
 
     &__sub {
         font-size: 1.33em;
-        font-weight: 700;
+        font-weight: 600;
 
-        @media(max-width:767px) {
+        @media(max-width: $desktop) {
             font-size: 1em;
-
         }
     }
 
     &__list {
-
         margin-top: 36px;
+
+        @media(max-width: $desktop) {
+            margin-top: 24px;
+          }
     }
 
     &__inner-list {
@@ -33,6 +35,12 @@
             width: 100%;
             text-align: center;
 
+        }
+
+        & .title {
+          @media(max-width:$desktop) {
+              margin-bottom: 24px;
+            }
         }
     }
 
