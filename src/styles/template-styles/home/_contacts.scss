@@ -13,11 +13,10 @@
 
     &__sub {
         font-size: 1.33em;
-        font-weight: 700;
+        font-weight: 600;
 
         @media(max-width: $desktop) {
             font-size: 1em;
-
         }
     }
 
