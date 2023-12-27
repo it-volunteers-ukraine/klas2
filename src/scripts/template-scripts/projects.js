@@ -50,6 +50,10 @@
 				s.preventDefault();
 				var t = e(this).attr("data-id");
 				a(l[t], t);
+
+				// Прокручуємо сторінку вгору до початку article
+				var articleTop = l[t].offset().top - 200;
+				$("html, body").animate({ scrollTop: articleTop }, "slow");
 			});
 	};
 })();
