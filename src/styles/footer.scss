@@ -48,8 +48,8 @@
 
 	@media screen and (max-width: 575.9px) {
 		margin-right: 5px;
-		width: 28px;
-		height: 27px;
+		width: 42px;
+		height: 42px;
 	}
 }
 
@@ -260,17 +260,42 @@ footer .menu-item {
 	}
 }
 
+.footer-policy-wrapper {
+	display: flex;
+	justify-content: space-between;
+	@media screen and (max-width: $tablet) {
+		display: block;
+	}
+}
+
 .footer-policy-text {
 	font-size: 18px;
 	line-height: calc(24 / 18);
 
 	@media screen and (max-width: $desktop) {
 		font-size: 12px;
-		line-height: calc(4 / 12);
 	}
 
 	@media screen and (max-width: $mobile) {
 		line-height: 1.1;
+	}
+
+	&:not(:last-child) {
+		@media screen and (max-width: $desktop) {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.footer-policy-text a {
+	display: inline-block;
+	color: #3f78e3;
+	font-weight: 500;
+	transform: $transition-function;
+
+	&:hover,
+	&:focus {
+		scale: 1.03;
 	}
 }
 

@@ -27,7 +27,8 @@
 
       <ul class="fcontact__list hide-mob">
         <li>
-          <a class="fcontac__link" href="mailto:<?php the_field('email', 'options'); ?>" aria-label="Надіслати листа на електронну пошту">
+          <a class="fcontac__link" href="mailto:<?php the_field('email', 'options'); ?>"
+            aria-label="Надіслати листа на електронну пошту">
             <svg class="footer-icon" width="40" height="40" viewBox="0 0 40 40">
               <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#icon-Gmail"></use>
             </svg>
@@ -35,7 +36,8 @@
           </a>
         </li>
         <li>
-          <a class="fcontac__link" href="tel:<?php echo str_replace(' ', '', get_field('first-phone', 'options')); ?>" aria-label="Зателефонувати">
+          <a class="fcontac__link" href="tel:<?php echo str_replace(' ', '', get_field('first-phone', 'options')); ?>"
+            aria-label="Зателефонувати">
             <svg class="footer-icon" width="40" height="40" viewBox="0 0 40 40">
               <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#icon-Phone"></use>
             </svg>
@@ -43,7 +45,9 @@
           </a>
         </li>
         <li>
-          <a class="fcontac__link" href="https://api.whatsapp.com/send?phone=<?php echo ltrim(str_replace(' ', '', get_field('second-phone', 'options')), '+'); ?>" target="_blank" aria-label="Написати в WhatsApp">
+          <a class="fcontac__link"
+            href="https://api.whatsapp.com/send?phone=<?php echo ltrim(str_replace(' ', '', get_field('second-phone', 'options')), '+'); ?>"
+            target="_blank" aria-label="Написати в WhatsApp">
             <svg class="footer-icon" width="40" height="40" viewBox="0 0 40 40">
               <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#icon-WhatsApp"></use>
             </svg>
@@ -58,14 +62,16 @@
         </li>
         <li class="flex__wraper">
           <div>
-            <a href="<?php echo esc_attr(get_field('facebook', 'options')); ?>" target="_blank" aria-label="Відвідати нашу сторінку на Facebook">
+            <a href="<?php echo esc_attr(get_field('facebook', 'options')); ?>" target="_blank"
+              aria-label="Відвідати нашу сторінку на Facebook">
               <svg class="footer-icon" width="41" height="40" viewBox="0 0 41 40">
                 <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#icon-Facebook"></use>
               </svg>
             </a>
           </div>
           <div>
-            <a href="<?php echo esc_attr(get_field('youtube', 'options')); ?>" target="_blank" aria-label="Переглянути наш канал на YouTube">
+            <a href="<?php echo esc_attr(get_field('youtube', 'options')); ?>" target="_blank"
+              aria-label="Переглянути наш канал на YouTube">
               <svg class="footer-icon" width="40" height="40" viewBox="0 0 40 40">
                 <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#icon-YouTube"></use>
               </svg>
@@ -77,7 +83,8 @@
 
     <ul class="fcontact__list flex__wraper block__wraper hide-desc">
       <li>
-        <a class="fcontac__link" href="mailto:<?php the_field('email', 'options'); ?>" aria-label="Надіслати листа на електронну пошту">
+        <a class="fcontac__link" href="mailto:<?php the_field('email', 'options'); ?>"
+          aria-label="Надіслати листа на електронну пошту">
           <svg class="footer-icon" width="40" height="40" viewBox="0 0 40 40">
             <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#icon-Gmail"></use>
           </svg>
@@ -86,7 +93,8 @@
       </li>
       <li>
         <div>
-          <a class="fcontac__link" href="tel:<?php echo str_replace(' ', '', get_field('first-phone', 'options')); ?>" aria-label="Зателефонувати">
+          <a class="fcontac__link" href="tel:<?php echo str_replace(' ', '', get_field('first-phone', 'options')); ?>"
+            aria-label="Зателефонувати">
             <svg class="footer-icon" width="40" height="40" viewBox="0 0 40 40">
               <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#icon-Phone"></use>
             </svg>
@@ -94,7 +102,9 @@
           </a>
         </div>
         <div>
-          <a class="fcontac__link" href="https://api.whatsapp.com/send?phone=<?php echo ltrim(str_replace(' ', '', get_field('second-phone', 'options')), '+'); ?>" target="_blank" aria-label="Написати в WhatsApp">
+          <a class="fcontac__link"
+            href="https://api.whatsapp.com/send?phone=<?php echo ltrim(str_replace(' ', '', get_field('second-phone', 'options')), '+'); ?>"
+            target="_blank" aria-label="Написати в WhatsApp">
             <svg class="footer-icon" width="40" height="40" viewBox="0 0 40 40">
               <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#icon-WhatsApp"></use>
             </svg>
@@ -113,9 +123,15 @@
         }
         ?>
       </div>
-      <p class="footer-policy-text">
-        © <?php echo date('Y'); ?> IT Volunteers. All Rights Reserved.
-      </p>
+      <ul class="footer-policy-wrapper">
+        <li class="footer-policy-text">
+          © <?php echo date('Y'); ?> <?php the_field('rights_reserved', 'options') ?>
+        </li>
+        <li class="footer-policy-text">
+          Сайт розроблено <a href="https://it-volunteers.com/" target="_blank"
+            rel="noopener noreferrer">IT-Volunteers</a>
+        </li>
+      </ul>
     </div>
 
   </div>
