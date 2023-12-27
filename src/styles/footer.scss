@@ -265,6 +265,7 @@ footer .menu-item {
 	justify-content: space-between;
 	@media screen and (max-width: $tablet) {
 		display: block;
+		text-align: right;
 	}
 }
 
