@@ -292,11 +292,11 @@ footer .menu-item {
 	display: inline-block;
 	color: #3f78e3;
 	font-weight: 500;
-	transform: $transition-function;
+	transition: $transition-function;
 
 	&:hover,
 	&:focus {
-		scale: 1.03;
+		scale: 1.02;
 	}
 }
 
