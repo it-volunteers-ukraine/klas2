@@ -1,0 +1,33 @@
+.documents__container {
+	display: grid;
+	grid-template-columns: 1.5fr 1fr;
+	column-gap: 50px;
+	align-items: center;
+	@media screen and (max-width: 768px) {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		align-items: flex-start;
+	}
+	& li:not(:last-child) {
+		margin-bottom: 20px;
+	}
+}
+
+.documents_item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	& img {
+		width: 120px;
+		margin-right: 24px;
+		@media screen and (max-width: 768px) {
+			width: 90px;
+		}
+	}
+
+	& p {
+		font-weight: 600;
+	}
+}
