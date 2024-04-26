@@ -10,6 +10,8 @@ get_header();
     <div class="container">
       <h1 class="library__title"><?php the_title(); ?></h1>
 
+      <?php get_template_part( 'template-parts/material-categories'); ?>
+
       <?php get_template_part( 'template-parts/material-posts' ); ?>
 
     </div>
